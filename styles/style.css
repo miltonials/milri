@@ -35,6 +35,8 @@ header {
     top: 0;
     z-index: 1;
     background-color: white;
+    width: 100vw;
+    /* max-width: 1400px; */
 }
 a {
     text-decoration: none;
@@ -181,11 +183,11 @@ footer {
         grid-template-rows: repeat(2, 1fr);
     }
 }
-@media screen and (max-height: 400px) {
+/* @media screen and (max-height: 400px) {
     .main-description{
         display: none;
     }
     aside {
         width: 100vw;
     }
-}
+} */
