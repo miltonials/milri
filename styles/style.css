@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     --primary-color: #18191f;
+    --ligth-color: #F1E4FF;
 }
 html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,11 +18,15 @@ header {
     border: 1px solid #04ee6f;
 }
 .header-container {
+    /* position: fixed;
+    top: 0;
+    right: 0;
+    left: 0; */
     display: grid;
-    grid-template-columns: minmax(auto,  1024px);
+    grid-template-columns: minmax(auto,  1440px);
     justify-content: center;
     font-size: 1.6rem;
-/*     position: fixed; */
+    /*     position: fixed; */
 }
 
 .navigations {
@@ -37,10 +42,10 @@ header {
 
 .logo img{
     width: 5rem;
-    transform:rotate(79deg);
+    transform: rotate(79deg);
 }
 .logo img:hover {
-    transform:rotate(281deg);
+    transform: rotate(281deg);
     transition: all 1s ease-in;
 }
 
@@ -76,9 +81,44 @@ ul a li {
     font-weight: 600;
 }
 .rigth-menu ul a li{
-    background-color:#F1E4FF;
+    background-color: var(--ligth-color);
     border-radius: 1rem;
 }
 
 /*MAIN*/
 
+.main-container {
+    display: grid;
+    grid-template-columns: minmax(auto,  1440px);
+    justify-content: center;
+    font-size: 1.6rem;
+    /* padding-top: 70px; */
+}
+
+.main-sides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #ee0404;
+    height: 80vh;
+}
+.main-left {
+    overflow: overlay;
+}
+
+.aside-container {
+    background-image: url('../captura.png');
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80vh;
+    overflow: overlay;
+}
+
+.card {
+    height: 400px;
+    width: 250px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 25px;
+}
