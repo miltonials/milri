@@ -15,7 +15,7 @@ a {
 
 /*HEADER*/
 header {
-    border: 1px solid #04ee6f;
+    /* border: 1px solid #04ee6f; */
 }
 
 .header-container {
@@ -33,12 +33,12 @@ header {
 .navigations {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid #ee0404;
+    /* border: 1px solid #ee0404; */
     /* grid-template-areas:
         "left-menu right-menu";
     gap: 1rem; */
-/*     align-items: center; */
-/*     height: 70px; */
+    /*     align-items: center; */
+    /*     height: 70px; */
 }
 
 .logo img{
@@ -97,7 +97,7 @@ ul a li {
 .main-sides {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid #ee0404;
+    /* border: 1px solid #ee0404; */
     height: 80vh;
 }
 .main-left {
@@ -124,15 +124,37 @@ ul a li {
     text-align: center;
     color: #2C2738;
     padding: 15px;
+    position: relative;
+    z-index: 0;
+}
+.card::after {
+    background-image: linear-gradient( 114.2deg,  rgba(121,194,243,1) 22.6%, rgba(255,180,239,1) 67.7% );
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    transition: opacity 1s ease-out;
+    z-index: 1;
+    opacity: 0;
+}
+.card:hover::after {
+    opacity: 1;
 }
 .card-image img {
     width: 215px;
     height: 185px;
     border-radius: 25px;
     object-fit: cover;
+    position: relative;
+    z-index: 2;
 }
 .card-information {
     text-align: left;
+    position: relative;
+    z-index: 3;
 }
 .card-information p {
     line-height: 22px;
@@ -141,7 +163,7 @@ ul a li {
 .card-information button {
     width: 140px;
     height: 48px;
-    background-color: transparent;
+    background-color: #fafafa7c;
     color: #7C9CBF;
     border: 1px solid #7C9CBF;
     border-radius: 1rem;
