@@ -189,11 +189,11 @@ ul a li {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    color: #2C2738;
+    color: var(--ligth-color);
     padding: 15px;
 }
 
-//MEDIAQUERIES
+/*MEDIAQUERIES*/
 @media screen and (max-width:767px){
     .navigations {
         grid-template: 1fr 1fr / 1fr;
@@ -206,8 +206,3 @@ ul a li {
         width: 100vw;
     }
 }
-.social-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} 
