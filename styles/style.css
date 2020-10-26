@@ -9,6 +9,17 @@ html {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 62.5%;
 }
+
+.main-left::-webkit-scrollbar, .aside-container::-webkit-scrollbar {
+    width: .5rem;
+  }
+
+.main-left::-webkit-scrollbar-thumb, .aside-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /* border: 1px sol; */
+    background-image: linear-gradient( 114.2deg,  rgba(121,194,243,1) 22.6%, rgba(255,180,239,1) 67.7% );
+  }
+
 a {
     text-decoration: none;
 }
@@ -170,6 +181,9 @@ ul a li {
     border-radius: 1rem;
     outline: none;
 }
+.card:last-child{
+    margin-bottom: 200px;
+}
 
 .card-information button:active {
     -webkit-transform: scale(0.9);
@@ -190,10 +204,10 @@ ul a li {
     grid-template-columns: minmax(auto,  1110px);
     justify-content: center;
     font-size: 1.6rem;
-    /* position: fixed;
+    position: fixed;
     bottom: 0;
     right: 0;
-    left: 0; */
+    left: 0;
 }
 
 .footer-information {
@@ -228,6 +242,10 @@ ul a li {
 
 /*MEDIAQUERIES*/
 @media screen and (max-width:767px){
+    .main-left::-webkit-scrollbar-track, .aside-container::-webkit-scrollbar-track {
+        margin: 75px 0 200px;
+    }
+
     .navigations {
         grid-template: 1fr 1fr / 1fr;
         grid-column: auto;
@@ -237,5 +255,8 @@ ul a li {
     }
     .aside-container {
         width: 100vw;
+    }
+    .card:first-child{
+        margin-top: 75px;
     }
 }
