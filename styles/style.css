@@ -6,7 +6,7 @@
     --ligth-color: #F1E4FF;
 }
 html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 62.5%;
 }
 a {
@@ -121,4 +121,28 @@ ul a li {
     margin: 15px;
     background-color: #fff;
     border-radius: 25px;
+    text-align: center;
+    color: #2C2738;
+    padding: 15px;
+}
+.card-image img {
+    width: 215px;
+    height: 185px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+.card-information {
+    text-align: left;
+}
+.card-information p {
+    line-height: 22px;
+}
+
+.card-information button {
+    width: 140px;
+    height: 48px;
+    background-color: transparent;
+    color: #7C9CBF;
+    border: 1px solid #7C9CBF;
+    border-radius: 1rem;
 }
