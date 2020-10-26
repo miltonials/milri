@@ -159,3 +159,8 @@ ul a li {
         width: 100vw;
     }
 }
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
