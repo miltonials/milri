@@ -12,21 +12,22 @@ html {
 a {
     text-decoration: none;
 }
-
 /*HEADER*/
 header {
     /* border: 1px solid #04ee6f; */
 }
 
 .header-container {
-    /* position: fixed;
+    position: fixed;
     top: 0;
     right: 0;
-    left: 0; */
+    left: 0;
     display: grid;
     grid-template-columns: minmax(auto,  1440px);
     justify-content: center;
     font-size: 1.6rem;
+    z-index: 4;
+    background-color: #fff;
     /*     position: fixed; */
 }
 
@@ -91,7 +92,7 @@ ul a li {
     grid-template-columns: minmax(auto,  1440px);
     justify-content: center;
     font-size: 1.6rem;
-    /* padding-top: 70px; */
+    padding-top: 70px;
 }
 
 .main-sides {
@@ -110,7 +111,7 @@ ul a li {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 80vh;
+    height: calc(80vh - 0px);
     overflow: overlay;
 }
 
@@ -167,6 +168,16 @@ ul a li {
     color: #7C9CBF;
     border: 1px solid #7C9CBF;
     border-radius: 1rem;
+    outline: none;
+}
+
+.card-information button:active {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    transition: all .2s;
 }
 
 /* FOOTER */
