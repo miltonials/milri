@@ -103,6 +103,7 @@ ul a li {
 }
 .main-left {
     overflow: overlay;
+    padding: 0 3rem;
 }
 
 .aside-container {
