@@ -188,3 +188,16 @@ ul a li {
     border: 1px solid #7C9CBF;
     border-radius: 1rem;
 }
+
+@media screen and (max-width:767px){
+    .navigations {
+        grid-template: 1fr 1fr / 1fr;
+        grid-column: auto;
+    }
+    .main-left {
+        display: none;
+    }
+    .aside-container {
+        width: 100vw;
+    }
+}
