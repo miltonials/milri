@@ -1,8 +1,21 @@
 {
     "name": "MILRI",
     "short_name": "MILRI",
+    "icons": [
+        {
+          "src": "yo.png",
+          "type": "png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "yo.png",
+          "type": "png",
+          "sizes": "512x512"
+        }
+     ],
     "theme_color": "#18191f",
     "background_color": "#18191f",
     "display": "fullscreen",
-    "start_url": "https://miltonials.github.io/milri/"
+    "start_url": "http://localhost:5500/index.html"
+    // "start_url": "https://miltonials.github.io/milri/"
   }
