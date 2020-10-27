@@ -1,0 +1,8 @@
+{
+    "name": "MILRI",
+    "short_name": "MILRI",
+    "theme_color": "#18191f",
+    "background_color": "#18191f",
+    "display": "fullscreen",
+    "start_url": "/index.html"
+  }

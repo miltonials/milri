@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MILRI</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
+    <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/smartwatch.css" media="screen and (max-height: 280px)" />
     <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:767px)" />
@@ -218,6 +219,14 @@
             </section>
         </footer> 
         <script type="text/javascript" defer>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then (() => {
+                        console.log("Service Worker Registered");
+                    })
+                })
+            }
         if (
             navigator.appName == 'Microsoft Internet Explorer' || 
             navigator.appVersion == "5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; Tablet PC 2.0; Zoom 3.6.0; rv:11.0) like Gecko"

@@ -54,6 +54,7 @@ header {
 .navigations {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  box-shadow: 0px 1px 20px 0px #141514;
   /* border: 1px solid #ee0404; */
   /* grid-template-areas:
         "left-menu right-menu";
