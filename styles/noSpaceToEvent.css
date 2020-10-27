@@ -1,0 +1,40 @@
+.card {
+    display: grid;
+    grid-template: 30px 1fr 50px / 1fr 75px;
+    grid-template-areas:
+        "title img"
+        "information img"
+        "button img";
+    height: 190px;
+    width: 100%;
+    padding: 0;
+    padding-left: .8rem;
+    max-width: 319px;
+}
+.card-image {
+    grid-area: img;
+}
+.card-image img {
+    width: 75px;
+    height: 190px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    object-fit: cover;
+    overflow: hidden;
+}
+.card-information h2 {
+    grid-area: information;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+.card-information p {
+    grid-area: title;
+    line-height: 22px;
+}
+.card-information .card-btn {
+    grid-area: button;
+}
+.card-information button {
+    border-radius: 15px;
+}   

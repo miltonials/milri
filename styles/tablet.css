@@ -1,0 +1,17 @@
+.main-left::-webkit-scrollbar-track, .aside-container::-webkit-scrollbar-track {
+    margin: 75px 0 200px;
+}
+
+.navigations {
+    grid-template: 1fr 1fr / 1fr;
+    grid-column: auto;
+}
+.main-left {
+    display: none;
+}
+.aside-container {
+    width: 100vw;
+}
+.card:first-child{
+    margin-top: 75px;
+}
