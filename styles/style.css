@@ -25,6 +25,7 @@ a {
 }
 /*HEADER*/
 header {
+    background-color: var(--primary-color);
     /* border: 1px solid #04ee6f; */
 }
 
@@ -38,7 +39,6 @@ header {
     justify-content: center;
     font-size: 1.6rem;
     z-index: 4;
-    background-color: #fff;
     /*     position: fixed; */
 }
 
@@ -79,13 +79,25 @@ ul a li {
     align-items:center;
     height: 70px;
 }
+
+.left-menu {
+    background-color: var(--primary-color);
+    /* border-bottom: 1px solid var(--primary-color);
+    border-bottom-left-radius: 2rem; */
+}
 .left-menu ul li{
+    color: #F1E4FF;
     border-radius: 1rem;
-    color: black;
+    /* color: black; */
+    /* color: white; */
+    /* border: 1px solid #F1E4FF; */
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 .left-menu ul li:hover {
-    background-color: #F1E4FF;
-    transition: all .5s ease-in;
+    color: #F1E4FF;
+    background-color: #6d1a8b;
+    transition: all .2s ease-in;
 }
 
 .rigth-menu {
@@ -104,6 +116,7 @@ ul a li {
     justify-content: center;
     font-size: 1.6rem;
     padding-top: 70px;
+    background: var(--primary-color);
 }
 
 .main-sides {
@@ -111,12 +124,39 @@ ul a li {
     grid-template-columns: 1fr 1fr;
     /* border: 1px solid #ee0404; */
     height: 80vh;
+    background-color: var(--primary-color);
+    color: #fafafa;
 }
 .main-left {
     overflow: overlay;
     padding: 0 3rem;
 }
 
+.middle-moon {
+    background-color: #f2994a;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    -moz-border-radius: 100px 100px 0 0;
+    -webkit-border-radius: 100px 100px 0 0;
+    border-radius: 100px 100px 0 0;
+    right: 717px;
+    top: 90px;
+    z-index: 5;
+}
+.middle-moon2 {
+    display: none;
+    background-color: #f2994a;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    -moz-border-radius: 100px 100px 0 0;
+    -webkit-border-radius: 100px 100px 0 0;
+    border-radius: 100px 100px 0 0;
+    right: 717px;
+    top: 600px;
+    z-index: 5;
+}
 .aside-container {
     background-image: url('../captura.png');
     display: flex;
