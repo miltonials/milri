@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="robots"content="index,follow" />
+    <meta name="description"content="Herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>MILRI</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/smartwatch.css" media="screen and (max-height: 280px)" />
+    <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:767px)" />
+    <link rel="stylesheet" href="./styles/noSpaceToEvent.css" media="screen and (max-height:760px)" />
+
 </head>
 <body>
     <header>
@@ -97,10 +103,8 @@
                     </section>
                     <aside>
                         <section class="aside-container">
-                            <div class="middle-moon">
-                            </div>
-                            <div class="middle-moon2">
-                            </div>
+                            <!-- <div class="middle-moon">
+                            </div> -->
                             <div class="card">
                                 <figure class="card-image">
                                     <img src="https://cdn.themedizine.com/2018/10/JOJIALBUM.jpg" alt="Imagen de un evento" >
@@ -109,7 +113,9 @@
                                 <div class="card-information">
                                     <h2 class="title">Octubre</h2>
                                     <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <button><strong>Helouda</strong></button>
+                                    <div class="card-btn">
+                                        <button id="button"><strong>Helouda</strong></button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card">

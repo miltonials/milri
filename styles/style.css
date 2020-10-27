@@ -25,7 +25,6 @@ a {
 }
 /*HEADER*/
 header {
-    background-color: var(--primary-color);
     /* border: 1px solid #04ee6f; */
 }
 
@@ -39,6 +38,7 @@ header {
     justify-content: center;
     font-size: 1.6rem;
     z-index: 4;
+    background-color: #fff;
     /*     position: fixed; */
 }
 
@@ -80,13 +80,11 @@ ul a li {
     height: 70px;
 }
 
-.left-menu {
-    background-color: var(--primary-color);
+.left-menu {    
     /* border-bottom: 1px solid var(--primary-color);
     border-bottom-left-radius: 2rem; */
 }
 .left-menu ul li{
-    color: #F1E4FF;
     border-radius: 1rem;
     /* color: black; */
     /* color: white; */
@@ -95,8 +93,8 @@ ul a li {
     letter-spacing: 1px;
 }
 .left-menu ul li:hover {
-    color: #F1E4FF;
-    background-color: #6d1a8b;
+    color: #6d1a8b;
+    background-color: #F1E4FF;
     transition: all .2s ease-in;
 }
 
@@ -116,7 +114,6 @@ ul a li {
     justify-content: center;
     font-size: 1.6rem;
     padding-top: 70px;
-    background: var(--primary-color);
 }
 
 .main-sides {
@@ -124,15 +121,13 @@ ul a li {
     grid-template-columns: 1fr 1fr;
     /* border: 1px solid #ee0404; */
     height: 80vh;
-    background-color: var(--primary-color);
-    color: #fafafa;
 }
 .main-left {
     overflow: overlay;
     padding: 0 3rem;
 }
 
-.middle-moon {
+/* .middle-moon {
     background-color: #f2994a;
     position: absolute;
     width: 100px;
@@ -143,20 +138,7 @@ ul a li {
     right: 717px;
     top: 90px;
     z-index: 5;
-}
-.middle-moon2 {
-    display: none;
-    background-color: #f2994a;
-    position: absolute;
-    width: 100px;
-    height: 50px;
-    -moz-border-radius: 100px 100px 0 0;
-    -webkit-border-radius: 100px 100px 0 0;
-    border-radius: 100px 100px 0 0;
-    right: 717px;
-    top: 600px;
-    z-index: 5;
-}
+} */
 .aside-container {
     background-image: url('../captura.png');
     display: flex;
@@ -169,8 +151,8 @@ ul a li {
 .card {
     height: 400px;
     width: 250px;
-    padding: 10px;
-    margin: 15px;
+    /* padding: 10px; */
+    margin: 5px;
     background-color: #fff;
     border-radius: 25px;
     text-align: center;
@@ -278,25 +260,4 @@ ul a li {
     text-align: center;
     color: var(--ligth-color);
     padding: 15px;
-}
-
-/*MEDIAQUERIES*/
-@media screen and (max-width:767px){
-    .main-left::-webkit-scrollbar-track, .aside-container::-webkit-scrollbar-track {
-        margin: 75px 0 200px;
-    }
-
-    .navigations {
-        grid-template: 1fr 1fr / 1fr;
-        grid-column: auto;
-    }
-    .main-left {
-        display: none;
-    }
-    .aside-container {
-        width: 100vw;
-    }
-    .card:first-child{
-        margin-top: 75px;
-    }
 }
