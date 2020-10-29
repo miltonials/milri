@@ -1,20 +1,38 @@
-{
-    "name": "MILRI",
+  {
     "short_name": "MILRI",
+    "name": "MILRI",
+    "description": "Información de eventos",
     "icons": [
-        {
-          "src": "Images/petronas_logo_192.png",
-          "type": "image/png",
-          "sizes": "192x192"
-        },
-        {
-          "src": "Images/petronas_logo_192.png",
-          "type": "image/png",
-          "sizes": "512x512"
-        }
-     ],
-    "theme_color": "#18191f",
-    "background_color": "#18191f",
-    "display": "fullscreen",
-    "start_url": "https://miltonials.github.io/milri/"
+      {
+        "src": "/images/icons-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "https://miltonials.github.io/milri/",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6",
+    "shortcuts": [
+      {
+        "name": "How's weather today?",
+        "short_name": "Today",
+        "description": "View weather information for today",
+        "url": "https://miltonials.github.io/milri/",
+        "icons": [{ "src": "/images/today.png", "sizes": "192x192" }]
+      },
+      {
+        "name": "How's weather tomorrow?",
+        "short_name": "Tomorrow",
+        "description": "View weather information for tomorrow",
+        "url": "https://miltonials.github.io/milri/",
+        "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+      }
+    ]
   }
