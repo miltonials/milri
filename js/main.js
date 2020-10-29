@@ -2,7 +2,7 @@ const menu = document.querySelector('.rigth-menu');
 const menu2 = document.querySelector('.left-menu');
 const burgerButton = document.querySelector('#burger-menu');
 const card = document.querySelector('.aside-container');
-const tablet = window.matchMedia('screen and (max-width:767px)');
+const tablet = window.matchMedia('screen and (max-width:812px)');
 
 console.log(menu);
 

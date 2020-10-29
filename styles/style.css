@@ -48,27 +48,30 @@ header {
   font-size: 1.6rem;
   z-index: 4;
   background-color: #fff;
+  /* overflow: auto; */
 }
 
 .header-container {
-  /*     position: fixed; */
+  /* position: fixed; */
+  box-shadow: 0px 1px 20px 0px #141514;
 }
 
 .navigations {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  box-shadow: 0px 1px 20px 0px #141514;
+  grid-template-columns: 90px repeat(2, 1fr);
+  /* box-shadow: 0px 1px 20px 0px #141514; */
   /* border: 1px solid #ee0404; */
   /* grid-template-areas:
         "left-menu right-menu";
     gap: 1rem; */
-  /*     align-items: center; */
-  /*     height: 70px; */
+  /* align-items: center; */
+  height: 70px;
 }
 
 .logo img {
   width: 5rem;
-  transform: rotate(79deg);
+  height: 70px;
+  /* transform: rotate(90deg); */
 }
 .logo img:hover {
   transform: rotate(281deg);
@@ -76,7 +79,7 @@ header {
 }
 
 ul a li {
-  width: 150px;
+  /* width: 150px; */
   height: 40px;
   display: flex;
   justify-content: center;
@@ -91,6 +94,7 @@ ul a li {
   list-style: none;
   text-decoration: none;
   align-items: center;
+  flex-wrap: wrap;
   height: 70px;
 }
 .left-menu {
@@ -104,7 +108,7 @@ ul a li {
   /* border: 1px solid #F1E4FF; */
   font-weight: bold;
   letter-spacing: 1px;
-  width: 150px;
+  width: 171px;
   height: 40px;
   border-radius: 1rem;
 }
@@ -152,13 +156,16 @@ ul a li {
 
 .main-sides {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* border: 1px solid #ee0404; */
-  height: 80vh;
+  grid-template-columns: 90px 1fr 1fr;
+  grid-template-areas:
+    "blankSpace left rigth";
+  padding-top: 70px;
 }
 .main-left {
   overflow: overlay;
+  grid-area: left;
   padding: 0 3rem;
+  height: 80vh;
 }
 
 /* .middle-moon {
@@ -173,14 +180,18 @@ ul a li {
     top: 90px;
     z-index: 5;
 } */
+aside {
+  grid-area: rigth;
+}
 .aside-container {
   background-image: url("../images/captura.png");
+  grid-area: rigth;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: calc(80vh - 0px);
+  height: 80vh;
   overflow: overlay;
-  margin-top: 70px;
+  /* margin-top: 70px; */
 }
 
 .card {
@@ -274,6 +285,7 @@ ul a li {
 .footer-information {
   /* border: 1px solid red; */
   text-align: center;
+  overflow: auto;
 }
 .footer-information a {
   color: white;

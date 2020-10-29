@@ -12,25 +12,46 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/smartwatch.css" media="screen and (max-height: 280px)" />
-    <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:767px)" />
+    <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" />
+    <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-height: 280px)" />
     <link rel="stylesheet" href="./styles/noSpaceToEvent.css" media="screen and (max-width: 425px)" />
 
 </head>
 <body>
     <header>
-        <i class="icon-menu burger-button" id="burger-menu">➡</i>
+        <i class="icon-menu burger-button" id="burger-menu">
+            <svg width="27" height="44" viewBox="0 0 27 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0)" filter="url(#filter0_d)">
+                <path d="M7.27787 1.54915L22.8416 1.53647L20.3917 10.7532L4.82794 10.7659L7.27787 1.54915Z" fill="#8C30F5"/>
+                <path d="M7.28788 13.8355L22.8516 13.8228L20.4017 23.0396L4.83795 23.0522L7.28788 13.8355Z" fill="#2EC5CE"/>
+                <path d="M7.29788 26.1218L22.8616 26.1091L20.4117 35.3258L4.84796 35.3385L7.29788 26.1218Z" fill="#F2994A"/>
+                </g>
+                <defs>
+                <filter id="filter0_d" x="0" y="0" width="27.6895" height="44.875" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset dy="4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                <clipPath id="clip0">
+                <rect width="19.6595" height="36.859" fill="white" transform="translate(4 0.0160217) rotate(-0.0466716)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                
+        </i>
         <div class="header-container">
             <div class="navigations">
+                <a href="#">
+                    <figure class="logo">
+                        <img src="./images/yo.png" alt="LOGO">
+                    </figure>
+                </a>
                 <nav class="left-menu">
                     <ul>
-                        <li>
-                            <a href="#">
-                                <figure class="logo">
-                                    <img src="./images/yo.png" alt="LOGO">
-                                </figure>
-                            </a>
-                        </li>
                         <li><a href="./pages/allEvents/allEvents.html">Eventos del mes</a></li>
                         <li><a href="#">Juego antiestresante</a></li>
                     </ul>
