@@ -9,6 +9,7 @@
     width: 100%;
     padding: 0;
     padding-left: .8rem;
+    margin: 1rem auto;
     max-width: 319px;
 }
 .card-image {

@@ -1,0 +1,9 @@
+.main-sides {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* border: 1px solid #ee0404; */
+    /* height: 80vh; */
+}
+aside {
+    display: none;
+}

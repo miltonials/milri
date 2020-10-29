@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- HAY QUE AGREGAR ICONO PARA APPLE -->
+    <link rel="apple-touch-icon" href="/custom_icon.png" />
+    <meta name="theme-color" content="rgb(13, 5, 47)" />
+    <meta name="robots" content="index,follow" />
+    <meta
+      name="description"
+      content="Herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MILRI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="../../manifest.json" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="./styles/smartwatch.css"
+      media="screen and (max-height: 280px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/tablet.css"
+      media="screen and (max-width:767px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/noSpaceToEvent.css"
+      media="screen and (max-height:760px)"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="navigations">
+          <nav class="left-menu">
+            <ul>
+              <li>
+                <a href="../../index.html">
+                  <figure class="logo">
+                    <img src="../../images/yo.png" alt="LOGO" />
+                  </figure>
+                </a>
+              </li>
+              <li><a href="#">Eventos del mes</a></li>
+              <li><a href="#">Juego antiestresante</a></li>
+            </ul>
+          </nav>
+          <nav class="rigth-menu">
+            <ul>
+              <li>
+                <a href="#"> Agendar un evento</a>
+              </li>
+              <li>
+                <a href="#">
+                  Mi actividad
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M6.28369 16.9938C6.63136 16.9938 6.95408 16.809 7.13595 16.5057L8.22552 14.6886L10.439 19.4186C10.8178 20.2282 11.9587 20.182 12.274 19.3443L14.8808 12.4179L17.114 16.4729C17.2912 16.7947 17.6242 16.9938 17.9851 16.9938H19.2532C19.7716 18.3085 21.03 19.2362 22.5 19.2362C24.433 19.2362 26 17.6322 26 15.6535C26 13.6749 24.433 12.0709 22.5 12.0709C20.8034 12.0709 19.3888 13.3065 19.0681 14.9466H18.5693L15.5813 9.52102C15.1661 8.76709 14.081 8.8481 13.7771 9.65571L11.2411 16.3939L9.23585 12.1088C8.89363 11.3775 7.89613 11.3244 7.48173 12.0155L5.72414 14.9466H5C4.44772 14.9466 4 15.4049 4 15.9702C4 16.5355 4.44772 16.9938 5 16.9938H6.28369ZM22.5 17.1889C23.3284 17.1889 24 16.5015 24 15.6535C24 14.8055 23.3284 14.1181 22.5 14.1181C21.6716 14.1181 21 14.8055 21 15.6535C21 16.5015 21.6716 17.1889 22.5 17.1889Z"
+                      fill="black"
+                    />
+                    <mask
+                      id="mask0"
+                      mask-type="alpha"
+                      maskUnits="userSpaceOnUse"
+                      x="4"
+                      y="9"
+                      width="22"
+                      height="11"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.28369 16.9938C6.63136 16.9938 6.95408 16.809 7.13595 16.5057L8.22552 14.6886L10.439 19.4186C10.8178 20.2282 11.9587 20.182 12.274 19.3443L14.8808 12.4179L17.114 16.4729C17.2912 16.7947 17.6242 16.9938 17.9851 16.9938H19.2532C19.7716 18.3085 21.03 19.2362 22.5 19.2362C24.433 19.2362 26 17.6322 26 15.6535C26 13.6749 24.433 12.0709 22.5 12.0709C20.8034 12.0709 19.3888 13.3065 19.0681 14.9466H18.5693L15.5813 9.52102C15.1661 8.76709 14.081 8.8481 13.7771 9.65571L11.2411 16.3939L9.23585 12.1088C8.89363 11.3775 7.89613 11.3244 7.48173 12.0155L5.72414 14.9466H5C4.44772 14.9466 4 15.4049 4 15.9702C4 16.5355 4.44772 16.9938 5 16.9938H6.28369ZM22.5 17.1889C23.3284 17.1889 24 16.5015 24 15.6535C24 14.8055 23.3284 14.1181 22.5 14.1181C21.6716 14.1181 21 14.8055 21 15.6535C21 16.5015 21.6716 17.1889 22.5 17.1889Z"
+                        fill="white"
+                      />
+                    </mask>
+                    <g mask="url(#mask0)">
+                      <rect width="30" height="30" fill="#8C30F5" />
+                    </g>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <strong>Iniciar sesión</strong>
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M15 14C12.2386 14 10 11.7614 10 9C10 6.23858 12.2386 4 15 4C17.7614 4 20 6.23858 20 9C20 11.7614 17.7614 14 15 14ZM15 12C16.6569 12 18 10.6569 18 9C18 7.34315 16.6569 6 15 6C13.3432 6 12 7.34315 12 9C12 10.6569 13.3432 12 15 12ZM6.97768 24.9998C7.52982 25.0121 7.98742 24.5745 7.99976 24.0223C8.12226 18.5373 10.3776 17 14.9999 17C19.8804 17 22.1174 18.5181 21.9954 23.9777C21.9831 24.5298 22.4207 24.9874 22.9729 24.9998C23.525 25.0121 23.9826 24.5745 23.9949 24.0223C24.141 17.4819 21.0479 15 14.9999 15C9.22369 15 6.14576 17.4627 6.00025 23.9777C5.98792 24.5298 6.42553 24.9874 6.97768 24.9998Z"
+                      fill="black"
+                    />
+                    <mask
+                      id="mask1"
+                      mask-type="alpha"
+                      maskUnits="userSpaceOnUse"
+                      x="6"
+                      y="4"
+                      width="18"
+                      height="21"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M15 14C12.2386 14 10 11.7614 10 9C10 6.23858 12.2386 4 15 4C17.7614 4 20 6.23858 20 9C20 11.7614 17.7614 14 15 14ZM15 12C16.6569 12 18 10.6569 18 9C18 7.34315 16.6569 6 15 6C13.3432 6 12 7.34315 12 9C12 10.6569 13.3432 12 15 12ZM6.97768 24.9998C7.52982 25.0121 7.98742 24.5745 7.99976 24.0223C8.12226 18.5373 10.3776 17 14.9999 17C19.8804 17 22.1174 18.5181 21.9954 23.9777C21.9831 24.5298 22.4207 24.9874 22.9729 24.9998C23.525 25.0121 23.9826 24.5745 23.9949 24.0223C24.141 17.4819 21.0479 15 14.9999 15C9.22369 15 6.14576 17.4627 6.00025 23.9777C5.98792 24.5298 6.42553 24.9874 6.97768 24.9998Z"
+                        fill="white"
+                      />
+                    </mask>
+                    <g mask="url(#mask1)">
+                      <rect width="30" height="30" fill="#8C30F5" />
+                    </g>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <div class="main-container">
+            <div class="main-sides">
+                <section class="main-left">
+                    <div class="main-left-information">
+                        <details class="month enero">
+                            <summary>
+                                Ver eventos de enero
+                                <button>NUEVO EVENTO</button>
+                            </summary>
+                            <div class="card">
+                              <figure class="card-image">
+                                  <img src="https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_0sd7inc5/def_height/1425/def_width/950/version/100011/type/1" alt="Imagen de un evento" >
+                                  <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                              </figure>
+                              <div class="card-information">
+                                  <h2 class="title">Octubre</h2>
+                                  <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                  <button><strong>Helouda</strong></button>
+                              </div>
+                          </div>
+                          <div class="card">
+                            <figure class="card-image">
+                                <img src="https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_0sd7inc5/def_height/1425/def_width/950/version/100011/type/1" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <button><strong>Helouda</strong></button>
+                            </div>
+                        </div>
+                            <div class="card">
+                                <figure class="card-image">
+                                    <img src="https://cdn.themedizine.com/2018/10/JOJIALBUM.jpg" alt="Imagen de un evento" >
+                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                                </figure>
+                                <div class="card-information">
+                                    <h2 class="title">Octubre</h2>
+                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                    <div class="card-btn">
+                                        <button id="button"><strong>Helouda</strong></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="month febrero">
+                            <summary>
+                                Ver eventos de febrero
+                                <button>NUEVO EVENTO</button>
+                            </summary>
+                            <div class="card">
+                                <figure class="card-image">
+                                    <img src="https://cdn.themedizine.com/2018/10/JOJIALBUM.jpg" alt="Imagen de un evento" >
+                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                                </figure>
+                                <div class="card-information">
+                                    <h2 class="title">Octubre</h2>
+                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                    <div class="card-btn">
+                                        <button id="button"><strong>Helouda</strong></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="month marzo">
+                            <summary>
+                                Ver eventos de marzo
+                                <button>NUEVO EVENTO</button>
+                            </summary>
+                            <div class="card">
+                                <figure class="card-image">
+                                    <img src="https://cdn.themedizine.com/2018/10/JOJIALBUM.jpg" alt="Imagen de un evento" >
+                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                                </figure>
+                                <div class="card-information">
+                                    <h2 class="title">Octubre</h2>
+                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                    <div class="card-btn">
+                                        <button id="button"><strong>Helouda</strong></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                </section>
+                <aside>
+                    <section class="aside-container">
+                        <!-- <div class="middle-moon">
+                        </div> -->
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="https://cdn.themedizine.com/2018/10/JOJIALBUM.jpg" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <div class="card-btn">
+                                    <button id="button"><strong>Helouda</strong></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="https://www.diariovivo.com/wp-content/uploads/2020/07/unnamed-2-5-750x450.jpg" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <button><strong>Helouda</strong></button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_0sd7inc5/def_height/1425/def_width/950/version/100011/type/1" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <button><strong>Helouda</strong></button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="https://i.pinimg.com/236x/d7/ff/72/d7ff72fea47fd30c3094310308444230.jpg" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <button><strong>Helouda</strong></button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="https://i.blogs.es/43f1c3/death-note-one-shot-febrero-2020-gratis-espanol-mexico/840_560.jpg" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <button><strong>Helouda</strong></button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="https://scontent.fsyq4-2.fna.fbcdn.net/v/t1.0-9/53179912_2469734583098456_2683794229976629248_o.jpg?_nc_cat=110&ccb=2&_nc_sid=8bfeb9&_nc_ohc=jqvflSuLT-0AX-Sxz0O&_nc_oc=AQngA0WzJCTJskKdQ7PVAKiPk2iYJSrXmz1Qhlfxrljiwx0nvfPzLhxLyIOSk_gBVAg&_nc_ht=scontent.fsyq4-2.fna&oh=57c820922ac3d45364b1605224605209&oe=5FBAF2D0" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <button><strong>Helouda</strong></button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="https://img2.rtve.es/i/?w=1600&i=1600264164654.jpg" alt="Imagen de un evento" >
+                                <!-- <figcaption>Es una imagen de un evento</figcaption> -->
+                            </figure>
+                            <div class="card-information">
+                                <h2 class="title">Octubre</h2>
+                                <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                <button><strong>Helouda</strong></button>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <!--  -->
+    <footer>
+      <section class="footer-container">
+        <div class="footer-information">
+          <figure class="logo">
+            <a href="../../index.html">
+              <img src="../../images/yo.png" alt="LOGO" />
+            </a>
+          </figure>
+          <ul class="information-links">
+            <a href=""
+              ><li><span>Acerca de</span></li></a
+            >
+            <a href=""
+              ><li><span>Funcionalidades</span></li></a
+            >
+            <a href=""
+              ><li><span>¿Cómo colaborar?</span></li></a
+            >
+            <a href=""
+              ><li><span>Licencia</span></li></a
+            >
+          </ul>
+          <div class="social-links">
+            <span>MILRI 2020</span>
+            <span>REDES SOCIALES</span>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

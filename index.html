@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/smartwatch.css" media="screen and (max-height: 280px)" />
     <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:767px)" />
-    <link rel="stylesheet" href="./styles/noSpaceToEvent.css" media="screen and (max-height:760px)" />
+    <link rel="stylesheet" href="./styles/noSpaceToEvent.css" media="screen and (max-width: 425px)" />
 
 </head>
 <body>
     <header>
+        <i class="icon-menu burger-button" id="burger-menu">➡</i>
         <div class="header-container">
             <div class="navigations">
                 <nav class="left-menu">
@@ -26,11 +27,11 @@
                         <li>
                             <a href="#">
                                 <figure class="logo">
-                                    <img src="./yo.png" alt="LOGO">
+                                    <img src="./images/yo.png" alt="LOGO">
                                 </figure>
                             </a>
                         </li>
-                        <li><a href="#">Eventos del mes</a></li>
+                        <li><a href="./pages/allEvents/allEvents.html">Eventos del mes</a></li>
                         <li><a href="#">Juego antiestresante</a></li>
                     </ul>
                 </nav>
@@ -202,7 +203,7 @@
                 <div class="footer-information">
                     <figure class="logo">
                         <a href="#">
-                            <img src="./yo.png" alt="LOGO">
+                            <img src="./images/yo.png" alt="LOGO">
                         </a>
                         </figure>
                     <ul class="information-links">
@@ -218,7 +219,7 @@
                 </div>
             </section>
         </footer> 
-        <script type="text/javascript" defer>
+        <script type="text/javascript" defer="">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('sw.js')
@@ -237,5 +238,6 @@
                 alert("¡Hola! Al parecer tienes un vavegador no compatible con ultimás tecnologías del 2020. Cámbiate a uno más moderno❤");
             }
         </script>
+        <script src="./js/main.js"></script>
     </body>
 </html>

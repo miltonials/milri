@@ -10,7 +10,10 @@ html {
   font-size: 62.5%;
 }
 
-.main-left::-webkit-scrollbar,
+#burger-menu {
+  display: none;
+}
+/* .main-left::-webkit-scrollbar,
 .aside-container::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -21,23 +24,20 @@ html {
 .main-left::-webkit-scrollbar-thumb,
 .aside-container::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  /* border: 1px sol; */
   background-image: linear-gradient(
     114.2deg,
     rgba(121, 194, 243, 1) 22.6%,
     rgba(255, 180, 239, 1) 67.7%
   );
-}
+} */
 
 a {
   text-decoration: none;
 }
+
 /*HEADER*/
 header {
   /* border: 1px solid #04ee6f; */
-}
-
-.header-container {
   position: fixed;
   top: 0;
   right: 0;
@@ -48,6 +48,9 @@ header {
   font-size: 1.6rem;
   z-index: 4;
   background-color: #fff;
+}
+
+.header-container {
   /*     position: fixed; */
 }
 
@@ -144,7 +147,7 @@ ul a li {
   grid-template-columns: minmax(auto, 1440px);
   justify-content: center;
   font-size: 1.6rem;
-  padding-top: 70px;
+  /* padding-top: 70px; */
 }
 
 .main-sides {
@@ -171,12 +174,13 @@ ul a li {
     z-index: 5;
 } */
 .aside-container {
-  background-image: url("../captura.png");
+  background-image: url("../images/captura.png");
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: calc(80vh - 0px);
   overflow: overlay;
+  margin-top: 70px;
 }
 
 .card {
@@ -256,7 +260,7 @@ ul a li {
 .footer-container {
   background-color: #0b0d17;
   color: white;
-  height: 200px;
+  /* height: 200px; */
   display: grid;
   grid-template-columns: minmax(auto, 1110px);
   justify-content: center;
