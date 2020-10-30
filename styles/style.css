@@ -112,9 +112,7 @@ ul a li {
   height: 40px;
   border-radius: 1rem;
 }
-.left-menu ul li:hover:first-child {
-    background-color: transparent;
-}
+
 .left-menu ul li:hover {
   color: #6d1a8b;
   background-color: #f1e4ff;
