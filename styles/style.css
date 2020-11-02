@@ -2,13 +2,18 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --primary-color: #18191f;
-  --ligth-color: #f1e4ff;
 }
 html {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 62.5%;
 }
+body {
+  --dark-color: #18191f;
+  --ligth-color: #fafafa;
+  --li-ligth-color: #f1e4ff;
+  background-color: var(--ligth-color);;
+}
+
 
 #burger-menu {
   display: none;
@@ -47,7 +52,7 @@ header {
   justify-content: center;
   font-size: 1.6rem;
   z-index: 4;
-  background-color: #fff;
+  background-color: var(--ligth-color);
   /* overflow: auto; */
 }
 
@@ -98,7 +103,7 @@ ul a li {
   height: 70px;
 }
 .left-menu {
-  /* border-bottom: 1px solid var(--primary-color);
+  /* border-bottom: 1px solid var(--dark-color);
     border-bottom-left-radius: 2rem; */
 }
 .left-menu ul li {
@@ -120,13 +125,13 @@ ul a li {
 }
 
 .rigth-menu {
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
   font-weight: 600;
 }
 .rigth-menu ul li {
   width: 150px;
   height: 40px;
-  background-color: var(--ligth-color);
+  background-color: var(--li-ligth-color);
   border-radius: 1rem;
 }
 .rigth-menu ul li:hover {
@@ -166,18 +171,6 @@ ul a li {
   height: 80vh;
 }
 
-/* .middle-moon {
-    background-color: #f2994a;
-    position: absolute;
-    width: 100px;
-    height: 50px;
-    -moz-border-radius: 100px 100px 0 0;
-    -webkit-border-radius: 100px 100px 0 0;
-    border-radius: 100px 100px 0 0;
-    right: 717px;
-    top: 90px;
-    z-index: 5;
-} */
 aside {
   grid-area: rigth;
 }
@@ -229,7 +222,7 @@ aside {
   width: 215px;
   height: 185px;
   border-radius: 25px;
-  object-fit: cover;
+  object-fit: ;
   position: relative;
   z-index: 2;
 }
@@ -307,6 +300,5 @@ aside {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  color: var(--ligth-color);
   padding: 15px;
 }

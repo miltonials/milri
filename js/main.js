@@ -1,3 +1,7 @@
+/*DARK-THEME*/
+const bodyColors = document.querySelector('#body');
+
+/*NAVBAR*/
 const rigth_menu = document.querySelector('.rigth-menu');
 const left_menu = document.querySelector('.left-menu');
 const logo = document.querySelector('.logo');
@@ -20,6 +24,7 @@ function validation(event) {
 
 function hideShow() {
     if (rigth_menu.classList.contains('is-active')){
+        bodyColors.classList.remove('is-active');
         logo.classList.remove('is-active');
         burgerButton.classList.remove('is-active');
         rigth_menu.classList.remove('is-active');
@@ -27,6 +32,7 @@ function hideShow() {
         card.classList.remove('is-active');
     }
     else {
+        bodyColors.classList.add('is-active')
         logo.classList.add('is-active');
         burgerButton.classList.add('is-active');
         rigth_menu.classList.add('is-active');
