@@ -9,44 +9,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MILRI</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
+    <!-- IBM Plex Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  />
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" />
     <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
 
 </head>
-<body>
+<body id="body">
     <header>
-        <i class="icon-menu burger-button" id="burger-menu">
-            <svg width="27" height="44" viewBox="0 0 27 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0)" filter="url(#filter0_d)">
-                <path d="M7.27787 1.54915L22.8416 1.53647L20.3917 10.7532L4.82794 10.7659L7.27787 1.54915Z" fill="#8C30F5"/>
-                <path d="M7.28788 13.8355L22.8516 13.8228L20.4017 23.0396L4.83795 23.0522L7.28788 13.8355Z" fill="#2EC5CE"/>
-                <path d="M7.29788 26.1218L22.8616 26.1091L20.4117 35.3258L4.84796 35.3385L7.29788 26.1218Z" fill="#F2994A"/>
-                </g>
-                <defs>
-                <filter id="filter0_d" x="0" y="0" width="27.6895" height="44.875" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-                <feOffset dy="4"/>
-                <feGaussianBlur stdDeviation="2"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                </filter>
-                <clipPath id="clip0">
-                <rect width="19.6595" height="36.859" fill="white" transform="translate(4 0.0160217) rotate(-0.0466716)"/>
-                </clipPath>
-                </defs>
-                </svg>
-                
-        </i>
+        <i class="icon-menu burger-button" id="burger-menu"><span></span></i>
         <div class="header-container">
             <div class="navigations">
                 <a href="#">
                     <figure class="logo">
-                        <img src="./images/yo.png" alt="LOGO">
+                        <img src="./assets/imgs/yo.png" alt="LOGO">
                     </figure>
                 </a>
                 <nav class="left-menu">
@@ -57,35 +35,17 @@
                 </nav>
                 <nav class="rigth-menu">
                     <ul>
-                        <li>
+                        <li id="agendarEvennt--btn">
                             <a href="#"> Agendar un evento</a>
                         </li>
-                        <li>
+                        <li id="miActividad--btn">
                             <a href="#">
-                                Mi actividad
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.28369 16.9938C6.63136 16.9938 6.95408 16.809 7.13595 16.5057L8.22552 14.6886L10.439 19.4186C10.8178 20.2282 11.9587 20.182 12.274 19.3443L14.8808 12.4179L17.114 16.4729C17.2912 16.7947 17.6242 16.9938 17.9851 16.9938H19.2532C19.7716 18.3085 21.03 19.2362 22.5 19.2362C24.433 19.2362 26 17.6322 26 15.6535C26 13.6749 24.433 12.0709 22.5 12.0709C20.8034 12.0709 19.3888 13.3065 19.0681 14.9466H18.5693L15.5813 9.52102C15.1661 8.76709 14.081 8.8481 13.7771 9.65571L11.2411 16.3939L9.23585 12.1088C8.89363 11.3775 7.89613 11.3244 7.48173 12.0155L5.72414 14.9466H5C4.44772 14.9466 4 15.4049 4 15.9702C4 16.5355 4.44772 16.9938 5 16.9938H6.28369ZM22.5 17.1889C23.3284 17.1889 24 16.5015 24 15.6535C24 14.8055 23.3284 14.1181 22.5 14.1181C21.6716 14.1181 21 14.8055 21 15.6535C21 16.5015 21.6716 17.1889 22.5 17.1889Z" fill="black"/>
-                                    <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="4" y="9" width="22" height="11">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.28369 16.9938C6.63136 16.9938 6.95408 16.809 7.13595 16.5057L8.22552 14.6886L10.439 19.4186C10.8178 20.2282 11.9587 20.182 12.274 19.3443L14.8808 12.4179L17.114 16.4729C17.2912 16.7947 17.6242 16.9938 17.9851 16.9938H19.2532C19.7716 18.3085 21.03 19.2362 22.5 19.2362C24.433 19.2362 26 17.6322 26 15.6535C26 13.6749 24.433 12.0709 22.5 12.0709C20.8034 12.0709 19.3888 13.3065 19.0681 14.9466H18.5693L15.5813 9.52102C15.1661 8.76709 14.081 8.8481 13.7771 9.65571L11.2411 16.3939L9.23585 12.1088C8.89363 11.3775 7.89613 11.3244 7.48173 12.0155L5.72414 14.9466H5C4.44772 14.9466 4 15.4049 4 15.9702C4 16.5355 4.44772 16.9938 5 16.9938H6.28369ZM22.5 17.1889C23.3284 17.1889 24 16.5015 24 15.6535C24 14.8055 23.3284 14.1181 22.5 14.1181C21.6716 14.1181 21 14.8055 21 15.6535C21 16.5015 21.6716 17.1889 22.5 17.1889Z" fill="white"/>
-                                    </mask>
-                                    <g mask="url(#mask0)">
-                                        <rect width="30" height="30" fill="#8C30F5"/>
-                                    </g>
-                                </svg>
+                                Mi actividad <span class="actividad-icon"></span>
                             </a>
                         </li>
-                        <li>
+                        <li id="iniciarSesion--btn">
                             <a href="#">
-                                <strong>Iniciar sesión</strong>
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 14C12.2386 14 10 11.7614 10 9C10 6.23858 12.2386 4 15 4C17.7614 4 20 6.23858 20 9C20 11.7614 17.7614 14 15 14ZM15 12C16.6569 12 18 10.6569 18 9C18 7.34315 16.6569 6 15 6C13.3432 6 12 7.34315 12 9C12 10.6569 13.3432 12 15 12ZM6.97768 24.9998C7.52982 25.0121 7.98742 24.5745 7.99976 24.0223C8.12226 18.5373 10.3776 17 14.9999 17C19.8804 17 22.1174 18.5181 21.9954 23.9777C21.9831 24.5298 22.4207 24.9874 22.9729 24.9998C23.525 25.0121 23.9826 24.5745 23.9949 24.0223C24.141 17.4819 21.0479 15 14.9999 15C9.22369 15 6.14576 17.4627 6.00025 23.9777C5.98792 24.5298 6.42553 24.9874 6.97768 24.9998Z" fill="black"/>
-                                    <mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="6" y="4" width="18" height="21">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15 14C12.2386 14 10 11.7614 10 9C10 6.23858 12.2386 4 15 4C17.7614 4 20 6.23858 20 9C20 11.7614 17.7614 14 15 14ZM15 12C16.6569 12 18 10.6569 18 9C18 7.34315 16.6569 6 15 6C13.3432 6 12 7.34315 12 9C12 10.6569 13.3432 12 15 12ZM6.97768 24.9998C7.52982 25.0121 7.98742 24.5745 7.99976 24.0223C8.12226 18.5373 10.3776 17 14.9999 17C19.8804 17 22.1174 18.5181 21.9954 23.9777C21.9831 24.5298 22.4207 24.9874 22.9729 24.9998C23.525 25.0121 23.9826 24.5745 23.9949 24.0223C24.141 17.4819 21.0479 15 14.9999 15C9.22369 15 6.14576 17.4627 6.00025 23.9777C5.98792 24.5298 6.42553 24.9874 6.97768 24.9998Z" fill="white"/>
-                                    </mask>
-                                    <g mask="url(#mask1)">
-                                        <rect width="30" height="30" fill="#8C30F5"/>
-                                    </g>
-                                </svg>
+                                <strong>Iniciar sesión</strong><span class="iniciarSesion-icon"></span>
                             </a>
                         </li>
                     </ul>
@@ -193,7 +153,7 @@
                             </div>
                             <div class="card">
                                 <figure class="card-image">
-                                    <img src="https://scontent.fsyq4-2.fna.fbcdn.net/v/t1.0-9/53179912_2469734583098456_2683794229976629248_o.jpg?_nc_cat=110&ccb=2&_nc_sid=8bfeb9&_nc_ohc=jqvflSuLT-0AX-Sxz0O&_nc_oc=AQngA0WzJCTJskKdQ7PVAKiPk2iYJSrXmz1Qhlfxrljiwx0nvfPzLhxLyIOSk_gBVAg&_nc_ht=scontent.fsyq4-2.fna&oh=57c820922ac3d45364b1605224605209&oe=5FBAF2D0" alt="Imagen de un evento" >
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/miltonialsblog.appspot.com/o/imagenes%2FCaptura.PNG?alt=media&token=b90a8a52-0bfe-4e9c-8786-99795c25e835" alt="Imagen de un evento" >
                                     <!-- <figcaption>Es una imagen de un evento</figcaption> -->
                                 </figure>
                                 <div class="card-information">
@@ -223,7 +183,7 @@
                 <div class="footer-information">
                     <figure class="logo">
                         <a href="#">
-                            <img src="./images/yo.png" alt="LOGO">
+                            <img src="./assets/imgs/yo.png" alt="LOGO">
                         </a>
                         </figure>
                     <ul class="information-links">
@@ -238,7 +198,13 @@
                     </div>
                 </div>
             </section>
-        </footer> 
+        </footer>
+        <!-- MODAL INICIAR SESION -->
+        <!-- <section class="loginModal"> -->
+            
+
+        </section>
+        <!-- SERVICE WORKER -->
         <script type="text/javascript" defer="">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
@@ -248,16 +214,9 @@
                     })
                 })
             }
-        if (
-            navigator.appName == 'Microsoft Internet Explorer' || 
-            navigator.appVersion == "5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; Tablet PC 2.0; Zoom 3.6.0; rv:11.0) like Gecko"
-            )
-            {
-                alert("¡Hola! Al parecer tienes un vavegador antiguo. Cámbiate a uno más moderno❤");
-            } else if (navigator.appVersion == "5.0 (Windows)") {
-                alert("¡Hola! Al parecer tienes un vavegador no compatible con ultimás tecnologías del 2020. Cámbiate a uno más moderno❤");
-            }
         </script>
+        <!-- JS-->
         <script type="text/javascript" src="./js/main.js"></script>
+        <script src="./js/detectarBrowser.js"></script>
     </body>
 </html>
