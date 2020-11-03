@@ -228,7 +228,7 @@ aside {
   height: 100%;
   border-radius: 25px;
   transition: opacity 1s ease-out;
-  z-index: 1;
+  /* z-index: 1; */
   opacity: 0;
 }
 .card:hover::after {
@@ -320,7 +320,7 @@ aside {
 }
 
 /* MODAL INICIAR SESION */
-.iniciarSesion--container {
+.modal--container {
   z-index: 5;
   position: fixed;
   width: 100vw;
@@ -330,7 +330,7 @@ aside {
   background: rgba(0, 0, 0, 0.363);
   display: flex;
 }
-.iniciarSesion--container::before {
+.modal--container::before {
   content: "X";
   position: absolute;
   margin: 5rem 5rem 0 0;
@@ -339,9 +339,9 @@ aside {
   opacity: .5;
   font-size: 5rem;
 }
-.iniciarSesion__content--modal {
+.content--modal {
   width: 50%;
-  height: 50%;
+  /* height: 50%; */
   margin: auto;
   background: var(--ligth-color);
   border-radius: 25px;

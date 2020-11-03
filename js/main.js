@@ -1,3 +1,8 @@
+// obtener fecha
+let meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+let f=new Date();
+console.log(meses[f.getMonth()]);
+
 /*DARK-THEME*/
 const bodyColors = document.querySelector('#body');
 
@@ -67,13 +72,13 @@ const createCustomElement = (element,attributes,children) => {
 const printModal = (content) => {
     // crear contenedor interno
     const modalContentEl = createCustomElement('div', {
-        id: 'IniciarSesion--modal',
-        class: 'iniciarSesion__content--modal',
+        id: 'content--modal',
+        class: 'content--modal',
     }, [content])
     // crear contenedor principal
     const modalContainerEl = createCustomElement('div', {
-        id: '',
-        class: 'iniciarSesion--container',
+        id: 'modal--container',
+        class: 'modal--container',
     }, [modalContentEl]);
 
     // Imprimir modal
@@ -92,9 +97,23 @@ const printModal = (content) => {
 
 // printModal (`<h1>hola mundo</h1>`);
 
-document.getElementById('iniciarSesion--btn').addEventListener('click', () => {
+document.getElementById('miActividad--btn').addEventListener('click', () => {
     printModal(`
-    <h1>SOY UN MODAL</h1>
-    <h1>hola mundo</h1>
+    <h2>Agregar el modal de actividad</h2>
     `);
   })
+  document.getElementById('agendarEvennt--btn').addEventListener('click', () => {
+    printModal(`
+    <h2>Agregar el modal de agendar evento</h2>
+    `);
+  })  
+document.getElementById('iniciarSesion--btn').addEventListener('click', () => {
+    printModal(`
+    <h2>Agregar el modal de iniciar sesion</h2>
+    `);
+  })
+  //   requisitos y valor de una patente comercial de textiles
+  
+// 27584444 ext120
+
+// dinna clark
