@@ -23,6 +23,7 @@ body {
   height: 44px;
   background-image: url("../assets/icons/burgerButton.svg");
 }
+
 /* .main-left::-webkit-scrollbar,
 .aside-container::-webkit-scrollbar {
   width: 0.5rem;
@@ -317,3 +318,31 @@ aside {
   text-align: center;
   padding: 15px;
 }
+
+/* MODAL INICIAR SESION */
+.iniciarSesion--container {
+  z-index: 5;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.363);
+  display: flex;
+}
+.iniciarSesion--container::before {
+  content: "X";
+  position: absolute;
+  margin: 5rem 5rem 0 0;
+  top: 0;
+  right: 0;
+  opacity: .5;
+  font-size: 5rem;
+}
+.iniciarSesion__content--modal {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  background: var(--ligth-color);
+  border-radius: 25px;
+  }

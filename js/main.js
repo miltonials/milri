@@ -40,3 +40,61 @@ function hideShow() {
         card.classList.add('is-active');
     }
 }
+
+// MODAL DE SIGNIN
+
+// Añadir un objeto de atributos a un elemento
+const addAttributes = (element, attrObj) => {
+  for (let attr in attrObj) {
+    if (attrObj.hasOwnProperty(attr)) element.setAttribute(attr,attrObj[attr])
+  }
+};
+// Crear elementos con atributos e hijo
+const createCustomElement = (element,attributes,children) => {
+    let customElement = document.createElement(element);
+    if (children !== undefined) children.forEach(el => {
+      if (el.nodeType) {
+        if (el.nodeType === 1 || el.nodeType === 11) customElement.appendChild(el);
+      } else {
+        customElement.innerHTML += el;
+      }
+    });
+    addAttributes(customElement,attributes);
+    return customElement;
+  };
+  
+//   imprimir modal
+const printModal = (content) => {
+    // crear contenedor interno
+    const modalContentEl = createCustomElement('div', {
+        id: 'IniciarSesion--modal',
+        class: 'iniciarSesion__content--modal',
+    }, [content])
+    // crear contenedor principal
+    const modalContainerEl = createCustomElement('div', {
+        id: '',
+        class: 'iniciarSesion--container',
+    }, [modalContentEl]);
+
+    // Imprimir modal
+    document.body.appendChild(modalContainerEl);
+    // remover modal
+    const removeModal =  () => {
+      document.body.removeChild(modalContainerEl)
+    };
+    
+    modalContainerEl.addEventListener('click', e => {
+      if (e.target === modalContainerEl) {
+        removeModal();
+      }
+    })
+}
+
+// printModal (`<h1>hola mundo</h1>`);
+
+document.getElementById('iniciarSesion--btn').addEventListener('click', () => {
+    printModal(`
+    <h1>SOY UN MODAL</h1>
+    <h1>hola mundo</h1>
+    `);
+  })
