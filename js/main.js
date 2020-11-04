@@ -76,7 +76,7 @@ const printModal = (content) => {
         class: 'content--modal',
     }, [content])
     // crear contenedor principal
-    const modalContainerEl = createCustomElement('div', {
+    const modalContainerEl = createCustomElement('section', {
         id: 'modal--container',
         class: 'modal--container',
     }, [modalContentEl]);
@@ -109,7 +109,26 @@ document.getElementById('miActividad--btn').addEventListener('click', () => {
   })  
 document.getElementById('iniciarSesion--btn').addEventListener('click', () => {
     printModal(`
-    <h2>Agregar el modal de iniciar sesion</h2>
+    <div class="iniciarSesion--container">
+      <div class="iniciarSesion__information--container">
+        <h2>Iniciar sesion</h2>
+        <p>¡Hola! Si tienes una cuenta MILRI inicia sesión</p>
+        <form action="iniciarSesion">
+          <label for="correo">
+            <p>Correo</p>
+            <input type="text" name="correo" id="correo" placeholder="Digita tu correo">
+          </label>
+          <label for="password">
+            <p>Contraseña</p>
+            <input type="password" name="password" id="password" placeholder="Digita tu contraseña">
+          </label>
+          <label type="submit" for="iniciarSesion">
+            <button>Iniciar sesión</button>
+          </label>
+          <!-- <i>Ya sé que estoy feo, pero es mi versión 0.0.1</i> -->
+        </form>
+      </div>
+    </div>
     `);
   })
   //   requisitos y valor de una patente comercial de textiles
