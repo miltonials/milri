@@ -94,6 +94,17 @@ const printModal = (content) => {
       }
     })
 }
+const mostrarContrasena = () => {
+  let tipo = document.getElementById("password");
+  let mostrarContrasenaBtn = document.getElementById("showPassword--btn");
+  if(tipo.type == "password"){
+      tipo.type = "text";
+      mostrarContrasenaBtn.value = "Ocultar contraseña🔒";
+    }else{
+      tipo.type = "password";
+      mostrarContrasenaBtn.value = "Mostrar contraseña🔓";
+  }
+}
 
 // printModal (`<h1>hola mundo</h1>`);
 
@@ -116,23 +127,21 @@ document.getElementById('iniciarSesion--btn').addEventListener('click', () => {
         <form action="iniciarSesion">
           <label for="correo">
             <p>Correo</p>
-            <input type="text" name="correo" id="correo" placeholder="Digita tu correo">
+            <input type="email" name="correo" id="correo" placeholder="Digita tu correo" required>
           </label>
           <label for="password">
-            <p>Contraseña</p>
-            <input type="password" name="password" id="password" placeholder="Digita tu contraseña">
+            <p>
+              Contraseña
+              <input type="button" id="showPassword--btn" value="Mostrar contraseña🔓" onclick="mostrarContrasena()">
+            </p>
+            <input type="password" name="password" id="password" placeholder="Digita tu contraseña" required>
           </label>
           <label type="submit" for="iniciarSesion">
             <button>Iniciar sesión</button>
           </label>
-          <!-- <i>Ya sé que estoy feo, pero es mi versión 0.0.1</i> -->
+          <i>Ya sé que me falta algo, pero es mi versión 0.0.1</i>
         </form>
       </div>
     </div>
     `);
   })
-  //   requisitos y valor de una patente comercial de textiles
-  
-// 27584444 ext120
-
-// dinna clark

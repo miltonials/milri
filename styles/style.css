@@ -345,7 +345,7 @@ aside {
 
 /* MODAL INICIAR SESION */
 .iniciarSesion__information--container{
-  border-radius: 10px;
+  border-radius: 15px;
   background: var(--ligth-color);
   transition: 1s;
   margin: 19px;

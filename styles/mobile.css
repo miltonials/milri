@@ -43,7 +43,12 @@
 .rigth-menu.is-active {
   left: 25%;
 }
-
+/* background */
+.aside-container {
+  background-image: url("../assets/imgs/bgTablet.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+}
 .aside-container.is-active:first-child {
     padding-top: 290px;
     transition: all 1s;
