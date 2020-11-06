@@ -166,30 +166,41 @@ document.getElementById("iniciarSesion--btn").addEventListener("click", () => {
       </div>
     </div>
     `);
+    // LOGEAR USUSARIO
   const signInForm = document.querySelector("#iniciarSesion--Form");
 
-  // LOGEAR USUSARIO
   signInForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const correo = document.querySelector("#correo").value;
     const password = document.querySelector("#password").value;
 
-    auth
-        .signInWithEmailAndPassword(correo, password)
-        .then(userCredential => {
-          let modal = document.getElementById('modal--container');
+    auth.signInWithEmailAndPassword(correo, password)
+      .then((userCredential) => {
+        let modal = document.getElementById("modal--container");
 
-          document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
-          modal.remove();
-          console.log("Has iniciado sesión");
-          // console.log(userCredential.user.displayName);
+        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
+        modal.remove();
+        console.log("Has iniciado sesión");
+        document.querySelector("#iniciarSesion--btn").classList.add("logout");
+    });
+  });
+  let out = document.getElementsByClassName("logout");
 
-        }) 
+  out.addEventListener("click", () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        alert(`SignOut Correcto`, 4000);
+        document.querySelector("#iniciarSesion--btn").classList.remove("logout");
+        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Iniciar Sesión";
+      })
+      .catch((error) => {
+        alert(`Error al realizar SignOut => ${error}`, 4000);
+      });
   });
 
-
-  
   // crear usuario
   // signInForm.addEventListener('submit', (e) => {
   //   const correo = document.querySelector('#correo').value;
