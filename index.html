@@ -247,17 +247,14 @@
   
   const auth = firebase.auth();
 
-
-
-  const validarSiEstaLogeado = () => {
+  
+  auth.onAuthStateChanged( () => {
     if (auth.currentUser) {
         document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
-      } else {
-          document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Iniciar Sesión";
+    } else {
+        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Iniciar Sesión";
       }
-}
-validarSiEstaLogeado();
-  
+});
 
 </script>
     </body>

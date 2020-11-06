@@ -1,4 +1,3 @@
-
 // obtener fecha
 let meses = new Array(
   "Enero",
@@ -128,13 +127,11 @@ const mostrarContrasena = () => {
   }
 };
 
+const miActividad = document.getElementById("miActividad--btn");
+const egendar_evento = document.getElementById("agendarEvennt--btn");
+const iniciarSesion_btn = document.getElementById("iniciarSesion--btn");
 
-
-const miActividad = document.getElementById("miActividad--btn")
-const egendar_evento = document.getElementById("agendarEvennt--btn")
-const iniciarSesion_btn = document.getElementById("iniciarSesion--btn")
-
- miActividad.addEventListener("click", () => {
+miActividad.addEventListener("click", () => {
   printModal(`
     <h2>Agregar el modal de actividad</h2>
     `);
@@ -145,26 +142,24 @@ egendar_evento.addEventListener("click", () => {
     `);
 });
 
-
-
 iniciarSesion_btn.addEventListener("click", () => {
   const user = firebase.auth().currentUser;
-  
-  if (user){
+
+  if (user) {
     let out = document.querySelector(".logout");
-  
-      auth
-        .signOut()
-        .then(() => {
-          console.log(`SignOut Correcto`, 4000);
-          document.querySelector("#iniciarSesion--btn").classList.remove("logout");
-          validarSiEstaLogeado();
-        })
-        .catch((error) => {
-          alert(`Error al realizar SignOut => ${error}`, 4000);
-        });
+
+    auth
+      .signOut()
+      .then(() => {
+        console.log(`SignOut Correcto`, 4000);
+        document
+          .querySelector("#iniciarSesion--btn")
+          .classList.remove("logout");
+      })
+      .catch((error) => {
+        alert(`Error al realizar SignOut => ${error}`, 4000);
+      });
   } else {
-   
     printModal(`
     <div class="iniciarSesion--container">
       <div class="iniciarSesion__information--container">
@@ -191,54 +186,62 @@ iniciarSesion_btn.addEventListener("click", () => {
     </div>
     `);
     // LOGEAR USUSARIO
-  const signInForm = document.querySelector("#iniciarSesion--Form");
+    const signInForm = document.querySelector("#iniciarSesion--Form");
 
-  signInForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+    signInForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    const correo = document.querySelector("#correo").value;
-    const password = document.querySelector("#password").value;
+      const correo = document.querySelector("#correo").value;
+      const password = document.querySelector("#password").value;
 
-    auth.signInWithEmailAndPassword(correo, password)
-      .then((userCredential) => {
-        let modal = document.getElementById("modal--container");
+      auth
+        .signInWithEmailAndPassword(correo, password)
+        .then((userCredential) => {
+          let modal = document.getElementById("modal--container");
 
-        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
-        modal.remove();
-        printModal(`<h1>HAS INICIADO SESION</h1>`);
-        console.log("Has iniciado sesión");
-
-        validarSiEstaLogeado();
+          document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
+            "Cerrar Sesión";
+          modal.remove();
+          printModal(`<h1>HAS INICIADO SESION ${auth.currentUser.email}</h1>
+          <div style="position: relative; padding-top: 56.25%;     width: calc(100vw - 20vw);
+          margin: auto;">
+            <iframe width="560" height="365" src="https://www.youtube.com/embed/Yw6u6YkTgQ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;"></iframe>
+            </div>
+            `);
+          console.log("Has iniciado sesión");
+        });
     });
-  });
-
-}
+  }
 });
-  
+
 // const logout_btn = document.querySelector('.logout');
-  // logout_btn.addEventListener('click', () => {})
+// logout_btn.addEventListener('click', () => {})
 
+// crear usuario
+// signInForm.addEventListener('submit', (e) => {
+//   const correo = document.querySelector('#correo').value;
+//   const password = document.querySelector('#password').value;
 
-  // crear usuario
-  // signInForm.addEventListener('submit', (e) => {
-  //   const correo = document.querySelector('#correo').value;
-  //   const password = document.querySelector('#password').value;
+//   e.preventDefault();
 
-  //   e.preventDefault();
+//   console.log(printModal.modalContentEl);
 
-  //   console.log(printModal.modalContentEl);
+//   auth
+//     .createUserWithEmailAndPassword(correo, password)
+//     .then(userCredential => {
+//       // removeModal
+//       let iniciarSesion_btn = document.getElementById('iniciarSesion--btn');
+//       let modal = document.getElementById('modal--container');
 
-  //   auth
-  //     .createUserWithEmailAndPassword(correo, password)
-  //     .then(userCredential => {
-  //       // removeModal
-  //       let iniciarSesion_btn = document.getElementById('iniciarSesion--btn');
-  //       let modal = document.getElementById('modal--container');
+//       modal.remove();
+//       // iniciarSesion_btn.
 
-  //       modal.remove();
-  //       // iniciarSesion_btn.
-
-  //       alert("registrado");
-  // })
-  // });
-
+//       alert("registrado");
+// })
+// });
