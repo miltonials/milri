@@ -1,3 +1,4 @@
+
 // obtener fecha
 let meses = new Array(
   "Enero",
@@ -127,21 +128,44 @@ const mostrarContrasena = () => {
   }
 };
 
-// printModal (`<h1>hola mundo</h1>`);
 
-document.getElementById("miActividad--btn").addEventListener("click", () => {
+
+const miActividad = document.getElementById("miActividad--btn")
+const egendar_evento = document.getElementById("agendarEvennt--btn")
+const iniciarSesion_btn = document.getElementById("iniciarSesion--btn")
+
+ miActividad.addEventListener("click", () => {
   printModal(`
     <h2>Agregar el modal de actividad</h2>
     `);
 });
-document.getElementById("agendarEvennt--btn").addEventListener("click", () => {
+egendar_evento.addEventListener("click", () => {
   printModal(`
     <h2>Agregar el modal de agendar evento</h2>
     `);
 });
 
-document.getElementById("iniciarSesion--btn").addEventListener("click", () => {
-  printModal(`
+
+
+iniciarSesion_btn.addEventListener("click", () => {
+  const user = firebase.auth().currentUser;
+  
+  if (user){
+    let out = document.querySelector(".logout");
+  
+      auth
+        .signOut()
+        .then(() => {
+          console.log(`SignOut Correcto`, 4000);
+          document.querySelector("#iniciarSesion--btn").classList.remove("logout");
+          validarSiEstaLogeado();
+        })
+        .catch((error) => {
+          alert(`Error al realizar SignOut => ${error}`, 4000);
+        });
+  } else {
+   
+    printModal(`
     <div class="iniciarSesion--container">
       <div class="iniciarSesion__information--container">
         <h2>Iniciar sesion</h2>
@@ -181,25 +205,19 @@ document.getElementById("iniciarSesion--btn").addEventListener("click", () => {
 
         document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
         modal.remove();
+        printModal(`<h1>HAS INICIADO SESION</h1>`);
         console.log("Has iniciado sesión");
-        document.querySelector("#iniciarSesion--btn").classList.add("logout");
+
+        validarSiEstaLogeado();
     });
   });
-  let out = document.getElementsByClassName("logout");
 
-  out.addEventListener("click", () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        alert(`SignOut Correcto`, 4000);
-        document.querySelector("#iniciarSesion--btn").classList.remove("logout");
-        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Iniciar Sesión";
-      })
-      .catch((error) => {
-        alert(`Error al realizar SignOut => ${error}`, 4000);
-      });
-  });
+}
+});
+  
+// const logout_btn = document.querySelector('.logout');
+  // logout_btn.addEventListener('click', () => {})
+
 
   // crear usuario
   // signInForm.addEventListener('submit', (e) => {
@@ -223,4 +241,4 @@ document.getElementById("iniciarSesion--btn").addEventListener("click", () => {
   //       alert("registrado");
   // })
   // });
-});
+
