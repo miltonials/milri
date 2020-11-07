@@ -45,7 +45,7 @@
 }
 /* background */
 .aside-container {
-  background-image: url("../assets/imgs/bgTablet.jpg");
+  /* background-image: url("../assets/imgs/bgTablet.jpg"); */
   background-repeat: no-repeat;
   height: 100%;
 }

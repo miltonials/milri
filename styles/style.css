@@ -212,7 +212,6 @@ aside {
   color: #2c2738;
   padding: 15px;
   position: relative;
-  z-index: 0;
 }
 .card::after {
   background-image: linear-gradient(
@@ -228,7 +227,6 @@ aside {
   height: 100%;
   border-radius: 25px;
   transition: opacity 1s ease-out;
-  /* z-index: 1; */
   opacity: 0;
 }
 .card:hover::after {
@@ -245,6 +243,7 @@ aside {
 .card-information {
   text-align: left;
   position: relative;
+  max-height: 9;
   z-index: 3;
 }
 .card-information p {
@@ -259,6 +258,7 @@ aside {
   border: 1px solid #7c9cbf;
   border-radius: 1rem;
   outline: none;
+  grid-area: button;
 }
 .card:last-child {
   margin-bottom: 200px;

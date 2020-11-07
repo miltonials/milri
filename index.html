@@ -35,15 +35,15 @@
                 </nav>
                 <nav class="rigth-menu">
                     <ul>
-                        <li id="agendarEvennt--btn">
+                        <li id="agendarEvennt--btn" class="logged-out" style="display: none;">
                             <a href="#"> Agendar un evento</a>
                         </li>
-                        <li id="miActividad--btn">
+                        <li id="miActividad--btn" class="logged-out" style="display: none;">
                             <a href="#">
                                 Mi actividad <span class="actividad-icon"></span>
                             </a>
                         </li>
-                        <li id="iniciarSesion--btn">
+                        <li id="iniciarSesion--btn" class="logged-in">
                             <a href="#">
                                 <strong >Cargando</strong><span class="iniciarSesion-icon"></span>
                             </a>
@@ -92,88 +92,83 @@
                     </section>
                     <aside>
                         <section class="aside-container">
-                            <!-- <div class="middle-moon">
-                            </div> -->
-                            <div class="card">
-                                <figure class="card-image">
-                                    <img src="https://cdn.themedizine.com/2018/10/JOJIALBUM.jpg" alt="Imagen de un evento" >
-                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
-                                </figure>
-                                <div class="card-information">
-                                    <h2 class="title">Octubre</h2>
-                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <div class="card-btn">
-                                        <button id="button"><strong>Helouda</strong></button>
+                            <!-- <div class="prueba">
+                            
+                        </section>
+                                    <div class="card event">
+                                        <figure class="card-image">
+                                            <img src="https://cdn.themedizine.com/2018/10/JOJIALBUM.jpg" alt="Imagen de un evento" >
+                                        </figure>
+                                        <div class="card-information">
+                                            <h2 class="title">Octubre</h2>
+                                            <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                            <div class="card-btn">
+                                                <button id="button"><strong>Helouda</strong></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card event">
+                                        <figure class="card-image">
+                                            <img src="https://www.diariovivo.com/wp-content/uploads/2020/07/unnamed-2-5-750x450.jpg" alt="Imagen de un evento" >
+                                        </figure>
+                                        <div class="card-information">
+                                            <h2 class="title">Octubre</h2>
+                                            <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                            <button><strong>Helouda</strong></button>
+                                        </div>
+                                    </div>
+                                    <div class="card event">
+                                        <figure class="card-image">
+                                            <img src="https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_0sd7inc5/def_height/1425/def_width/950/version/100011/type/1" alt="Imagen de un evento" >
+                                        </figure>
+                                        <div class="card-information">
+                                            <h2 class="title">Octubre</h2>
+                                            <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                            <button><strong>Helouda</strong></button>
+                                        </div>
+                                    </div>
+                                    <div class="card event">
+                                        <figure class="card-image">
+                                            <img src="https://i.pinimg.com/236x/d7/ff/72/d7ff72fea47fd30c3094310308444230.jpg" alt="Imagen de un evento" >
+                                        </figure>
+                                        <div class="card-information">
+                                            <h2 class="title">Octubre</h2>
+                                            <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                            <button><strong>Helouda</strong></button>
+                                        </div>
+                                    </div>
+                                    <div class="card event">
+                                        <figure class="card-image">
+                                            <img src="https://i.blogs.es/43f1c3/death-note-one-shot-febrero-2020-gratis-espanol-mexico/840_560.jpg" alt="Imagen de un evento" >
+                                        </figure>
+                                        <div class="card-information">
+                                            <h2 class="title">Octubre</h2>
+                                            <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                            <button><strong>Helouda</strong></button>
+                                        </div>
+                                    </div>
+                                    <div class="card event">
+                                        <figure class="card-image">
+                                            <img src="https://firebasestorage.googleapis.com/v0/b/miltonialsblog.appspot.com/o/imagenes%2FCaptura.PNG?alt=media&token=b90a8a52-0bfe-4e9c-8786-99795c25e835" alt="Imagen de un evento" >
+                                        </figure>
+                                        <div class="card-information">
+                                            <h2 class="title">Octubre</h2>
+                                            <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                            <button><strong>Helouda</strong></button>
+                                        </div>
+                                    </div>
+                                    <div class="card event">
+                                        <figure class="card-image">
+                                            <img src="https://img2.rtve.es/i/?w=1600&i=1600264164654.jpg" alt="Imagen de un evento" >
+                                        </figure>
+                                        <div class="card-information">
+                                            <h2 class="title">Octubre</h2>
+                                            <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
+                                            <button><strong>Helouda</strong></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <figure class="card-image">
-                                    <img src="https://www.diariovivo.com/wp-content/uploads/2020/07/unnamed-2-5-750x450.jpg" alt="Imagen de un evento" >
-                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
-                                </figure>
-                                <div class="card-information">
-                                    <h2 class="title">Octubre</h2>
-                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <button><strong>Helouda</strong></button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <figure class="card-image">
-                                    <img src="https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/1_0sd7inc5/def_height/1425/def_width/950/version/100011/type/1" alt="Imagen de un evento" >
-                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
-                                </figure>
-                                <div class="card-information">
-                                    <h2 class="title">Octubre</h2>
-                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <button><strong>Helouda</strong></button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <figure class="card-image">
-                                    <img src="https://i.pinimg.com/236x/d7/ff/72/d7ff72fea47fd30c3094310308444230.jpg" alt="Imagen de un evento" >
-                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
-                                </figure>
-                                <div class="card-information">
-                                    <h2 class="title">Octubre</h2>
-                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <button><strong>Helouda</strong></button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <figure class="card-image">
-                                    <img src="https://i.blogs.es/43f1c3/death-note-one-shot-febrero-2020-gratis-espanol-mexico/840_560.jpg" alt="Imagen de un evento" >
-                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
-                                </figure>
-                                <div class="card-information">
-                                    <h2 class="title">Octubre</h2>
-                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <button><strong>Helouda</strong></button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <figure class="card-image">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/miltonialsblog.appspot.com/o/imagenes%2FCaptura.PNG?alt=media&token=b90a8a52-0bfe-4e9c-8786-99795c25e835" alt="Imagen de un evento" >
-                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
-                                </figure>
-                                <div class="card-information">
-                                    <h2 class="title">Octubre</h2>
-                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <button><strong>Helouda</strong></button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <figure class="card-image">
-                                    <img src="https://img2.rtve.es/i/?w=1600&i=1600264164654.jpg" alt="Imagen de un evento" >
-                                    <!-- <figcaption>Es una imagen de un evento</figcaption> -->
-                                </figure>
-                                <div class="card-information">
-                                    <h2 class="title">Octubre</h2>
-                                    <p>Supporting description for the card goes here like a breeze.Supporting description for the card goes here.</p>
-                                    <button><strong>Helouda</strong></button>
-                                </div>
-                            </div>
-                        </section>
+                                </div> -->
                     </aside>
                 </div>
             </div>
@@ -215,9 +210,7 @@
                 })
             }
         </script>
-        <!-- JS-->
-        <script type="text/javascript" src="./js/main.js"></script>
-        <script src="./js/detectarBrowser.js"></script>
+
 
         <!-- FIREABASE SCRIPTS -->
 
@@ -228,6 +221,7 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 <script defer>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -246,16 +240,20 @@
   firebase.analytics();
   
   const auth = firebase.auth();
+  const fs = firebase.firestore();
 
   
-  auth.onAuthStateChanged( () => {
-    if (auth.currentUser) {
-        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
-    } else {
-        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Iniciar Sesión";
-      }
-});
+//   auth.onAuthStateChanged( () => {
+//     if (auth.currentUser) {
+//         document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
+//     } else {
+//         document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Iniciar Sesión";
+//       }
+// });
 
 </script>
+        <!-- CUSTOM JS -->
+        <script type="text/javascript" src="./js/main.js"></script>
+        <script src="./js/detectarBrowser.js"></script>
     </body>
 </html>

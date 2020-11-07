@@ -203,20 +203,72 @@ iniciarSesion_btn.addEventListener("click", () => {
             "Cerrar Sesión";
           modal.remove();
           printModal(`<h1>HAS INICIADO SESION ${auth.currentUser.email}</h1>
-          <div style="position: relative; padding-top: 56.25%;     width: calc(100vw - 20vw);
+          <div style="position: relative; padding-top: 56.25%; width: calc(100vw - 20vw);
           margin: auto;">
-            <iframe width="560" height="365" src="https://www.youtube.com/embed/Yw6u6YkTgQ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;"></iframe>
+            <iframe width="560" height="365" src="https://www.youtube.com/embed/Yw6u6YkTgQ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%;height: 100%;"></iframe>
             </div>
             `);
           console.log("Has iniciado sesión");
         });
     });
+  }
+});
+
+// EVENTOS
+const eventList = document.querySelector(".aside-container");
+
+const setupEvents = (data) => {
+  if (data.length) {
+    let html = "";
+    data.forEach((doc) => {
+      const evento = doc.data();
+      const card = `
+      <div class="card event">
+        <figure class="card-image">
+        <img src="https://firebasestorage.googleapis.com/v0/b/miltonialsblog.appspot.com/o/imagenes%2FCaptura.PNG?alt=media&token=b90a8a52-0bfe-4e9c-8786-99795c25e835" alt="Imagen de un evento" >
+        </figure>
+        <div class="card-information">
+          <h2 class="title">${evento.title}</h2>
+          <p>${evento.description}</p>
+          <button><strong>Helouda</strong></button>
+        </div>
+      </div>
+      `;
+      html += card;
+    });
+    eventList.innerHTML = html;
+  } else {
+    eventList.innerHTML = `<div style="position: relative; padding-top: 56.25%; width: 100%;
+    margin: auto;">
+      <iframe width="560" height="365" src="https://www.youtube.com/embed/Yw6u6YkTgQ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%;height: 100%;"></iframe>
+      </div>`;
+  }
+};
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
+      "Cerrar Sesión";
+    fs.collection("evento")
+      .orderBy("title", "desc")
+      .get()
+      .then((snapshot) => {
+        setupEvents(snapshot.docs);
+        miActividad.style.display = "block";
+        egendar_evento.style.display = "block";
+      });
+  } else {
+    fs.collection("evento")
+      .orderBy("title", "desc")
+      .get()
+      .then((snapshot) => {
+        setupEvents(snapshot.docs);
+        miActividad.style.display = "none";
+    egendar_evento.style.display = "none";
+      });
+    document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
+      "Iniciar Sesión";
+    
   }
 });
 

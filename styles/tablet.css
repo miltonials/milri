@@ -62,6 +62,7 @@
 .rigth-menu ul {
   flex-wrap: wrap;
   height: auto;
+  margin-left: 3;
 }
 .rigth-menu ul li {
   margin: 1rem;
@@ -70,6 +71,7 @@
   position: fixed;
   right: 3.5rem;
   z-index: 4;
+  margin: 0 1rem;
 }
 
 /* MAIN */
