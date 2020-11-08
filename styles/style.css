@@ -13,9 +13,8 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-color: var(--ligth-color);;
+  background-color: var(--ligth-color);
 }
-
 
 #burger-menu {
   display: none;
@@ -24,23 +23,22 @@ body {
   background-image: url("../assets/icons/burgerButton.svg");
 }
 
-/* .main-left::-webkit-scrollbar,
-.aside-container::-webkit-scrollbar {
-  width: 0.5rem;
+.card-information .title::-webkit-scrollbar, .card-information p::-webkit-scrollbar {
+  width: 5px;
 }
-.main-left::-webkit-scrollbar-track, .aside-container::-webkit-scrollbar-track {
-    margin: 0 0 120px;
-}
-
-.main-left::-webkit-scrollbar-thumb,
-.aside-container::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-image: linear-gradient(
-    114.2deg,
-    rgba(121, 194, 243, 1) 22.6%,
-    rgba(255, 180, 239, 1) 67.7%
-  );
+/* .card-information p::-webkit-scrollbar-track {
+    margin: 25px 0;
 } */
+
+.card-information .title::-webkit-scrollbar-thumb, .card-information p::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: gray;
+  /* background-image: linear-gradient(
+    114.2deg,
+    rgba(0, 153, 255, 0.856) 22.6%,
+    rgb(226, 0, 177) 67.7% */
+  );
+}
 
 a {
   text-decoration: none;
@@ -151,8 +149,8 @@ ul a li {
   background-image: url("../assets/icons/signIn.svg");
 }
 .rigth-menu ul li:hover {
-    filter: brightness(1.05);
-    transition: all .5s;
+  filter: brightness(1.05);
+  transition: all 0.5s;
 }
 
 .left-menu ul li a,
@@ -176,8 +174,7 @@ ul a li {
 .main-sides {
   display: grid;
   grid-template-columns: 90px 1fr 1fr;
-  grid-template-areas:
-    "blankSpace left rigth";
+  grid-template-areas: "blankSpace left rigth";
   padding-top: 70px;
 }
 .main-left {
@@ -204,6 +201,7 @@ aside {
 .card {
   height: 400px;
   width: 250px;
+  /* overflow: inherit; */
   /* padding: 10px; */
   margin: 5px;
   background-color: #fff;
@@ -212,6 +210,7 @@ aside {
   color: #2c2738;
   padding: 15px;
   position: relative;
+  z-index: 0;
 }
 .card::after {
   background-image: linear-gradient(
@@ -227,6 +226,7 @@ aside {
   height: 100%;
   border-radius: 25px;
   transition: opacity 1s ease-out;
+  /* z-index: 1; */
   opacity: 0;
 }
 .card:hover::after {
@@ -243,11 +243,17 @@ aside {
 .card-information {
   text-align: left;
   position: relative;
-  max-height: 9;
   z-index: 3;
+}
+.card-information .title {
+  max-height: 32.22px;
+  overflow: auto;
 }
 .card-information p {
   line-height: 22px;
+  max-height: 110px;
+  overflow: auto;
+
 }
 
 .card-information button {
@@ -258,7 +264,6 @@ aside {
   border: 1px solid #7c9cbf;
   border-radius: 1rem;
   outline: none;
-  grid-area: button;
 }
 .card:last-child {
   margin-bottom: 200px;
@@ -336,7 +341,7 @@ aside {
   margin: 5rem 5rem 0 0;
   top: 0;
   right: 0;
-  opacity: .5;
+  opacity: 0.5;
   font-size: 5rem;
 }
 .content--modal {
@@ -344,7 +349,7 @@ aside {
 }
 
 /* MODAL INICIAR SESION */
-.iniciarSesion__information--container{
+.iniciarSesion__information--container {
   border-radius: 15px;
   background: var(--ligth-color);
   transition: 1s;
@@ -354,15 +359,17 @@ aside {
   max-width: 460px;
   padding: 30px;
   font-size: 1.6rem;
-  }
-.iniciarSesion__information--container h2{
+}
+.iniciarSesion__information--container h2 {
   font-size: 4rem;
   color: var(--dark-color);
 }
-.iniciarSesion__information--container p{
+.iniciarSesion__information--container p {
   margin-bottom: 10px;
 }
-#correo, #password, .iniciarSesion__information--container label button {
+#correo,
+#password,
+.iniciarSesion__information--container label button {
   color: var(--dark-color);
   height: 52px;
   width: 100%;
@@ -372,7 +379,9 @@ aside {
   border-radius: 10px;
   border: 1px solid gray;
 }
-#correo:hover, #password:hover, .iniciarSesion__information--container label button:hover{
+#correo:hover,
+#password:hover,
+.iniciarSesion__information--container label button:hover {
   box-shadow: inset 0 0 4px #8c30f5;
 }
 .iniciarSesion__information--container label button {

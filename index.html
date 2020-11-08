@@ -194,66 +194,31 @@
                 </div>
             </section>
         </footer>
-        <!-- MODAL INICIAR SESION -->
-        <!-- <section class="loginModal"> -->
-            
 
-        </section>
         <!-- SERVICE WORKER -->
         <script type="text/javascript" defer="">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('sw.js')
-                    .then (() => {
-                        console.log("Service Worker Registered");
-                    })
+                .then (() => {
+                    console.log("Service Worker Registered");
                 })
-            }
+                .catch(error => {
+                    console.error(`Error al registrar el service worker => ${error}`)
+                })
+            })
+        }
         </script>
-
-
         <!-- FIREABASE SCRIPTS -->
-
         <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-<script defer>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyDA79K7UCPt16HV45LQTHATILkhsyjPe2Y",
-    authDomain: "milritest.firebaseapp.com",
-    databaseURL: "https://milritest.firebaseio.com",
-    projectId: "milritest",
-    storageBucket: "milritest.appspot.com",
-    messagingSenderId: "754202976328",
-    appId: "1:754202976328:web:5cc9c0f9b8e458fe95b87d",
-    measurementId: "G-CECHFXCC6Z"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  
-  const auth = firebase.auth();
-  const fs = firebase.firestore();
-
-  
-//   auth.onAuthStateChanged( () => {
-//     if (auth.currentUser) {
-//         document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Cerrar Sesión";
-//     } else {
-//         document.querySelector("#iniciarSesion--btn > a > strong").innerHTML = "Iniciar Sesión";
-//       }
-// });
-
-</script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
         <!-- CUSTOM JS -->
+        <script type="text/javascript" src="./js/config/ConfigFirebase.js"></script>
+        <script type="text/javascript" src="./js/detectarBrowser.js"></script>
         <script type="text/javascript" src="./js/main.js"></script>
-        <script src="./js/detectarBrowser.js"></script>
+        <script type="text/javascript" src="./js/modals.js"></script>
     </body>
 </html>
