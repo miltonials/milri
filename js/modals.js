@@ -91,24 +91,30 @@ iniciarSesion_btn.addEventListener("click", () => {
     printModal(`
     <div class="iniciarSesion--container">
       <div class="iniciarSesion__information--container">
-        <h2>Iniciar sesion</h2>
+        <h1>Iniciar sesión</h1>
         <p>¡Hola! Si tienes una cuenta MILRI inicia sesión</p>
         <form action="iniciarSesion" id="iniciarSesion--Form">
           <label for="correo">
-            <p>Correo</p>
-            <input type="email" name="correo" id="correo" placeholder="Digita tu correo" required autocomplete="email">
+            <h5>
+              Correo electrónico
+              <div class="email--container">
+                <input type="email" name="correo" id="correo" required autocomplete="email">
+              </div>
+            </h5>
           </label>
           <label for="password">
-            <p>
+            <h5>
               Contraseña
-              <input type="button" id="showPassword--btn" value="Mostrar contraseña🔓" onclick="mostrarContrasena()">
-            </p>
-            <input type="password" name="password" id="password" placeholder="Digita tu contraseña" required>
+              <div class="password--container">
+                <input type="password" name="password" id="password" required>
+                <input type="button" id="showPassword--btn" value="👁" onclick="mostrarContrasena()">
+              </div>
+            </h5>
           </label>
           <label type="submit" for="iniciarSesion">
             <button>Iniciar sesión</button>
           </label>
-          <i>Ya sé que me falta algo, pero es mi versión 0.0.1</i>
+          <!-- <i>Ya sé que me falta algo, pero es mi versión 0.0.1</i> -->
         </form>
       </div>
     </div>
