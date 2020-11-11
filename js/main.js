@@ -65,8 +65,11 @@ const mostrarContrasena = () => {
   let mostrarContrasenaBtn = document.getElementById("showPassword--btn");
   if (tipo.type == "password") {
     tipo.type = "text";
+    mostrarContrasenaBtn.style.backgroundImage = "url('./assets/icons/eye-blocked.svg')";
   } else {
     tipo.type = "password";
+    mostrarContrasenaBtn.style.backgroundImage = "url('./assets/icons/eye.svg')";
+
   }
 };
 
@@ -81,7 +84,7 @@ const setupEvents = (data) => {
       const card = `
       <div class="card event">
         <figure class="card-image">
-        <img src="https://www.diariovivo.com/wp-content/uploads/2020/07/unnamed-2-5-750x450.jpg" alt="Imagen de un evento" >
+        <img src="https://firebasestorage.googleapis.com/v0/b/miltonialsblog.appspot.com/o/imagenes%2FCaptura.PNG?alt=media&token=b90a8a52-0bfe-4e9c-8786-99795c25e835" alt="Imagen de un evento" >
         </figure>
         <div class="card-information">
           <h2 class="title">${evento.title}</h2>

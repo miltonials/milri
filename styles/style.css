@@ -403,17 +403,18 @@ aside {
   background-color: transparent;
 }
 #showPassword--btn {
-  cursor: pointer;
-  color: #706c7a;
-  font-size: 2.5rem;
   outline: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
   border: none;
   background-color: transparent;
-  }
-  .email--container:hover,
-  .password--container:hover,
+  width: 40px;
+  height: 33px;
+  margin: auto;
+  background-image: url('../assets/icons/eye.svg');
+  background-repeat: no-repeat;
+  filter: opacity(.5);
+}
+.email--container:hover,
+.password--container:hover,
 .iniciarSesion__information--container label button:hover {
   box-shadow: 0 0 4px #8c30f5;
 }

@@ -107,7 +107,7 @@ iniciarSesion_btn.addEventListener("click", () => {
               Contraseña
               <div class="password--container">
                 <input type="password" name="password" id="password" required>
-                <input type="button" id="showPassword--btn" value="👁" onclick="mostrarContrasena()">
+                <input type="button" id="showPassword--btn" onclick="mostrarContrasena()">
               </div>
             </h5>
           </label>
