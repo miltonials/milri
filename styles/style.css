@@ -346,18 +346,23 @@ aside {
 }
 .content--modal {
   margin: auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
 }
 
 /* MODAL INICIAR SESION */
 .iniciarSesion__information--container {
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
-  margin: 19px;
   max-width: 400px;
-  padding: 30px;
   font-size: 1.7rem;
-  background: #fff;
+  /* border-radius: 15px; */
+  /* margin: 19px; */
+  /* max-width: 400px; */
+  /* padding: 30px; */
+  /* font-size: 1.7rem; */
+  /* background: #fff; */
   transition: 1s;
 }
 .iniciarSesion__information--container h1 {
@@ -370,7 +375,7 @@ aside {
   font-size: 4rem;
   color: #000;
 }
-.iniciarSesion__information--container h5 {
+h5 {
   margin-bottom: 10px;
   font-size: 1.5rem;
   color: #757381;
@@ -379,6 +384,9 @@ aside {
 #correo,
 #password,
 .iniciarSesion__information--container button,
+#agendarEvento label button,
+#eventDescription,
+#eventTittle--container,
 .email--container,
 .password--container {
   color: #757381;
@@ -392,7 +400,9 @@ aside {
   border-radius: 5px;
 }
 .email--container,
-.password--container {
+.password--container,
+#eventDescription,
+#eventTittle--container {
   display: flex;
   border: 1px solid #706c7a;
   border-radius: 5px;
@@ -413,16 +423,36 @@ aside {
   background-repeat: no-repeat;
   filter: opacity(.5);
 }
+
 .email--container:hover,
 .password--container:hover,
-.iniciarSesion__information--container label button:hover {
+.iniciarSesion__information--container label button:hover, 
+#agendarEvento label button:hover,
+#eventDescription:hover,
+#eventTittle--container:hover {
   box-shadow: 0 0 4px #8c30f5;
 }
-.iniciarSesion__information--container label button {
+.iniciarSesion__information--container label button, #agendarEvento label button {
   background-color: #8c30f5;
   color: #eff0ff;
 }
-#showPassword--btn:active, .iniciarSesion__information--container label button:active {
+#showPassword--btn:active, .iniciarSesion__information--container label button:active, #agendarEvento label button:active {
   transform: scale(0.8);
   transition: all 0.2s;
+}
+
+
+/* MODAL AGENDAR EVENTO*/
+.agendarEvento--container {
+  font-size: 1.7rem;
+}
+#agendarEvento {
+  display: flex;
+  flex-direction: column;
+}
+#eventDescription {
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 250px;
+  font-family: "IBM Plex Sans", sans-serif;
 }
