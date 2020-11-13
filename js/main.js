@@ -84,7 +84,7 @@ const setupEvents = (data) => {
       const card = `
       <div class="card event">
         <figure class="card-image">
-        <img src="https://firebasestorage.googleapis.com/v0/b/miltonialsblog.appspot.com/o/imagenes%2FCaptura.PNG?alt=media&token=b90a8a52-0bfe-4e9c-8786-99795c25e835" alt="Imagen de un evento" >
+        <img src="https://media.giphy.com/media/DBW3BniaWrFo4/giphy.gif" alt="Imagen de un evento" >
         </figure>
         <div class="card-information">
           <h2 class="title">${evento.title}</h2>
