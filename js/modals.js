@@ -59,10 +59,12 @@ const miActividad = document.getElementById("miActividad--btn");
 const egendar_evento = document.getElementById("agendarEvennt--btn");
 const iniciarSesion_btn = document.getElementById("iniciarSesion--btn");
 
-const crearEvento = (title, description) =>
+const crearEvento = (title, description, userEmail, userUID) =>
   fs.collection("evento").doc().set({
     title,
     description,
+    userEmail: auth.currentUser.email,
+    userUID: auth.currentUser.uid,
   });
 
 egendar_evento.addEventListener("click", () => {
@@ -95,7 +97,7 @@ egendar_evento.addEventListener("click", () => {
     alert("Primero debes iniciar sesión.");
   }
 
-  let modal = document.getElementById("modal--container");
+  // let modal = document.getElementById("modal--container");
 
   const agendarEvento = document.querySelector("#agendarEvento");
 
@@ -112,8 +114,6 @@ egendar_evento.addEventListener("click", () => {
 
     agendarEvento.reset();
     title.focus();
-    // removeModal();
-    // printModal(`<h2>Genial! Agendaste un nuevo evento.</h2>`);
   });
 });
 
