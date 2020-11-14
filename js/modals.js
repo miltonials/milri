@@ -72,18 +72,18 @@ egendar_evento.addEventListener("click", () => {
     printModal(`
     <div class="agendarEvento--container">
       <h1>Agendar un nuevo evento</h1>
-      <p>Hola ${auth.currentUser.email} egenda un nuevo evento</p>
+      <p>¡Hola! ${auth.currentUser.email}, crea un nuevo evento.</p>
       <form action="agendarEvento" id="agendarEvento">
         <label for="titulo">
           <h5>Título del evento</h5>
-          <input type="text" name="eventTittle--container" id="eventTittle--container" autocomplete="off">
+          <input type="text" name="eventTittle--container" id="eventTittle--container" autocomplete="off" required maxlength="17">
         </label>
         <label for="imgEvent">
           <input type="file" name="imgEvent" id="imgEvent" placeholder="Selecciona una imagen">
         </label>
         <label for="eventDescription--container">
           <h5>Descripción del evento</h5>
-          <textarea name="eventDescription" id="eventDescription" cols="30" rows="10"></textarea>
+          <textarea name="eventDescription" id="eventDescription" cols="30" rows="10" required></textarea>
         </label>
         <label type="submit" for="subirEvento">
           <button id="agendar--btn">Agendar</button>
@@ -110,10 +110,10 @@ egendar_evento.addEventListener("click", () => {
     await crearEvento(title.value, description.value);
     document.querySelector("#agendar--btn").style = "display: block;";
 
-    //  agendarEvento.reset();
-    //  title.focus();
+    agendarEvento.reset();
+    title.focus();
     // removeModal();
-    printModal(`<h2>Genial! Agendaste un nuevo evento.</h2>`);
+    // printModal(`<h2>Genial! Agendaste un nuevo evento.</h2>`);
   });
 });
 
@@ -178,32 +178,37 @@ iniciarSesion_btn.addEventListener("click", () => {
       </div>
     </div>
     `);
-  }
+    // INICIAR SESIÓN
+    const signInForm = document.querySelector("#iniciarSesion--Form");
+    let modal = document.getElementById("modal--container");
 
-  // INICIAR SESIÓN
-  const signInForm = document.querySelector("#iniciarSesion--Form");
-  let modal = document.getElementById("modal--container");
+    signInForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      document.querySelector(
+        "#iniciarSesion--Form > label:nth-child(3) > button"
+      ).style = "display: none";
 
-  signInForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+      const correo = document.querySelector("#correo").value;
+      const password = document.querySelector("#password").value;
 
-    const correo = document.querySelector("#correo").value;
-    const password = document.querySelector("#password").value;
-
-    auth
-      .signInWithEmailAndPassword(correo, password)
-      .then((userCredential) => {
-        document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
-          "Cerrar Sesión";
-        modal.remove();
-        printModal(`
-            <h1>Bienvenido ${auth.currentUser.email}</h1>
+      auth
+        .signInWithEmailAndPassword(correo, password)
+        .then((userCredential) => {
+          document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
+            "Cerrar Sesión";
+          modal.remove();
+          printModal(`
+              <h1>Bienvenido ${auth.currentUser.email}</h1>
+                `);
+        })
+        .catch((error) => {
+          printModal(`
+              <h2>Error al iniciar sesión => ${error}</h2>
               `);
-      })
-      .catch((error) => {
-        printModal(`
-            <h2>Error al iniciar sesión => ${error}</h2>
-            `);
-      });
-  });
+          document.querySelector(
+            "#iniciarSesion--Form > label:nth-child(3) > button"
+          ).style = "display: block";
+        });
+    });
+  }
 });

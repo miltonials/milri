@@ -65,43 +65,12 @@ const mostrarContrasena = () => {
   let mostrarContrasenaBtn = document.getElementById("showPassword--btn");
   if (tipo.type == "password") {
     tipo.type = "text";
-    mostrarContrasenaBtn.style.backgroundImage = "url('./assets/icons/eye-blocked.svg')";
+    mostrarContrasenaBtn.style.backgroundImage =
+      "url('./assets/icons/eye-blocked.svg')";
   } else {
     tipo.type = "password";
-    mostrarContrasenaBtn.style.backgroundImage = "url('./assets/icons/eye.svg')";
-
-  }
-};
-
-// EVENTOS
-const eventList = document.querySelector(".aside-container");
-
-const setupEvents = (data) => {
-  if (data.length) {
-    let html = "";
-    data.forEach((doc) => {
-      const evento = doc.data();
-      const card = `
-      <div class="card event">
-        <figure class="card-image">
-        <img src="https://media.giphy.com/media/DBW3BniaWrFo4/giphy.gif" alt="Imagen de un evento" >
-        </figure>
-        <div class="card-information">
-          <h2 class="title">${evento.title}</h2>
-          <p>${evento.description}</p>
-          <button><strong>Helouda</strong></button>
-        </div>
-      </div>
-      `;
-      html += card;
-    });
-    eventList.innerHTML = html;
-  } else {
-    eventList.innerHTML = `
-    <div style="position: relative; padding-top: 56.25%; width: 100%;
-    margin: auto;">
-      <iframe width="560" height="365" src="https://www.youtube.com/embed/Yw6u6YkTgQ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%;height: 100%;"></iframe>
-      </div>`;
+    mostrarContrasenaBtn.style.backgroundImage =
+      "url('./assets/icons/eye.svg')";
   }
 };
 
@@ -110,24 +79,42 @@ auth.onAuthStateChanged((user) => {
   if (user) {
     document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
       "Cerrar sesión";
-    fs.collection("evento")
-      .orderBy("title", "desc")
-      .get()
-      .then((snapshot) => {
-        setupEvents(snapshot.docs);
-        miActividad.style.display = "block";
-        egendar_evento.style.display = "block";
-      });
+    miActividad.style.display = "block";
+    egendar_evento.style.display = "block";
   } else {
-    fs.collection("evento")
-      .orderBy("title", "desc")
-      .get()
-      .then((snapshot) => {
-        setupEvents(snapshot.docs);
-        miActividad.style.display = "none";
-        egendar_evento.style.display = "none";
-      });
+    miActividad.style.display = "none";
+    egendar_evento.style.display = "none";
     document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
       "Iniciar Sesión";
   }
+});
+
+// EVENTOS
+const onGetEvents = (callback) =>
+  fs.collection("evento").orderBy("title", "desc").onSnapshot(callback);
+const eventList = document.querySelector(".aside-container");
+
+document.addEventListener("DOMContentLoaded", () => {
+  onGetEvents((querySnapshot) => {
+    eventList.innerHTML = "";
+
+    let html = "";
+    querySnapshot.forEach((doc) => {
+      const evento = doc.data();
+      const card = `
+        <div class="card event">
+            <figure class="card-image">
+            <img src="https://media.giphy.com/media/DBW3BniaWrFo4/giphy.gif" alt="Imagen de un evento" >
+            </figure>
+            <div class="card-information">
+            <h2 class="title">${evento.title}</h2>
+            <p>${evento.description}</p>
+            <button><strong>Helouda</strong></button>
+            </div>
+        </div>
+        `;
+      html += card;
+    });
+    eventList.innerHTML = html;
+  });
 });
