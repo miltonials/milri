@@ -2,30 +2,32 @@
 <html lang="es">
 <head>
     <!-- HAY QUE AGREGAR ICONO PARA APPLE -->
-    <link rel="apple-touch-icon" href="/custom_icon.png"/>
+    <link rel="apple-touch-icon" href="./assets/imgs/logo.png"/>
     <meta name="theme-color" content="rgb(13, 5, 47)">
     <meta name="robots"content="index,follow" />
     <meta name="description"content="Herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos." />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>MILRI</title>
+    <link rel="icon" href="./assets/imgs/logo.png">
     <!-- IBM Plex Sans-->
     <link rel="preload" crossorigin as="font" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  />
     <link rel="preload" as="style" href="./styles/style.css" />
+    <link rel="preload" as="style" href="./styles/headerFooter.css" />
     <link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" />
     <link rel="preload" as="style" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
     
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/headerFooter.css" />
     <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" />
     <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
 </head>
 <body id="body">
     <header>
-        <i class="icon-menu burger-button" id="burger-menu"><span></span></i>
-        <div class="header-container">
-            <!-- NAVIGATIONS GOES HERE -->
+            <!-- HEADER GOES HERE -->
         </div>
         </header>
         <main>
@@ -74,10 +76,10 @@
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js" ></script>
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js" ></script>
         <!-- CUSTOM JS -->
-        <script defer type="text/javascript" src="./js/config/ConfigFirebase.js" ></script>
-        <script defer type="text/javascript" src="./js/detectarBrowser.js" ></script>
         <script type="text/javascript" src="./js/header/index.js" ></script>
         <script type="text/javascript" src="./js/footer/index.js" ></script>
+        <script defer type="text/javascript" src="./js/config/ConfigFirebase.js" ></script>
+        <script defer type="text/javascript" src="./js/detectarBrowser.js" ></script>
         <script defer type="text/javascript" src="./js/main.js" ></script>
         <script defer type="text/javascript" src="./js/modalController.js" ></script>
         <script defer type="text/javascript" src="./js/modals.js" ></script>

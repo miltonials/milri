@@ -4,7 +4,7 @@
     "description": "Información de eventos",
     "icons": [
       {
-        "src": "/images/icons-192.png",
+        "src": "./assets/imgs/logo.png",
         "type": "image/png",
         "sizes": "192x192"
       },
@@ -25,14 +25,14 @@
         "short_name": "Today",
         "description": "View weather information for today",
         "url": "/",
-        "icons": [{ "src": "/images/today.png", "sizes": "192x192" }]
+        "icons": [{ "src": "./assets/imgs/logo.png", "sizes": "192x192" }]
       },
       {
         "name": "How's weather tomorrow?",
         "short_name": "Tomorrow",
         "description": "View weather information for tomorrow",
         "url": "/",
-        "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+        "icons": [{ "src": "./assets/imgs/logo.png", "sizes": "192x192" }]
       }
     ]
   }

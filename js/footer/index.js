@@ -4,7 +4,7 @@ const footer = () => {
     <div class="footer-information">
     <figure class="logo">
         <a href="#">
-            <img src="./assets/imgs/yo.png" alt="LOGO">
+            <img src="../assets/imgs/logo.png" alt="LOGO">
         </a>
         </figure>
     <ul class="information-links">

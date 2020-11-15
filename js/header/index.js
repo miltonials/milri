@@ -1,16 +1,17 @@
 const header = () => {
-    const headerContainer = document.querySelector('.header-container');
     const el = `
+    <i class="icon-menu burger-button" id="burger-menu"><span></span></i>
+        <div class="header-container">
     <div class="navigations">
-    <a href="#">
+    <a href="https://miltonials.github.io/milri">
         <figure class="logo">
-            <img src="./assets/imgs/yo.png" alt="LOGO">
+            <img src="../assets/imgs/logo.png" alt="LOGO">
         </figure>
     </a>
     <nav class="left-menu">
         <ul>
-            <li><a href="./pages/allEvents/allEvents.html">Eventos del mes</a></li>
-            <li><a href="#">Juego antiestresante</a></li>
+            <li><a href="https://miltonials.github.io/milri/pages/allEvents.html">Eventos del mes</a></li>
+            <li><a href="https://miltonials.github.io/milri/pages/game.html">Juego antiestresante</a></li>
         </ul>
     </nav>
     <nav class="rigth-menu">
@@ -33,6 +34,6 @@ const header = () => {
     </div>
     `;
     
-    headerContainer.innerHTML = el;
+    document.querySelector('header').innerHTML = el;
 }
 header();
