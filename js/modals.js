@@ -121,12 +121,76 @@ miActividad.addEventListener("click", () => {
   let user = firebase.auth().currentUser;
 
   if (user) {
-    printModal(`
-    <h2>Agregar el modal de mi actividad</h2>
-      `);
+    // printModal(`
+    const onGetEventsUser = (callback) =>
+    fs
+      .collection("evento")
+      .orderBy("title", "desc")
+      .where("userEmail", "==", auth.currentUser.email)
+      .onSnapshot(callback);
+
+  onGetEventsUser((querySnapshot) => {
+    document.querySelector(".aside-container").innerHTML = "";
+
+    if (querySnapshot.empty) {
+      alert("estoy vacio")
+    } else {
+      let html = "";
+      querySnapshot.forEach((doc) => {
+        const evento = doc.data();
+        const card = `
+          <div class="card event">
+              <figure class="card-image">
+              <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
+              </figure>
+              <div class="card-information">
+              <h2 class="title">${evento.title}</h2>
+              <p>${evento.description}</p>
+              <button><strong>helouda</strong></button>
+              </div>
+          </div>
+          `;
+        html += card;
+      });
+      document.querySelector(".aside-container").innerHTML = html;
+      document.querySelector("#miActividad--btn > a").classList.add("verTodosEventos");
+      document.querySelector("#miActividad--btn > a").innerHTML = "verTodosEventos";
+    }
+  });
+    //   `);
   } else {
     alert("Primero debes iniciar sesión.");
   }
+
+  
+
+
+  document.querySelector(".verTodosEventos").addEventListener("click", onGetEvents((querySnapshot) => {
+        eventList.innerHTML = "";
+    
+        let html = "";
+        querySnapshot.forEach((doc) => {
+          const evento = doc.data();
+          const card = `
+            <div class="card event">
+                <figure class="card-image">
+                <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
+                </figure>
+                <div class="card-information">
+                <h2 class="title">${evento.title}</h2>
+                <p>${evento.description}</p>
+                <button><strong>Helouda</strong></button>
+                </div>
+            </div>
+            `;
+          html += card;
+          document.querySelector("#miActividad--btn > a").classList.remove("verTodosEventos");
+          document.querySelector("#miActividad--btn > a").innerHTML = "Mi actividad";
+        });
+        eventList.innerHTML = html;
+      }));
+
+
 });
 
 iniciarSesion_btn.addEventListener("click", () => {
