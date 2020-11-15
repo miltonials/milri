@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MILRI</title>
     <!-- IBM Plex Sans-->
-    <link rel="preload" crossorigin="anonymous" as="font" type="font/woff2" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  />
+    <link rel="preload" crossorigin as="font" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  />
     <link rel="preload" as="style" href="./styles/style.css" />
     <link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" />
     <link rel="preload" as="style" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
     
     <link rel="manifest" href="./manifest.json">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" />
     <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
@@ -25,36 +25,7 @@
     <header>
         <i class="icon-menu burger-button" id="burger-menu"><span></span></i>
         <div class="header-container">
-            <div class="navigations">
-                <a href="#">
-                    <figure class="logo">
-                        <img src="./assets/imgs/yo.png" alt="LOGO">
-                    </figure>
-                </a>
-                <nav class="left-menu">
-                    <ul>
-                        <li><a href="./pages/allEvents/allEvents.html">Eventos del mes</a></li>
-                        <li><a href="#">Juego antiestresante</a></li>
-                    </ul>
-                </nav>
-                <nav class="rigth-menu">
-                    <ul>
-                        <li id="agendarEvennt--btn" class="logged-out" style="display: none;">
-                            <a href="#"> Agendar un evento</a>
-                        </li>
-                        <li id="miActividad--btn" class="logged-out" style="display: none;">
-                            <a href="#">
-                                Mi actividad <span class="actividad-icon"></span>
-                            </a>
-                        </li>
-                        <li id="iniciarSesion--btn" class="logged-in">
-                            <a href="#">
-                                <strong >Cargando</strong><span class="iniciarSesion-icon"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <!-- NAVIGATIONS GOES HERE -->
         </div>
         </header>
         <main>
@@ -66,7 +37,6 @@
                             <h1>I'm the number 12</h1>
                             <h1>I'm the number 13</h1>
                             <h1>I'm the number 14</h1>
-                            
                         </div>
                     </section>
                     <aside>
@@ -79,23 +49,7 @@
         </main>
         <footer>
             <section class="footer-container">
-                <div class="footer-information">
-                    <figure class="logo">
-                        <a href="#">
-                            <img src="./assets/imgs/yo.png" alt="LOGO">
-                        </a>
-                        </figure>
-                    <ul class="information-links">
-                        <a href=""><li><span>Acerca de</span></li></a>
-                        <a href=""><li><span>Funcionalidades</span></li></a>
-                        <a href=""><li><span>¿Cómo colaborar?</span></li></a>
-                        <a href=""><li><span>Licencia</span></li></a>
-                    </ul>
-                    <div class="social-links">
-                        <span>MILRI 2020</span>
-                        <span>REDES SOCIALES</span>
-                    </div>
-                </div>
+                <!-- FOOTER GOES HERE -->
             </section>
         </footer>
 
@@ -122,7 +76,10 @@
         <!-- CUSTOM JS -->
         <script defer type="text/javascript" src="./js/config/ConfigFirebase.js" ></script>
         <script defer type="text/javascript" src="./js/detectarBrowser.js" ></script>
+        <script type="text/javascript" src="./js/header/index.js" ></script>
+        <script type="text/javascript" src="./js/footer/index.js" ></script>
         <script defer type="text/javascript" src="./js/main.js" ></script>
+        <script defer type="text/javascript" src="./js/modalController.js" ></script>
         <script defer type="text/javascript" src="./js/modals.js" ></script>
     </body>
 </html>

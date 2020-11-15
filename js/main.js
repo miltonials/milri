@@ -90,11 +90,11 @@ auth.onAuthStateChanged((user) => {
 });
 
 // EVENTOS
-const onGetEvents = (callback) =>
-  fs.collection("evento").orderBy("title", "desc").onSnapshot(callback);
+const onGetEvents = (callback) => fs.collection("evento").orderBy("title", "desc").onSnapshot(callback);
 const eventList = document.querySelector(".aside-container");
 
 document.addEventListener("DOMContentLoaded", () => {
+
   onGetEvents((querySnapshot) => {
     eventList.innerHTML = "";
 
