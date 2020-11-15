@@ -10,8 +10,8 @@ const header = () => {
     </a>
     <nav class="left-menu">
         <ul>
-            <li><a href="https://miltonials.github.io/milri/pages/allEvents.html/#">Eventos del mes</a></li>
-            <li><a href="https://miltonials.github.io/milri/pages/game.html/#">Juego antiestresante</a></li>
+            <li><a href="https://miltonials.github.io/milri/pages/allEvents.html#">Eventos del mes</a></li>
+            <li><a href="https://miltonials.github.io/milri/pages/game.html#">Juego antiestresante</a></li>
         </ul>
     </nav>
     <nav class="rigth-menu">

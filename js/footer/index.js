@@ -3,7 +3,7 @@ const footer = () => {
     const el = `
     <div class="footer-information">
     <figure class="logo">
-        <a href="#">
+        <a href="https://miltonials.github.io/milri/#">
             <img src="https://miltonials.github.io/milri/assets/imgs/logo.png" alt="LOGO">
         </a>
         </figure>
