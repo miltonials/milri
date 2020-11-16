@@ -7,6 +7,11 @@
       #8e5aa0b0 22.6%,
       #fe9351b0 67.7%
     );
+    --gradient-secondary: linear-gradient(
+      52.2deg,
+      #8e5aa0b0 22.6%,
+      #fe9351b0 67.7%
+    );
   }
   * {
     box-sizing: border-box;
@@ -284,11 +289,8 @@ header {
       border-top-left-radius: 2.5rem;
       border-bottom-left-radius: 2.5rem;
       position: fixed;
-      background-image: linear-gradient(
-        114.2deg,
-        rgb(121 194 243) 22.6%,
-        rgb(255 180 239) 67.7%
-      );
+      background-color: var(--ligth-color);
+      background-image: var(--gradient-primary);
       z-index: 3;
       left: 200vw;
       width: 100%;
@@ -323,11 +325,6 @@ header {
     }
     .left-menu {
       position: fixed;
-      background-image: linear-gradient(
-        90deg,
-        rgb(121 194 243) 26.6%,
-        rgb(255 180 239) 80.7%
-      );
       z-index: 4;
       left: 200vw;
       width: 100%;
@@ -339,6 +336,9 @@ header {
       display: block;
       flex-direction: column;
       height: auto;
+      background-color: var(--ligth-color);
+      background-image: var(--gradient-secondary);
+      width: 100%;
     }
     .left-menu ul li {
       width: 150px;
