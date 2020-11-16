@@ -318,9 +318,9 @@ header {
   }
 
   @media screen and (max-width: 568px) {
-    /* .header-container {
+    .header-container {
       position: initial;
-    } */
+    }
     .left-menu {
       position: fixed;
       background-image: linear-gradient(

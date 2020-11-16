@@ -33,7 +33,6 @@ const header = () => {
     </nav>
     </div>
     `;
-    
     document.querySelector('header').innerHTML = el;
 }
 header();

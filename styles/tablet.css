@@ -100,9 +100,9 @@
 .card:last-child {
   margin-bottom: 15px;
 }
-/* .footer-container {
+.footer-container {
   position: initial;
-} */
+}
 
 .footer-information a {
   border-radius: 10px;
