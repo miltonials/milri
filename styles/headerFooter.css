@@ -176,7 +176,6 @@ header {
 .footer-container {
     background-color: #0b0d17;
     color: white;
-    /* height: 200px; */
     display: grid;
     grid-template-columns: minmax(auto, 1110px);
     justify-content: center;
@@ -214,7 +213,7 @@ header {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    padding: 15px;
+    /* padding: 15px; */
   }
   
   /* MODAL CONTAINER*/
