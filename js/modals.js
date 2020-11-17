@@ -125,7 +125,17 @@ miActividad.addEventListener("click", () => {
       document.querySelector(".aside-container").innerHTML = "";
 
       if (querySnapshot.empty) {
-        alert("estoy vacio");
+        const card = `
+        <div class="card event">
+              <figure class="card-image">
+              <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
+              </figure>
+              <div class="card-information">
+              <h2 class="title">NO HAY EVENTOS</h2>
+              <p>NO HAY EVENTOS</p>
+              <button><strong>helouda</strong></button>
+              </div>
+          </div>`;
       } else {
         let html = "";
         querySnapshot.forEach((doc) => {
