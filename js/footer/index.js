@@ -2,11 +2,11 @@ const footer = () => {
     const el = `
         <section class="footer-container">
             <div class="footer-information">
-            <figure class="logo">
+            <!-- <figure class="logo">
                 <a href="https://miltonials.github.io/milri/#">
                     <img src="https://miltonials.github.io/milri/assets/imgs/logo.png" alt="LOGO">
                 </a>
-                </figure>
+                </figure>  -->
             <ul class="information-links">
                 <a href=""><li><span>Acerca de</span></li></a>
                 <a href=""><li><span>Funcionalidades</span></li></a>

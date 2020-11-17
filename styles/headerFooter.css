@@ -316,6 +316,9 @@ header {
       z-index: 4;
       margin: 0 1rem;
     }
+    .footer-container {
+      position: initial;
+    }
   }
 
   @media screen and (max-width: 568px) {
