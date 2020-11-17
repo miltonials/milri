@@ -245,12 +245,12 @@
           }
   
           ganoElJuego() {
-            swal('Platzi', 'Felicitaciones, ganaste el juego!', 'success')
+            swal('MILRI', 'Felicitaciones, ganaste!', 'success')
               .then(this.inicializar)
           }
   
           perdioElJuego() {
-            printModal('Platzi', 'Lo lamentamos, perdiste :(', 'error')
+            printModal('MILRI', 'Lo lamentamos, perdiste :(')
               .then(() => {
                 this.eliminarEventosClick()
                 this.inicializar()
