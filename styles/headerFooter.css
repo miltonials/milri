@@ -288,7 +288,8 @@ header {
     
     .navigations {
       grid-template-columns: 90px 1fr;
-      background-color: var(--dark-color);
+      background-color: var(--ligth-color);
+
     }
     
     .left-menu {
@@ -346,6 +347,9 @@ header {
   @media screen and (max-width: 568px) {
     .header-container {
       position: initial;
+    }
+    .navigations {
+      background-color: var(--dark-color);
     }
     .left-menu {
       position: fixed;
