@@ -41,7 +41,12 @@
     transition: all 1s;
   }
 } */
-
+#content--modal {
+  /* display: flex; */
+    /* align-items: center; */
+  /* height: calc(90vh - 30vh); */
+  /* overflow: scroll; */
+}
 .iniciarSesion__content--modal {
   width: 90%;
 }

@@ -37,12 +37,12 @@
   #progress--bar::-moz-progress-bar {
     border-radius: 10px;
     background: var(--gradient-secondary);
-    transition: .5s;
+    transition: 2s;
   }
   #progress--bar::-webkit-progress-value {
     border-radius: 10px;
     background: var(--gradient-secondary);
-    transition: .5s;
+    transition: 2s;
   } 
   #burger-menu {
     display: none;
@@ -251,7 +251,7 @@ header {
   .modal--container::before {
     content: "X";
     position: absolute;
-    margin: 5rem 5rem 0 0;
+    margin: 10px 10px 0 0;
     top: 0;
     right: 0;
     opacity: 0.5;

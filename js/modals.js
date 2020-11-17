@@ -2,14 +2,39 @@ const miActividad = document.getElementById("miActividad--btn");
 const egendar_evento = document.getElementById("agendarEvennt--btn");
 const iniciarSesion_btn = document.getElementById("iniciarSesion--btn");
 
-const crearEvento = (title, description, imgLink, userEmail, userUID) =>
-  fs.collection("evento").doc().set({
-    title,
-    description,
-    imgLink,
-    userEmail: auth.currentUser.email,
-    userUID: auth.currentUser.uid,
-  });
+const obtenerFecha = (timeStamp) => {
+  const d = new Date(timeStamp);
+  let month = "" + (d.getMonth() + 1);
+  let day = "" + d.getDate();
+  let year = d.getFullYear();
+
+  if (month.length < 2) month = "0" + month;
+  if (day.length < 2) day = "0" + day;
+
+  return [day, month, year].join("/");
+};
+
+const crearEvento = (
+  title,
+  description,
+  imgLink,
+  fecha,
+  userEmail,
+  userUID,
+  publicado,
+) =>
+  fs
+    .collection("evento")
+    .doc()
+    .set({
+      title,
+      description,
+      imgLink,
+      userEmail: auth.currentUser.email,
+      userUID: auth.currentUser.uid,
+      publicado: obtenerFecha(new Date()),
+      fecha,
+    });
 
 egendar_evento.addEventListener("click", () => {
   let user = firebase.auth().currentUser;
@@ -31,6 +56,10 @@ egendar_evento.addEventListener("click", () => {
           <h5>Descripción del evento</h5>
           <textarea name="eventDescription" id="eventDescription" cols="30" rows="10" required></textarea>
         </label>
+          <label for="fecha">
+            <h5>¿Cuándo es la fecha del evento?</h5>
+            <input type="datetime-local" id="fecha" required>
+        </label>
         <label type="submit" for="subirEvento">
           <button id="agendar--btn">Agendar</button>
         </label>
@@ -48,16 +77,17 @@ egendar_evento.addEventListener("click", () => {
 
   const agendarEvento = document.querySelector("#agendarEvento");
 
-  agendarEvento.addEventListener("submit", async (e) => {
+  agendarEvento.addEventListener("submit", (e) => {
     e.preventDefault();
 
     document.querySelector("#agendar--btn").style = "display: none;";
 
     const title = agendarEvento["eventTittle--container"];
     const description = agendarEvento["eventDescription"];
+    const fecha = agendarEvento["fecha"];
     // const img = agendarEvento["imgEvento"];
-
     const img = document.querySelector("#imgEvento");
+
     if (img.files[0]) {
       let urlImg = "";
       const file = img.files[0];
@@ -67,6 +97,8 @@ egendar_evento.addEventListener("click", () => {
       const task = refStorage.put(file);
       const titlevalue = agendarEvento["eventTittle--container"].value;
       const descriptionvalue = agendarEvento["eventDescription"].value;
+      const fecha = agendarEvento["fecha"].value;
+
       task.on(
         "state_changed",
         (snapshot) => {
@@ -74,12 +106,9 @@ egendar_evento.addEventListener("click", () => {
           const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes;
           console.log(porcentaje);
           progress.value = porcentaje;
-          document.querySelector("#agendar--btn").style = "display: block;";
-          agendarEvento.reset();
-          title.focus();
         },
         (err) => {
-          console.log(`Error subiendo archivo = > ${err.message}`, 4000);
+          alert(`Error subiendo archivo = > ${err.message}`, 4000);
         },
         () => {
           task.snapshot.ref
@@ -88,10 +117,14 @@ egendar_evento.addEventListener("click", () => {
               console.log(title.value, description.value);
               sessionStorage.setItem("evento", url);
               urlImg = url;
-              crearEvento(titlevalue, descriptionvalue, urlImg);
+              crearEvento(titlevalue, descriptionvalue, urlImg, fecha);
+              document.querySelector("#agendar--btn").style = "display: block;";
+              agendarEvento.reset();
+            title.focus();
             })
             .catch((err) => {
-              console.log(`Error obteniendo downloadURL = > ${err}`, 4000);
+              alert(`Error obteniendo downloadURL = > ${err}`, 4000);
+              title.focus();
             });
         }
       );
@@ -99,7 +132,8 @@ egendar_evento.addEventListener("click", () => {
       crearEvento(
         title.value,
         description.value,
-        "https://miltonials.github.io/milri/assets/imgs/isologo.png"
+        "https://miltonials.github.io/milri/assets/imgs/isologo.png",
+        fecha.value
       );
       document.querySelector("#agendar--btn").style = "display: block;";
 
@@ -133,7 +167,6 @@ miActividad.addEventListener("click", () => {
               <div class="card-information">
               <h2 class="title">NO HAY EVENTOS</h2>
               <p>NO HAY EVENTOS</p>
-              <button><strong>helouda</strong></button>
               </div>
           </div>`;
       } else {

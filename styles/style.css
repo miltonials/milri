@@ -4,7 +4,6 @@
   grid-template-columns: minmax(auto, 1440px);
   justify-content: center;
   font-size: 1.6rem;
-  /* padding-top: 70px; */
 }
 
 .main-sides {
@@ -21,7 +20,6 @@
   display: flex;
   align-content: center;
   border-right: 1px solid gray;
-  /* margin: auto; */
 }
 .main-left-information {
   margin: auto;
@@ -35,7 +33,6 @@ aside {
   grid-area: rigth;
 }
 .aside-container {
-  /* background-image: url("../assets/imgs/captura.png"); */
   background-color: var(--dark-color);
   grid-area: rigth;
   display: flex;
@@ -43,14 +40,11 @@ aside {
   justify-content: center;
   height: calc(100vh - 70px - 61px);
   overflow: overlay;
-  /* margin-top: 70px; */
 }
 
 .card {
   height: 400px;
   width: 250px;
-  /* overflow: inherit; */
-  /* padding: 10px; */
   margin: 5px;
   background-color: rgba(255, 255, 255, 0.171);
   border-radius: 25px;
@@ -70,7 +64,6 @@ aside {
   height: 100%;
   border-radius: 25px;
   transition: opacity 1s ease-out;
-  /* z-index: 1; */
   opacity: 0;
 }
 .card:hover::after {
@@ -95,31 +88,13 @@ aside {
 }
 .card-information p {
   line-height: 22px;
+  height: 110px;
   max-height: 110px;
   overflow: auto;
 
 }
-
-.card-information button {
-  width: 140px;
-  height: 48px;
-  background-color: #fafafa7c;
-  color: var(--ligth-color);
-  border: 1px solid #7c9cbf;
-  border-radius: 1rem;
-  outline: none;
-}
-.card:last-child {
-  margin-bottom: 200px;
-}
-
-.card-information button:active {
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  transform: scale(0.9);
-  transition: all 0.2s;
+.fecha--container {
+  font-size: 1.2rem;
 }
 
 /* FOOTER */
@@ -130,12 +105,6 @@ aside {
   flex-direction: column;
   max-width: 400px;
   font-size: 1.7rem;
-  /* border-radius: 15px; */
-  /* margin: 19px; */
-  /* max-width: 400px; */
-  /* padding: 30px; */
-  /* font-size: 1.7rem; */
-  /* background: #fff; */
   transition: 1s;
 }
 .iniciarSesion__information--container h1 {
@@ -228,4 +197,10 @@ h5 {
   min-height: 100px;
   max-height: 250px;
   font-family: "IBM Plex Sans", sans-serif;
+}
+#fecha {
+  border-radius: 10px;
+  border: 1px solid gray;
+  margin: 0 0 15px 0;
+  outline: none;
 }
