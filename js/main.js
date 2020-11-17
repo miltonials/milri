@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = `
         <div class="card event">
             <figure class="card-image">
-            <img src="https://media.giphy.com/media/DBW3BniaWrFo4/giphy.gif" alt="Imagen de un evento" >
+            <img src="${evento.imgLink}" alt="Imagen de un evento" >
             </figure>
             <div class="card-information">
             <h2 class="title">${evento.title}</h2>

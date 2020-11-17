@@ -3,7 +3,7 @@ var firebaseConfig = {
     authDomain: "milritest.firebaseapp.com",
     databaseURL: "https://milritest.firebaseio.com",
     projectId: "milritest",
-    storageBucket: "milritest.appspot.com",
+    storageBucket: "gs://milritest.appspot.com/",
     messagingSenderId: "754202976328",
     appId: "1:754202976328:web:5cc9c0f9b8e458fe95b87d",
     measurementId: "G-CECHFXCC6Z"
@@ -14,3 +14,4 @@ var firebaseConfig = {
   
   const auth = firebase.auth();
   const fs = firebase.firestore();
+  const storage = firebase.storage();

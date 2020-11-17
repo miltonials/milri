@@ -2,10 +2,11 @@ const miActividad = document.getElementById("miActividad--btn");
 const egendar_evento = document.getElementById("agendarEvennt--btn");
 const iniciarSesion_btn = document.getElementById("iniciarSesion--btn");
 
-const crearEvento = (title, description, userEmail, userUID) =>
+const crearEvento = (title, description, imgLink, userEmail, userUID) =>
   fs.collection("evento").doc().set({
     title,
     description,
+    imgLink,
     userEmail: auth.currentUser.email,
     userUID: auth.currentUser.uid,
   });
@@ -23,8 +24,8 @@ egendar_evento.addEventListener("click", () => {
           <h5>Título del evento</h5>
           <input type="text" name="eventTittle--container" id="eventTittle--container" autocomplete="off" required maxlength="17">
         </label>
-        <label for="imgEvent">
-          <input type="file" name="imgEvent" id="imgEvent" placeholder="Selecciona una imagen">
+        <label for="imgEvento">
+          <input type="file" name="imgEvento" id="imgEvento" placeholder="Selecciona una imagen">
         </label>
         <label for="eventDescription--container">
           <h5>Descripción del evento</h5>
@@ -33,6 +34,9 @@ egendar_evento.addEventListener("click", () => {
         <label type="submit" for="subirEvento">
           <button id="agendar--btn">Agendar</button>
         </label>
+        <div class="progress--container">
+        <progress id="progress--bar"></progress>
+        </div>
       </form>
     </div>
       `);
@@ -51,12 +55,57 @@ egendar_evento.addEventListener("click", () => {
 
     const title = agendarEvento["eventTittle--container"];
     const description = agendarEvento["eventDescription"];
+    // const img = agendarEvento["imgEvento"];
 
-    await crearEvento(title.value, description.value);
-    document.querySelector("#agendar--btn").style = "display: block;";
+    const img = document.querySelector("#imgEvento");
+    if (img.files[0]) {
+      let urlImg = "";
+      const file = img.files[0];
+      const refStorage = storage.ref(
+        `imgEvento/${auth.currentUser.email}/${file.name}`
+      );
+      const task = refStorage.put(file);
+      const titlevalue = agendarEvento["eventTittle--container"].value;
+      const descriptionvalue = agendarEvento["eventDescription"].value;
+      task.on(
+        "state_changed",
+        (snapshot) => {
+          const progress = document.getElementById("progress--bar");
+          const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes;
+          console.log(porcentaje);
+          progress.value = porcentaje;
+          document.querySelector("#agendar--btn").style = "display: block;";
+          agendarEvento.reset();
+          title.focus();
+        },
+        (err) => {
+          console.log(`Error subiendo archivo = > ${err.message}`, 4000);
+        },
+        () => {
+          task.snapshot.ref
+            .getDownloadURL()
+            .then((url) => {
+              console.log(title.value, description.value);
+              sessionStorage.setItem("evento", url);
+              urlImg = url;
+              crearEvento(titlevalue, descriptionvalue, urlImg);
+            })
+            .catch((err) => {
+              console.log(`Error obteniendo downloadURL = > ${err}`, 4000);
+            });
+        }
+      );
+    } else {
+      crearEvento(
+        title.value,
+        description.value,
+        "https://miltonials.github.io/milri/assets/imgs/isologo.png"
+      );
+      document.querySelector("#agendar--btn").style = "display: block;";
 
-    agendarEvento.reset();
-    title.focus();
+      agendarEvento.reset();
+      title.focus();
+    }
   });
 });
 
@@ -66,22 +115,22 @@ miActividad.addEventListener("click", () => {
   if (user) {
     // printModal(`
     const onGetEventsUser = (callback) =>
-    fs
-      .collection("evento")
-      .orderBy("title", "desc")
-      .where("userEmail", "==", auth.currentUser.email)
-      .onSnapshot(callback);
+      fs
+        .collection("evento")
+        .orderBy("title", "desc")
+        .where("userEmail", "==", auth.currentUser.email)
+        .onSnapshot(callback);
 
-  onGetEventsUser((querySnapshot) => {
-    document.querySelector(".aside-container").innerHTML = "";
+    onGetEventsUser((querySnapshot) => {
+      document.querySelector(".aside-container").innerHTML = "";
 
-    if (querySnapshot.empty) {
-      alert("estoy vacio")
-    } else {
-      let html = "";
-      querySnapshot.forEach((doc) => {
-        const evento = doc.data();
-        const card = `
+      if (querySnapshot.empty) {
+        alert("estoy vacio");
+      } else {
+        let html = "";
+        querySnapshot.forEach((doc) => {
+          const evento = doc.data();
+          const card = `
           <div class="card event">
               <figure class="card-image">
               <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
@@ -93,28 +142,30 @@ miActividad.addEventListener("click", () => {
               </div>
           </div>
           `;
-        html += card;
-      });
-      document.querySelector(".aside-container").innerHTML = html;
-      document.querySelector("#miActividad--btn > a").classList.add("verTodosEventos");
-      document.querySelector("#miActividad--btn > a").innerHTML = "verTodosEventos";
-    }
-  });
+          html += card;
+        });
+        document.querySelector(".aside-container").innerHTML = html;
+        document
+          .querySelector("#miActividad--btn > a")
+          .classList.add("verTodosEventos");
+        document.querySelector("#miActividad--btn > a").innerHTML =
+          "verTodosEventos";
+      }
+    });
     //   `);
   } else {
     alert("Primero debes iniciar sesión.");
   }
 
-  
+  document.querySelector(".verTodosEventos").addEventListener(
+    "click",
+    onGetEvents((querySnapshot) => {
+      eventList.innerHTML = "";
 
-
-  document.querySelector(".verTodosEventos").addEventListener("click", onGetEvents((querySnapshot) => {
-        eventList.innerHTML = "";
-    
-        let html = "";
-        querySnapshot.forEach((doc) => {
-          const evento = doc.data();
-          const card = `
+      let html = "";
+      querySnapshot.forEach((doc) => {
+        const evento = doc.data();
+        const card = `
             <div class="card event">
                 <figure class="card-image">
                 <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
@@ -126,14 +177,16 @@ miActividad.addEventListener("click", () => {
                 </div>
             </div>
             `;
-          html += card;
-          document.querySelector("#miActividad--btn > a").classList.remove("verTodosEventos");
-          document.querySelector("#miActividad--btn > a").innerHTML = "Mi actividad";
-        });
-        eventList.innerHTML = html;
-      }));
-
-
+        html += card;
+        document
+          .querySelector("#miActividad--btn > a")
+          .classList.remove("verTodosEventos");
+        document.querySelector("#miActividad--btn > a").innerHTML =
+          "Mi actividad";
+      });
+      eventList.innerHTML = html;
+    })
+  );
 });
 
 iniciarSesion_btn.addEventListener("click", () => {

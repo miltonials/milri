@@ -15,8 +15,10 @@
   overflow: overlay;
   padding-top: 70px;
   transition: all 0.5s;
-  background-color: var(--ligth-color);
-  background-image: url(../);
+  background-color: var(--dark-color);
+
+  /* background-color: var(--ligth-color); */
+  /* background-image: url(../); */
 }
 .aside-container.is-active:first-child {
   transition: all 0.5s;

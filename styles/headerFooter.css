@@ -25,7 +25,25 @@
   body {
     background-color: var(--ligth-color);
   }
-  
+  .progress--container {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  #progress--bar {
+    width: 100%;
+    height: 20px;
+    appearance: none;
+  }
+  #progress--bar::-moz-progress-bar {
+    border-radius: 10px;
+    background: var(--gradient-secondary);
+    transition: .5s;
+  }
+  #progress--bar::-webkit-progress-value {
+    border-radius: 10px;
+    background: var(--gradient-secondary);
+    transition: .5s;
+  } 
   #burger-menu {
     display: none;
     width: 27px;
@@ -114,7 +132,8 @@ header {
     flex-wrap: wrap;
     height: 70px;
   }
-  .left-menu {
+  .left-menu ul{
+    background-color: #fafafa;
     /* border-bottom: 1px solid var(--dark-color);
       border-bottom-left-radius: 2rem; */
   }
@@ -137,8 +156,10 @@ header {
   }
   
   .rigth-menu {
-    background-color: var(--dark-color);
     font-weight: 600;
+  }
+  .rigth-menu ul {
+    background-color: var(--dark-color);
   }
   .rigth-menu ul li {
     width: 150px;
@@ -267,7 +288,7 @@ header {
     
     .navigations {
       grid-template-columns: 90px 1fr;
-      background-color: var(--ligth-color);
+      background-color: var(--dark-color);
     }
     
     .left-menu {
@@ -303,6 +324,7 @@ header {
       left: 0;
     }
     .rigth-menu ul {
+      background-color: transparent;
       flex-wrap: wrap;
       height: auto;
       margin-left: 3;
