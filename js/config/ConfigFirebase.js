@@ -1,12 +1,12 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyDA79K7UCPt16HV45LQTHATILkhsyjPe2Y",
-    authDomain: "milritest.firebaseapp.com",
-    databaseURL: "https://milritest.firebaseio.com",
-    projectId: "milritest",
-    storageBucket: "gs://milritest.appspot.com/",
-    messagingSenderId: "754202976328",
-    appId: "1:754202976328:web:5cc9c0f9b8e458fe95b87d",
-    measurementId: "G-CECHFXCC6Z"
+  apiKey: "AIzaSyDp63Wjiokq7DCH95-DcMNr5VVp7ex0TlI",
+  authDomain: "milri-c9c17.firebaseapp.com",
+  databaseURL: "https://milri-c9c17.firebaseio.com",
+  projectId: "milri-c9c17",
+  storageBucket: "milri-c9c17.appspot.com",
+  messagingSenderId: "343408517103",
+  appId: "1:343408517103:web:7ffca4fea8053ad3e9a01a",
+  measurementId: "G-BNCCMW7BW0"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);

@@ -51,13 +51,14 @@ egendar_evento.addEventListener("click", () => {
         </label>
         <label for="imgEvento">
           <input type="file" name="imgEvento" id="imgEvento" placeholder="Selecciona una imagen">
+          <span><h5 class="advertencia">Solo imágenes de tamaño máximo 5MB</h5></span>
         </label>
         <label for="eventDescription--container">
           <h5>Descripción del evento</h5>
           <textarea name="eventDescription" id="eventDescription" cols="30" rows="10" required></textarea>
         </label>
           <label for="fecha">
-            <h5>¿Cuándo es la fecha del evento?</h5>
+            <h5>¿Cuándo es será el evento?</h5>
             <input type="datetime-local" id="fecha" required>
         </label>
         <label type="submit" for="subirEvento">
@@ -109,6 +110,7 @@ egendar_evento.addEventListener("click", () => {
         },
         (err) => {
           alert(`Error subiendo archivo = > ${err.message}`, 4000);
+          document.querySelector("#agendar--btn").style = "display: block;";
         },
         () => {
           task.snapshot.ref
@@ -124,6 +126,7 @@ egendar_evento.addEventListener("click", () => {
             })
             .catch((err) => {
               alert(`Error obteniendo downloadURL = > ${err}`, 4000);
+              document.querySelector("#agendar--btn").style = "display: block;";
               title.focus();
             });
         }
