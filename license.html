@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link rel="apple-touch-icon" href="./assets/imgs/logo.png" />
+    <meta name="theme-color" content="rgb(13, 5, 47)" />
+    <meta name="robots" content="index,follow" />
+    <meta
+      name="description"
+      content="Herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos."
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MILRI | LICENSE</title>
+    <link rel="stylesheet" href="./styles/headerFooter.css" />
+    <style>
+        body {
+          background-color: var(--dark-color);
+        }
+        .license--container {
+          display: flex;
+          justify-content: center;
+        }
+        .license {
+          font-size: 1.5rem;
+            filter: invert();
+            margin-top: 75px;
+            max-width: 1024px;
+        }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+        <section class="license--container">
+            <p class="license">
+              The Clear BSD License <br />
+              <br />
+              Copyright (c) 2020 Milton Barrera Zepeda, Yassir Gómez Oses <br />
+              All rights reserved.<br />
+              <br />
+              Redistribution and use in source and binary forms, with or without
+              modification, are permitted (subject to the limitations in the
+              disclaimer below) provided that the following conditions are met:<br />
+              <br />
+              * Redistributions of source code must retain the above copyright notice,
+              this list of conditions and the following disclaimer.<br />
+              <br />
+              * Redistributions in binary form must reproduce the above copyright
+              notice, this list of conditions and the following disclaimer in the
+              documentation and/or other materials provided with the distribution.<br />
+              <br />
+              * Neither the name of the copyright holder nor the names of its
+              contributors may be used to endorse or promote products derived from
+              this software without specific prior written permission.<br />
+              <br />
+              NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED
+              BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+              CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+              BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+              FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+              COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+              INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+              NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+              USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+              ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+              THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+            </p>
+        </section>
+    </main>
+    <footer></footer>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"
+    ></script>
+    <!--  -->
+    <script
+      defer
+      type="text/javascript"
+      src="./js/config/ConfigFirebase.js"
+    ></script>
+    <script defer type="text/javascript" src="./js/modalController.js"></script>
+    <script defer type="text/javascript" src="./js/modals.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script src="./js/header/index.js"></script>
+    <script src="./js/footer/index.js"></script>
+  </body>
+</html>

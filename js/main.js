@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       eventList.innerHTML = `
       <div class="card event">
       <figure class="card-image">
-      <img src="./assets/imgs/isologo.png" alt="Imagen de un evento" >
+      <img src="./assets/imgs/imagotipo.png" alt="Imagen de un evento" >
       </figure>
       <div class="card-information">
       <h2 class="title">No hay eventos</h2>

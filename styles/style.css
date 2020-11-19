@@ -89,6 +89,7 @@ aside {
 .card-information p {
   line-height: 22px;
   height: 110px;
+  max-width: 236px;
   max-height: 110px;
   overflow: auto;
 

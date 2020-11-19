@@ -60,6 +60,7 @@
   
   .card-information .title::-webkit-scrollbar, .card-information p::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
   }
   /* .card-information p::-webkit-scrollbar-track {
       margin: 25px 0;
