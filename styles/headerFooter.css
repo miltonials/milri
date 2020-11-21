@@ -271,6 +271,113 @@ header {
     border-radius: 15px;
     padding: 30px;
   }
+/* MODAL INICIAR SESION */
+.iniciarSesion__information--container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  font-size: 1.7rem;
+  transition: 1s;
+}
+.iniciarSesion__information--container h1 {
+  font-size: 3.5rem;
+}
+.iniciarSesion__information--container p {
+  margin-bottom: 15px;
+}
+.iniciarSesion__information--container h2 {
+  font-size: 4rem;
+  color: #000;
+}
+h5 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #757381;
+}
+
+#correo,
+#password,
+.iniciarSesion__information--container button,
+#agendarEvento label button,
+#eventDescription,
+#eventTittle--container,
+.email--container,
+.password--container {
+  color: #757381;
+  height: 52px;
+  width: 100%;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  margin-bottom: 30px;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.email--container,
+.password--container,
+#eventDescription,
+#eventTittle--container {
+  display: flex;
+  border: 1px solid #706c7a;
+  border-radius: 5px;
+  height: 54px;
+}
+#password {
+  border: none;
+  background-color: transparent;
+}
+#showPassword--btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 33px;
+  margin: auto;
+  background-image: url('../assets/icons/eye.svg');
+  background-repeat: no-repeat;
+  filter: opacity(.5);
+}
+
+.email--container:hover,
+.password--container:hover,
+.iniciarSesion__information--container label button:hover, 
+#agendarEvento label button:hover,
+#eventDescription:hover,
+#eventTittle--container:hover {
+  box-shadow: 0 0 4px #8c30f5;
+}
+.iniciarSesion__information--container label button, #agendarEvento label button {
+  background-color: #8c30f5;
+  color: #eff0ff;
+}
+#showPassword--btn:active, .iniciarSesion__information--container label button:active, #agendarEvento label button:active {
+  transform: scale(0.8);
+  transition: all 0.2s;
+}
+
+
+/* MODAL AGENDAR EVENTO*/
+.agendarEvento--container {
+  font-size: 1.7rem;
+}
+#agendarEvento {
+  display: flex;
+  flex-direction: column;
+}
+#eventDescription {
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 250px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+#fecha {
+  border-radius: 10px;
+  border: 1px solid gray;
+  margin: 0 0 15px 0;
+  outline: none;
+}
+
+
 
   @media screen and (max-width:812px) {
     .header-container {

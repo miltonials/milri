@@ -135,7 +135,7 @@ egendar_evento.addEventListener("click", () => {
       crearEvento(
         title.value,
         description.value,
-        "https://miltonials.github.io/milri/assets/imgs/isologo.png",
+        "./assets/imgs/imagotipo.png",
         fecha.value
       );
       document.querySelector("#agendar--btn").style = "display: block;";

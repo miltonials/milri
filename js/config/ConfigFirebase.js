@@ -14,4 +14,4 @@ var firebaseConfig = {
   
   const auth = firebase.auth();
   const fs = firebase.firestore();
-  const storage = firebase.storage();
+  const storage = firebase.storage(); 

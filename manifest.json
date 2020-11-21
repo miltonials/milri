@@ -4,12 +4,12 @@
     "description": "Información de eventos",
     "icons": [
       {
-        "src": "./assets/imgs/logo.png",
+        "src": "./assets/imgs/isotipo.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/images/icons-512.png",
+        "src": "/images/isotipo.png",
         "type": "image/png",
         "sizes": "512x512"
       }
@@ -18,21 +18,5 @@
     "start_url": "/",
     "background_color": "rgb(13, 5, 47)",
     "display": "standalone",
-    "theme_color": "rgb(13, 5, 47)",
-    "shortcuts": [
-      {
-        "name": "How  's weather today?",
-        "short_name": "MILRI",
-        "description": "Proyecto desarrollado por estudiantes de la generación 2020",
-        "url": "/pages/allEvents.html",
-        "icons": [{ "src": "./assets/imgs/logo.png", "sizes": "192x192" }]
-      },
-      {
-        "name": "How's weather tomorrow?",
-        "short_name": "MILRI",
-        "description": "Proyecto desarrollado por estudiantes de la generación 2020",
-        "url": "/pages/game.html",
-        "icons": [{ "src": "./assets/imgs/logo.png", "sizes": "192x192" }]
-      }
-    ]
+    "theme_color": "rgb(13, 5, 47)"
   }
