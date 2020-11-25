@@ -1,4 +1,4 @@
-/*DARK-THEME*/
+
 
 /*NAVBAR*/
 const rigth_menu = document.querySelector(".rigth-menu");
@@ -63,5 +63,3 @@ auth.onAuthStateChanged((user) => {
       "Iniciar Sesión";
   }
 });
-
-// EVENTOS
