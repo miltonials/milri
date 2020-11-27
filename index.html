@@ -10,7 +10,7 @@
     <title>MILRI</title>
     <link rel="icon" href="./assets/imgs/isotipo.png">
     <!-- IBM Plex Sans-->
-    <link rel="prefetch" crossorigin as="font" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  onload="this.rel = 'stylesheet'"/>
+    <link rel="preload" crossorigin as="font" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"  onload="this.rel = 'stylesheet'"/>
     <link rel="preload" as="style" href="./styles/style.css" onload="this.rel = 'stylesheet'" />
     <link rel="preload" as="style" href="./styles/headerFooter.css" onload="this.rel = 'stylesheet'" />
     <link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" onload="this.rel = 'stylesheet'" />
@@ -46,15 +46,6 @@
         <footer>
         </footer>
         <script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '4e9e333cf47bccc5b3019b1b886b9ac5d504b8f8';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('sw.js')
@@ -81,7 +72,7 @@ window.smartsupp||(function(d) {
         <script defer type="text/javascript" src="./js/modalController.js" ></script>
         <script defer type="text/javascript" src="./js/modals.js" ></script>
         <!-- Start of HubSpot Embed Code -->
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8894378.js"></script>
+        <script type="text/javascript" id="hs-script-loader" defer async src="//js.hs-scripts.com/8894378.js"></script>
   <!-- End of HubSpot Embed Code -->
     </body>
 </html>

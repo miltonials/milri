@@ -1,6 +1,8 @@
 const miActividad = document.getElementById("miActividad--btn");
 const egendar_evento = document.getElementById("agendarEvennt--btn");
 const iniciarSesion_btn = document.getElementById("iniciarSesion--btn");
+let editStatus = false;
+let id = "";
 
 const obtenerFecha = (timeStamp) => {
   const d = new Date(timeStamp);
@@ -99,6 +101,10 @@ egendar_evento.addEventListener("click", () => {
       const titlevalue = agendarEvento["eventTittle--container"].value;
       const descriptionvalue = agendarEvento["eventDescription"].value;
       const fecha = agendarEvento["fecha"].value;
+      
+      
+      // const updateEvento = (id, updateEvento) => fs.collection("evento").doc(id).update(updateEvento);
+
 
       task.on(
         "state_changed",
@@ -112,14 +118,27 @@ egendar_evento.addEventListener("click", () => {
           alert(`Error subiendo archivo = > ${err.message}`, 4000);
           document.querySelector("#agendar--btn").style = "display: block;";
         },
-        () => {
+         () => {
           task.snapshot.ref
             .getDownloadURL()
             .then((url) => {
               console.log(title.value, description.value);
               sessionStorage.setItem("evento", url);
               urlImg = url;
-              crearEvento(titlevalue, descriptionvalue, urlImg, fecha);
+
+              if (!editStatus) {
+                crearEvento(titlevalue, descriptionvalue, urlImg, fecha);
+              } else {
+                updateEvento(id, {
+                  title: titlevalue,
+                  description: descriptionvalue,
+                  imgLink: urlImg,
+                  fecha: fecha,
+                })
+                editStatus = false;
+
+              }
+
               document.querySelector("#agendar--btn").style = "display: block;";
               agendarEvento.reset();
             title.focus();
@@ -132,107 +151,28 @@ egendar_evento.addEventListener("click", () => {
         }
       );
     } else {
-      crearEvento(
-        title.value,
-        description.value,
-        "./assets/imgs/imagotipo.png",
-        fecha.value
-      );
-      document.querySelector("#agendar--btn").style = "display: block;";
+      if (!editStatus) {
+        crearEvento(
+          title.value,
+          description.value,
+          "./assets/imgs/imagotipo.png",
+          fecha.value
+          );
+        } else {
+          updateEvento(id, {
+          title: title.value,
+          description: description.value,
+          fecha: fecha.value,
+        });
 
+        editStatus = false;
+      }
+      // modal.remove();
+        document.querySelector("#agendar--btn").style = "display: block;";
       agendarEvento.reset();
       title.focus();
     }
   });
-});
-
-miActividad.addEventListener("click", () => {
-  let user = firebase.auth().currentUser;
-
-  if (user) {
-    // printModal(`
-    const onGetEventsUser = (callback) =>
-      fs
-        .collection("evento")
-        .orderBy("title", "desc")
-        .where("userEmail", "==", auth.currentUser.email)
-        .onSnapshot(callback);
-
-    onGetEventsUser((querySnapshot) => {
-      document.querySelector(".aside-container").innerHTML = "";
-
-      if (querySnapshot.empty) {
-        const card = `
-        <div class="card event">
-              <figure class="card-image">
-              <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
-              </figure>
-              <div class="card-information">
-              <h2 class="title">NO HAY EVENTOS</h2>
-              <p>NO HAY EVENTOS</p>
-              </div>
-          </div>`;
-      } else {
-        let html = "";
-        querySnapshot.forEach((doc) => {
-          const evento = doc.data();
-          const card = `
-          <div class="card event">
-              <figure class="card-image">
-              <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
-              </figure>
-              <div class="card-information">
-              <h2 class="title">${evento.title}</h2>
-              <p>${evento.description}</p>
-              <button><strong>helouda</strong></button>
-              </div>
-          </div>
-          `;
-          html += card;
-        });
-        document.querySelector(".aside-container").innerHTML = html;
-        document
-          .querySelector("#miActividad--btn > a")
-          .classList.add("verTodosEventos");
-        document.querySelector("#miActividad--btn > a").innerHTML =
-          "verTodosEventos";
-      }
-    });
-    //   `);
-  } else {
-    alert("Primero debes iniciar sesión.");
-  }
-
-  document.querySelector(".verTodosEventos").addEventListener(
-    "click",
-    onGetEvents((querySnapshot) => {
-      eventList.innerHTML = "";
-
-      let html = "";
-      querySnapshot.forEach((doc) => {
-        const evento = doc.data();
-        const card = `
-            <div class="card event">
-                <figure class="card-image">
-                <img src="../assets/icons/signIn.svg" alt="Imagen de un evento" >
-                </figure>
-                <div class="card-information">
-                <h2 class="title">${evento.title}</h2>
-                <p>${evento.description}</p>
-                <button><strong>Helouda</strong></button>
-                </div>
-            </div>
-            `;
-        html += card;
-        document
-          .querySelector("#miActividad--btn > a")
-          .classList.remove("verTodosEventos");
-        document.querySelector("#miActividad--btn > a").innerHTML =
-          "Mi actividad";
-      });
-      eventList.innerHTML = html;
-    })
-  );
 });
 
 iniciarSesion_btn.addEventListener("click", () => {

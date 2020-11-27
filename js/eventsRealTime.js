@@ -1,5 +1,5 @@
 const onGetEvents = (callback) =>
-  fs.collection("evento").orderBy("fecha", "desc").onSnapshot(callback);
+  fs.collection("evento").orderBy("publicado", "desc").onSnapshot(callback);
 const eventList = document.querySelector(".aside-container");
 
 document.addEventListener("DOMContentLoaded", () => {

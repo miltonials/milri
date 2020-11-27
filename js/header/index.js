@@ -20,7 +20,7 @@ const header = () => {
                 <a href="#"> Agendar un evento</a>
             </li>
             <li id="miActividad--btn" class="logged-out" style="display: none;">
-                <a href="#">
+                <a href="./actividad.html">
                     Mi actividad <span class="actividad-icon"></span>
                 </a>
             </li>
