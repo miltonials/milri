@@ -1,22 +1,22 @@
   {
-    "short_name": "MILRI",
     "name": "MILRI",
+    "short_name": "MILRI",
     "description": "Información de eventos",
-    "icons": [
-      {
-        "src": "./assets/imgs/isotipo.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/images/isotipo.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
     "scope": "/",
     "start_url": "/",
     "background_color": "rgb(13, 5, 47)",
     "display": "standalone",
-    "theme_color": "rgb(13, 5, 47)"
+    "theme_color": "rgb(13, 5, 47)",
+    "icons": [
+      {
+        "src": "/assets/imgs/isotipo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/assets/imgs/isotipo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
   }

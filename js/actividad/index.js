@@ -63,7 +63,7 @@ function obtenerEventosUsuario() {
         btn_editar.forEach((btn) => {
           btn.addEventListener("click", async (e) => {
             
-            document.querySelector(".editar--btn").style = "display: none";
+            btn.style = "display: none";
             editStatus = true;
             const doc = await editarEvento(e.target.dataset.id);
             id = doc.id;
@@ -71,7 +71,7 @@ function obtenerEventosUsuario() {
             
             let agendarEvento_btn = document.querySelector("#agendarEvennt--btn");
             agendarEvento_btn.click();
-            document.querySelector(".editar--btn").style = "display: inline-block";
+            btn.style = "display: inline-block";
             
             // setTimeout(() => {
               agendarEvento["eventTittle--container"].value = docData.title;
