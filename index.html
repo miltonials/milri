@@ -29,12 +29,12 @@
     <title>MILRI</title>
     <link rel="icon" href="./assets/imgs/isotipo.png">
     <!-- IBM Plex Sans-->
-    <link rel="preload" crossorigin as="font" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" />
+    <link rel="preload" crossorigin as="font" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" onload="this.rel = 'stylesheet'" />
     <link rel="preload" as="style" href="./styles/style.css" />
     <link rel="preload" as="style" href="./styles/headerFooter.css" />
     <link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" />
     <link rel="preload" as="style" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
-
+    
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/headerFooter.css" />
     <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" />
@@ -70,6 +70,9 @@
         </main>
         <footer>
         </footer>
+        <script type="text/javascript" src="./js/header/index.js" ></script>
+        <script type="text/javascript" src="./js/footer/index.js" ></script>
+        <script defer type="text/javascript" src="./js/modalController.js" ></script>
         <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
@@ -83,22 +86,21 @@
             })
         }
         </script>
-        <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js" ></script>
-        <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js" ></script>
-        <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js" ></script>
-        <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js" ></script>
-        <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js" ></script>
-        <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-messaging.js" ></script>
+        <!-- firebase -->
+        <script defer  async src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js" ></script>
+        <script defer  async src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js" ></script>
+        <script defer  async src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js" ></script>
+        <script defer  async src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js" ></script>
+        <script defer  async src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js" ></script>
+        <script defer  async src="https://www.gstatic.com/firebasejs/8.0.0/firebase-messaging.js" ></script>
+        <!-- custom -->
         <script defer type="text/javascript" src="./js/config/ConfigFirebase.js" ></script>
         <script defer type="text/javascript" src="./js/eventsRealTime.js" ></script>
-        <script type="text/javascript" src="./js/header/index.js" ></script>
-        <script type="text/javascript" src="./js/footer/index.js" ></script>
         <script defer type="text/javascript" src="./js/detectarBrowser.js" ></script>
         <script defer type="text/javascript" src="./js/main.js" ></script>
-        <script defer type="text/javascript" src="./js/modalController.js" ></script>
         <script defer type="text/javascript" src="./js/modals.js" ></script>
         <!-- Start of HubSpot Embed Code -->
-        <script type="text/javascript" id="hs-script-loader" async src="//js.hs-scripts.com/8894378.js"></script>
+        <script type="text/javascript" id="hs-script-loader" defer async src="//js.hs-scripts.com/8894378.js"></script>
   <!-- End of HubSpot Embed Code -->
     </body>
 </html>
