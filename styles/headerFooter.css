@@ -25,6 +25,9 @@
   body {
     background-color: var(--ligth-color);
   }
+  ul, li{
+    list-style: none;
+  }
   .progress--container {
     overflow: hidden;
     border-radius: 10px;
@@ -121,7 +124,7 @@ header {
     filter: drop-shadow(0px 0px 5px #d68076);
   }
   
-  ul a li {
+  ul li a {
     /* width: 150px; */
     height: 40px;
     display: flex;
@@ -134,7 +137,6 @@ header {
   .rigth-menu ul {
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
     text-decoration: none;
     align-items: center;
     flex-wrap: wrap;
@@ -203,46 +205,45 @@ header {
 
 /*FOOTER*/
 .footer-container {
-    background-color: #0b0d17;
-    color: white;
-    display: grid;
-    grid-template-columns: minmax(auto, 1110px);
+  background-color: #0b0d17;
+  color: rgb(39, 39, 39);
+  display: grid;
+  grid-template-columns: minmax(auto, 1110px);
+  justify-content: center;
+  font-size: 1.6rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  }
+ .footer-information a {
+  color: white;
+}  
+.information-links {
+  /* height: 41px; */
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+.information-links li{
+    display: flex;
+    align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    width: 150px;
+    border-radius: 10px;
   }
-  
-  .footer-information {
-    /* border: 1px solid red; */
-    text-align: center;
-    overflow: auto;
-  }
-  .footer-information a {
-    color: white;
-    margin: 0 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  .footer-information .information-links a:hover {
+  .footer-information .information-links li:hover {
     background-color: gray;
     transition: all 1s;
   }
   
-  .information-links {
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid gray;
-  }
-  
   .social-links {
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    /* padding: 15px; */
+    color: white;
   }
   
   /* MODAL CONTAINER*/
@@ -507,5 +508,8 @@ h5 {
     }
     .information-links, .social-links {
       flex-direction: column;
-  }
+    }
+    .information-links li {
+      width: 100vw;
+    }
   }
