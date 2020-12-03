@@ -23,7 +23,7 @@ const crearEvento = (
   fecha,
   userEmail,
   userUID,
-  publicado,
+  publicado
 ) =>
   fs
     .collection("evento")
@@ -101,10 +101,8 @@ egendar_evento.addEventListener("click", () => {
       const titlevalue = agendarEvento["eventTittle--container"].value;
       const descriptionvalue = agendarEvento["eventDescription"].value;
       const fecha = agendarEvento["fecha"].value;
-      
-      
-      // const updateEvento = (id, updateEvento) => fs.collection("evento").doc(id).update(updateEvento);
 
+      // const updateEvento = (id, updateEvento) => fs.collection("evento").doc(id).update(updateEvento);
 
       task.on(
         "state_changed",
@@ -118,7 +116,7 @@ egendar_evento.addEventListener("click", () => {
           alert(`Error subiendo archivo = > ${err.message}`, 4000);
           document.querySelector("#agendar--btn").style = "display: block;";
         },
-         () => {
+        () => {
           task.snapshot.ref
             .getDownloadURL()
             .then((url) => {
@@ -134,14 +132,13 @@ egendar_evento.addEventListener("click", () => {
                   description: descriptionvalue,
                   imgLink: urlImg,
                   fecha: fecha,
-                })
+                });
                 editStatus = false;
-
               }
 
               document.querySelector("#agendar--btn").style = "display: block;";
               agendarEvento.reset();
-            title.focus();
+              title.focus();
             })
             .catch((err) => {
               alert(`Error obteniendo downloadURL = > ${err}`, 4000);
@@ -157,9 +154,9 @@ egendar_evento.addEventListener("click", () => {
           description.value,
           "./assets/imgs/imagotipo.png",
           fecha.value
-          );
-        } else {
-          updateEvento(id, {
+        );
+      } else {
+        updateEvento(id, {
           title: title.value,
           description: description.value,
           fecha: fecha.value,
@@ -168,7 +165,7 @@ egendar_evento.addEventListener("click", () => {
         editStatus = false;
       }
       // modal.remove();
-        document.querySelector("#agendar--btn").style = "display: block;";
+      document.querySelector("#agendar--btn").style = "display: block;";
       agendarEvento.reset();
       title.focus();
     }
@@ -258,7 +255,3 @@ iniciarSesion_btn.addEventListener("click", () => {
     });
   }
 });
-
-
-
-

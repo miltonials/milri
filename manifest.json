@@ -1,22 +1,62 @@
-  {
-    "name": "MILRI",
-    "short_name": "MILRI",
-    "description": "Información de eventos",
-    "scope": "/",
-    "start_url": "/",
-    "background_color": "rgb(13, 5, 47)",
-    "display": "standalone",
-    "theme_color": "rgb(13, 5, 47)",
-    "icons": [
-      {
-        "src": "/assets/imgs/isotipo.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/assets/imgs/isotipo.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ]
-  }
+{
+  "name": "MILRI",
+  "short_name": "MILRI",
+  "description": "Información de eventos",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait-primary",
+  "purpose": "any",
+  "background_color": "rgb(13, 5, 47)",
+  "display": "standalone",
+  "theme_color": "rgb(13, 5, 47)",
+  "icons": [
+    {
+      "src": "/assets/imgs/imagotipo72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/imgs/imagotipo96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/imgs/imagotipo128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/imgs/imagotipo144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/imgs/imagotipo152.png",
+      "type": "image/png",
+      "sizes": "152x152",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/imgs/imagotipo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/imgs/imagotipo384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/imgs/imagotipo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ]
+}
