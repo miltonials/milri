@@ -1,5 +1,3 @@
-
-
 /*NAVBAR*/
 const rigth_menu = document.querySelector(".rigth-menu");
 const left_menu = document.querySelector(".left-menu");

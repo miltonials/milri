@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <!--PWA -->
-    <meta name="theme-color" content="rgb(13, 5, 47)">
-    <link rel="apple-touch-icon" href="./assets/imgs/isotipo.png"/>
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="msapplication-starturl" content="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- SEO -->
-    <meta name="title" content="MILRI">
-    <meta name="subject" content="Eventos y avisos">
-    <meta name="description"content="La herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos." />
-    <meta name="keywords" content="Eventos, Avisos, MILRI, milri, Milri, Mylri, Milry, mes, juego, antiestresante, estres, milton, yassir, aviso, informatica, empresarial,">
-    <meta name="author" content="Autores: Milton Barrera Zepeda, Yassir Gómez Oses">
-    <meta name="languaje" content="spanish" />
-    <meta name="Revisit" content="1 day">
-    <meta name="distribution" content="global">
-    <meta name="robots"content="index,follow" />
-    <meta property="og:description" content="Todos juntos podemos hacer un cambio hacia una mejor comunicación estudiantil."/>
-    <meta property="og:title" content="MILRI HOME" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://milri-cr.web.app" />
-    <meta property="og:image" content="https://milri-cr.web.app/assets/imgs/isotipo.png" />
-    <meta property="og:site_name" content="https://milri-cr.web.app" />
-<!-- STYLE LINKS -->
-    <title>MILRI</title>
-    <link rel="icon" href="./assets/imgs/isotipo.png">
-    <!-- IBM Plex Sans-->
-    <link rel="preload" crossorigin as="font" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" />
-    <link rel="preload" as="style" href="./styles/style.css" />
-    <link rel="preload" as="style" href="./styles/headerFooter.css" />
-    <link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" />
-    <link rel="preload" as="style" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/headerFooter.css" />
-    <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" />
-    <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
-    <link rel="stylesheet" href="./styles/headerFooter.css" />
-
-    <link rel="manifest" href="./manifest.json">
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8" /><!--PWA --><meta name="theme-color" content="rgb(13, 5, 47)"><link rel="apple-touch-icon" href="./assets/imgs/isotipo.png"/><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="msapplication-starturl" content="/"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- SEO --><meta name="title" content="MILRI"><meta name="subject" content="Eventos y avisos"><meta name="description"content="La herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos." /><meta name="keywords" content="Eventos, Avisos, MILRI, milri, Milri, Mylri, Milry, mes, juego, antiestresante, estres, milton, yassir, aviso, informatica, empresarial,"><meta name="author" content="Autores: Milton Barrera Zepeda, Yassir Gómez Oses"><meta name="languaje" content="spanish" /><meta name="Revisit" content="1 day"><meta name="distribution" content="global"><meta name="robots"content="index,follow" /><meta property="og:description" content="Todos juntos podemos hacer un cambio hacia una mejor comunicación estudiantil."/><meta property="og:title" content="MILRI HOME" /><meta property="og:type" content="website" /><meta property="og:url" content="https://milri-cr.web.app" /><meta property="og:image" content="https://milri-cr.web.app/assets/imgs/isotipo.png" /><meta property="og:site_name" content="https://milri-cr.web.app" /><!-- STYLE LINKS --><title>MILRI</title><link rel="icon" href="./assets/imgs/isotipo.png"><link rel="preload" as="style" href="./styles/style.css" /><link rel="preload" as="style" href="./styles/headerFooter.css" /><link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" /><link rel="preload" as="style" href="./styles/mobile.css" media="screen and (max-width: 568px)" /><link rel="stylesheet" href="./styles/style.css" /><link rel="stylesheet" href="./styles/headerFooter.css" /><link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" /><link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width: 568px)" /><link rel="stylesheet" href="./styles/headerFooter.css" /><link rel="manifest" href="./manifest.json">
 </head>
 <body id="body">
     <header>
@@ -71,22 +27,9 @@
         </main>
         <footer>
         </footer>
-        <script type="text/javascript" src="./js/header/index.js" ></script>
-        <script type="text/javascript" src="./js/footer/index.js" ></script>
+        <script defer type="text/javascript" src="./js/header/index.js" ></script>
+        <script defer type="text/javascript" src="./js/footer/index.js" ></script>
         <script defer type="text/javascript" src="./js/modalController.js" ></script>
-        <script type="text/javascript">
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js')
-                .then (() => {
-                    console.log("Service Worker Registered");
-                })
-                .catch(error => {
-                    console.error(`Error al registrar el service worker => ${error}`)
-                })
-            })
-        }
-        </script>
         <!-- firebase -->
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js" ></script>
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js" ></script>
@@ -96,12 +39,5 @@
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-messaging.js" ></script>
         <!-- custom -->
         <script defer type="text/javascript" src="./js/config/ConfigFirebase.js" ></script>
-        <script defer type="text/javascript" src="./js/eventsRealTime.js" ></script>
-        <script defer type="text/javascript" src="./js/detectarBrowser.js" ></script>
-        <script defer type="text/javascript" src="./js/main.js" ></script>
-        <script defer type="text/javascript" src="./js/modals.js" ></script>
-        <!-- Start of HubSpot Embed Code -->
-        <script type="text/javascript" id="hs-script-loader" defer async src="//js.hs-scripts.com/8894378.js"></script>
-  <!-- End of HubSpot Embed Code -->
     </body>
 </html>

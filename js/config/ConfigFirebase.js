@@ -13,8 +13,8 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 const auth = firebase.auth();
-const fs = firebase.firestore();
-const storage = firebase.storage();
+// const fs = firebase.firestore();
+// const storage = firebase.storage();
 const messaging = firebase.messaging();
 
 messaging
@@ -34,3 +34,24 @@ messaging
   messaging.onMessage((payload) => {
     console.log('On message: ', payload)
   })
+
+// HELOUDA
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.appendChild(createCustomElement("script",{defer:"", async:"" ,src: "./js/eventsRealTime.js",},[]));
+    document.body.appendChild(createCustomElement("script",{defer:"", async:"" ,src: "./js/detectarBrowser.js",},[]));
+    document.body.appendChild(createCustomElement("script",{defer:"", async:"" ,src: "./js/main.js",},[]));
+    document.body.appendChild(createCustomElement("script",{defer:"", async:"" ,src: "./js/modals.js",},[]));
+    document.body.appendChild(createCustomElement("script",{defer:"", async:"" ,src: "//js.hs-scripts.com/8894378.js",},[]));
+}
+);
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js')
+        .then (() => {
+            console.log("Service Worker Registered");
+        })
+        .catch(error => {
+            console.error(`Error al registrar el service worker => ${error}`)
+        })
+    })
+}
