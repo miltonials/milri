@@ -9,3 +9,15 @@ if (
     "¡Hola! Al parecer tienes un vavegador no compatible con ultimás tecnologías del 2020. Cámbiate a uno más moderno. ❤"
   );
 }
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+      .then (() => {
+          console.log("Service Worker Registered");
+      })
+      .catch(error => {
+          console.error(`Error al registrar el service worker => ${error}`)
+      })
+  })
+}
