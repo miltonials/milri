@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </figure>
       <div class="card-information">
       <h2 class="title">No hay eventos</h2>
-      <p>No hay eventos</p>
+      <p>Espera unos segundos. Si aún no aparece ningún evento, entonces verifica tu conexión a internet y vuelve a recargar la página.
+        <i class="fecha--container">@miltonials</i>
+      </p>
       </div>
   </div>
       `;

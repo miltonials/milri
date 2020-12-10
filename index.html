@@ -74,19 +74,8 @@
         <script type="text/javascript" src="./js/header/index.js" ></script>
         <script type="text/javascript" src="./js/footer/index.js" ></script>
         <script defer type="text/javascript" src="./js/modalController.js" ></script>
-        <script type="text/javascript">
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js')
-                .then (() => {
-                    console.log("Service Worker Registered");
-                })
-                .catch(error => {
-                    console.error(`Error al registrar el service worker => ${error}`)
-                })
-            })
-        }
-        </script>
+        <!-- <script type="text/javascript">
+        </script> -->
         <!-- firebase -->
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js" ></script>
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js" ></script>
