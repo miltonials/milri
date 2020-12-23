@@ -1,10 +1,16 @@
+// import footer from "./footer/index.js";
+// import header from "./header/index.js";
+
+// header();
+// footer();
+
 /*NAVBAR*/
-const rigth_menu = document.querySelector(".rigth-menu");
-const left_menu = document.querySelector(".left-menu");
-const logo = document.querySelector(".logo");
-const burgerButton = document.querySelector("#burger-menu");
+let rigth_menu = document.querySelector(".rigth-menu");
+let left_menu = document.querySelector(".left-menu");
+let logo = document.querySelector(".logo");
+let burgerButton = document.querySelector("#burger-menu");
 // const card = document.querySelector(".aside-container");
-const tablet = window.matchMedia("screen and (max-width:812px)");
+let tablet = window.matchMedia("screen and (max-width:812px)");
 
 tablet.addListener(validation);
 
@@ -32,32 +38,23 @@ function hideShow() {
   }
 }
 
-// mostrarContraseña_btn
-const mostrarContrasena = () => {
-  let tipo = document.getElementById("password");
-  let mostrarContrasenaBtn = document.getElementById("showPassword--btn");
-  if (tipo.type == "password") {
-    tipo.type = "text";
-    mostrarContrasenaBtn.style.backgroundImage =
-      "url('./assets/icons/eye-blocked.svg')";
-  } else {
-    tipo.type = "password";
-    mostrarContrasenaBtn.style.backgroundImage =
-      "url('./assets/icons/eye.svg')";
-  }
-};
-
 // Cambio de estado de
 auth.onAuthStateChanged((user) => {
+  let welcomeText = document.querySelector(
+    ".main-left-information > h1"
+  );
   if (user) {
     document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
       "Cerrar sesión";
     miActividad.style.display = "block";
     egendar_evento.style.display = "block";
+
+    welcomeText.innerHTML = `Bienvenido/a ${auth.currentUser.email}`;
+    welcomeText.style ="border-bottom: 5px solid; border-image: var(--gradient-primary) 1";
   } else {
-    miActividad.style.display = "none";
-    egendar_evento.style.display = "none";
     document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
-      "Iniciar Sesión";
+    "Iniciar Sesión";
+    welcomeText.innerHTML = "Bienvenido/a";
+    welcomeText.style ="border-bottom: none";
   }
 });

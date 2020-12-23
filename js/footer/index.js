@@ -17,4 +17,5 @@ const footer = () => {
     `;
   document.querySelector("footer").innerHTML += el;
 };
-footer();
+
+export default footer;

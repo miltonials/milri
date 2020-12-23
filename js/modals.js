@@ -76,8 +76,6 @@ egendar_evento.addEventListener("click", () => {
     alert("Primero debes iniciar sesión.");
   }
 
-  // let modal = document.getElementById("modal--container");
-
   const agendarEvento = document.querySelector("#agendarEvento");
 
   agendarEvento.addEventListener("submit", (e) => {
@@ -88,7 +86,6 @@ egendar_evento.addEventListener("click", () => {
     const title = agendarEvento["eventTittle--container"];
     const description = agendarEvento["eventDescription"];
     const fecha = agendarEvento["fecha"];
-    // const img = agendarEvento["imgEvento"];
     const img = document.querySelector("#imgEvento");
 
     if (img.files[0]) {
@@ -112,15 +109,14 @@ egendar_evento.addEventListener("click", () => {
           console.log(porcentaje);
           progress.value = porcentaje;
         },
-        (err) => {
-          alert(`Error subiendo archivo = > ${err.message}`, 4000);
+        (error) => {
+          alert(`Error subiendo archivo => ${error.message}`, 4000);
           document.querySelector("#agendar--btn").style = "display: block;";
         },
         () => {
           task.snapshot.ref
             .getDownloadURL()
             .then((url) => {
-              console.log(title.value, description.value);
               sessionStorage.setItem("evento", url);
               urlImg = url;
 
@@ -161,10 +157,9 @@ egendar_evento.addEventListener("click", () => {
           description: description.value,
           fecha: fecha.value,
         });
-
         editStatus = false;
       }
-      // modal.remove();
+      alert("Tu evento ha sido actualizado");
       document.querySelector("#agendar--btn").style = "display: block;";
       agendarEvento.reset();
       title.focus();
@@ -173,21 +168,34 @@ egendar_evento.addEventListener("click", () => {
 });
 
 iniciarSesion_btn.addEventListener("click", () => {
+  mostrarContrasena = () => {
+    let tipo = document.getElementById("password");
+    let mostrarContrasenaBtn = document.getElementById("showPassword--btn");
+    if (tipo.type == "password") {
+      tipo.type = "text";
+      mostrarContrasenaBtn.style.backgroundImage =
+        "url('./assets/icons/eye-blocked.svg')";
+    } else {
+      tipo.type = "password";
+      mostrarContrasenaBtn.style.backgroundImage =
+        "url('./assets/icons/eye.svg')";
+    }
+  };
+
   let user = firebase.auth().currentUser;
 
   if (user) {
-    let out = document.querySelector(".logout");
-
     auth
       .signOut()
       .then(() => {
-        console.log(`SignOut Correcto`, 4000);
+        miActividad.style.display = "none";
+        egendar_evento.style.display = "none";
         document
           .querySelector("#iniciarSesion--btn")
           .classList.remove("logout");
       })
       .catch((error) => {
-        alert(`Error al realizar SignOut => ${error}`, 4000);
+        alert(`Error al cerrar sesión => ${error}`);
       });
   } else {
     printModal(`
@@ -227,15 +235,16 @@ iniciarSesion_btn.addEventListener("click", () => {
 
     signInForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
       document.querySelector(
         "#iniciarSesion--Form > label:nth-child(3) > button"
       ).style = "display: none";
 
-      const correo = document.querySelector("#correo").value;
+      const email = document.querySelector("#correo").value;
       const password = document.querySelector("#password").value;
 
       auth
-        .signInWithEmailAndPassword(correo, password)
+        .signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
           document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
             "Cerrar Sesión";

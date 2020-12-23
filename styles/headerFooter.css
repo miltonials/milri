@@ -442,7 +442,7 @@ h5 {
   }
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 630px) {
   .header-container {
     position: initial;
   }

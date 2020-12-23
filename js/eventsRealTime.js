@@ -1,15 +1,6 @@
-const fs = firebase.firestore();
-const storage = firebase.storage();
-
 const onGetEvents = (callback) =>
   fs.collection("evento").orderBy("publicado", "desc").onSnapshot(callback);
 const eventList = document.querySelector(".aside-container");
-
-// document.addEventListener("DOMContentLoaded", () => {
-  // document.body.appendChild(createCustomElement("script",{src: "./js/config/ConfigFirebase.js",},[]))
-    // createCustomElement("script",{src: "./js/detectarBrowser.js",},[])
-    // createCustomElement("script",{src: "//js.hs-scripts.com/8894378.js",},[])
-
 
   onGetEvents((querySnapshot) => {
     if (querySnapshot.empty) {
@@ -53,4 +44,3 @@ const eventList = document.querySelector(".aside-container");
       eventList.innerHTML = html;
     }
   });
-// });

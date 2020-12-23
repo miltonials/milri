@@ -35,4 +35,5 @@ const header = () => {
     `;
     document.querySelector('header').innerHTML = el;
 }
-header();
+
+export default header;
