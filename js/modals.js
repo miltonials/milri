@@ -80,46 +80,45 @@ egendar_evento.addEventListener("click", () => {
 
   agendarEvento.addEventListener("submit", (e) => {
     e.preventDefault();
-
     document.querySelector("#agendar--btn").style = "display: none;";
-
+    
     const title = agendarEvento["eventTittle--container"];
     const description = agendarEvento["eventDescription"];
     const fecha = agendarEvento["fecha"];
     const img = document.querySelector("#imgEvento");
-
+    
     if (img.files[0]) {
       let urlImg = "";
       const file = img.files[0];
       const refStorage = storage.ref(
         `imgEvento/${auth.currentUser.email}/${file.name}`
-      );
-      const task = refStorage.put(file);
-      const titlevalue = agendarEvento["eventTittle--container"].value;
-      const descriptionvalue = agendarEvento["eventDescription"].value;
-      const fecha = agendarEvento["fecha"].value;
-
-      // const updateEvento = (id, updateEvento) => fs.collection("evento").doc(id).update(updateEvento);
-
-      task.on(
-        "state_changed",
-        (snapshot) => {
-          const progress = document.getElementById("progress--bar");
-          const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes;
-          console.log(porcentaje);
-          progress.value = porcentaje;
-        },
-        (error) => {
-          alert(`Error subiendo archivo => ${error.message}`, 4000);
-          document.querySelector("#agendar--btn").style = "display: block;";
-        },
-        () => {
-          task.snapshot.ref
+        );
+        const task = refStorage.put(file);
+        const titlevalue = agendarEvento["eventTittle--container"].value;
+        const descriptionvalue = agendarEvento["eventDescription"].value;
+        const fecha = agendarEvento["fecha"].value;
+        
+        const updateEvento = (id, updateEvento) => fs.collection("evento").doc(id).update(updateEvento);
+        
+        task.on(
+          "state_changed",
+          (snapshot) => {
+            const progress = document.getElementById("progress--bar");
+            const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes;
+            console.log(porcentaje);
+            progress.value = porcentaje;
+          },
+          (error) => {
+            alert(`Error subiendo archivo => ${error.message}`, 4000);
+            document.querySelector("#agendar--btn").style = "display: block;";
+          },
+          () => {
+            task.snapshot.ref
             .getDownloadURL()
             .then((url) => {
               sessionStorage.setItem("evento", url);
               urlImg = url;
-
+              
               if (!editStatus) {
                 crearEvento(titlevalue, descriptionvalue, urlImg, fecha);
               } else {
@@ -130,8 +129,9 @@ egendar_evento.addEventListener("click", () => {
                   fecha: fecha,
                 });
                 editStatus = false;
+                alert("Tu evento ha sido actualizado");
               }
-
+              
               document.querySelector("#agendar--btn").style = "display: block;";
               agendarEvento.reset();
               title.focus();
@@ -141,29 +141,27 @@ egendar_evento.addEventListener("click", () => {
               document.querySelector("#agendar--btn").style = "display: block;";
               title.focus();
             });
-        }
-      );
-    } else {
-      if (!editStatus) {
-        crearEvento(
-          title.value,
-          description.value,
-          "./assets/imgs/imagotipo.png",
-          fecha.value
-        );
-      } else {
-        updateEvento(id, {
-          title: title.value,
+          }
+          );
+        } else if (!editStatus) {
+            crearEvento(
+              title.value,
+              description.value,
+              "./assets/imgs/imagotipo.png",
+              fecha.value
+              );
+            } else {
+              updateEvento(id, {
+                title: title.value,
           description: description.value,
           fecha: fecha.value,
         });
         editStatus = false;
+        alert("Tu evento ha sido actualizado");
+        document.querySelector("#agendar--btn").style = "display: block;";
+        agendarEvento.reset();
+        title.focus();
       }
-      alert("Tu evento ha sido actualizado");
-      document.querySelector("#agendar--btn").style = "display: block;";
-      agendarEvento.reset();
-      title.focus();
-    }
   });
 });
 
@@ -264,3 +262,16 @@ iniciarSesion_btn.addEventListener("click", () => {
     });
   }
 });
+
+// SERVICE WORKER
+if ("serviceWorker" in navigator) {
+  window.addEventListener('load', function() { 
+      navigator.serviceWorker.register("sw.js")
+      .then(() => {
+          console.log("Service Worker Registered");
+      })
+      .catch((error) => {
+          console.error(`Error al registrar el service worker => ${error}`);
+      });
+  })
+}

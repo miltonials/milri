@@ -1,8 +1,8 @@
-// import footer from "./footer/index.js";
-// import header from "./header/index.js";
+import footer from "./footer/index.js";
+import header from "./header/index.js";
 
-// header();
-// footer();
+header();
+footer();
 
 /*NAVBAR*/
 let rigth_menu = document.querySelector(".rigth-menu");
@@ -40,21 +40,23 @@ function hideShow() {
 
 // Cambio de estado de
 auth.onAuthStateChanged((user) => {
-  let welcomeText = document.querySelector(
-    ".main-left-information > h1"
-  );
+  let welcomeText = document.querySelector(".main-left-information > h1");
+  
   if (user) {
-    document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
-      "Cerrar sesión";
+    document.querySelector("#iniciarSesion--btn > a > strong").innerHTML ="Cerrar sesión";
     miActividad.style.display = "block";
     egendar_evento.style.display = "block";
 
-    welcomeText.innerHTML = `Bienvenido/a ${auth.currentUser.email}`;
-    welcomeText.style ="border-bottom: 5px solid; border-image: var(--gradient-primary) 1";
+    if (document.title === "MILRI") {
+      welcomeText.innerHTML = `Bienvenido/a ${auth.currentUser.email}`;
+      welcomeText.style ="border-bottom: 5px solid; border-image: var(--gradient-primary) 1";
+    }
   } else {
     document.querySelector("#iniciarSesion--btn > a > strong").innerHTML =
     "Iniciar Sesión";
-    welcomeText.innerHTML = "Bienvenido/a";
-    welcomeText.style ="border-bottom: none";
+    if (document.title === "MILRI"){
+      welcomeText.innerHTML = "Bienvenido/a";
+      welcomeText.style ="border-bottom: none";
+    }
   }
 });

@@ -1,91 +1,70 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8" /><!--PWA --><meta name="theme-color" content="rgb(13, 5, 47)"><link rel="apple-touch-icon" href="./assets/imgs/isotipo.png"/><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="msapplication-starturl" content="/"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- SEO --><meta name="title" content="MILRI"><meta name="subject" content="Eventos y avisos"><meta name="description"content="La herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos." /><meta name="keywords" content="Eventos, Avisos, MILRI, milri, Milri, Mylri, Milry, mes, juego, antiestresante, estres, milton, yassir, aviso, informatica, empresarial,"><meta name="author" content="Autores: Milton Barrera Zepeda, Yassir Gómez Oses"><meta name="languaje" content="spanish" /><meta name="Revisit" content="1 day"><meta name="distribution" content="global"><meta name="robots"content="index,follow" /><meta property="og:description" content="Todos juntos podemos hacer un cambio hacia una mejor comunicación estudiantil."/><meta property="og:title" content="MILRI HOME" /><meta property="og:type" content="website" /><meta property="og:url" content="https://milri-cr.web.app" /><meta property="og:image" content="https://milri-cr.web.app/assets/imgs/isotipo.png" /><meta property="og:site_name" content="https://milri-cr.web.app" /><!-- STYLE LINKS --><title>MILRI</title><link rel="icon" href="./assets/imgs/isotipo.png"><link rel="preload" as="style" href="./styles/style.css" /><link rel="preload" as="style" href="./styles/headerFooter.css" /><link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" /><link rel="preload" as="style" href="./styles/mobile.css" media="screen and (max-width: 568px)" /><link rel="stylesheet" href="./styles/style.css" /><link rel="stylesheet" href="./styles/headerFooter.css" /><link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" /><link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width: 568px)" /><link rel="stylesheet" href="./styles/headerFooter.css" /><link rel="manifest" href="./manifest.json">
-</head>
-<body id="body">
-    <header>
-        <i class="icon-menu burger-button" id="burger-menu"><span></span></i>
-        <div class="header-container">
-    <div class="navigations">
-    <a href="./">
-        <figure class="logo">
-            <img src="./assets/imgs/isotipo.png" alt="LOGO">
-        </figure>
-    </a>
-    <nav class="left-menu">
-        <ul>
-            <li><a href="./mes.html#">Eventos del mes</a></li>
-            <li><a href="./game.html#">Juego antiestresante</a></li>
-        </ul>
-    </nav>
-    <nav class="rigth-menu">
-        <ul>
-            <li id="agendarEvennt--btn" class="logged-out" style="display: none;">
-                <a href="#"> Agendar un evento</a>
-            </li>
-            <li id="miActividad--btn" class="logged-out" style="display: none;">
-                <a href="./actividad.html">
-                    Mi actividad <span class="actividad-icon"></span>
-                </a>
-            </li>
-            <li id="iniciarSesion--btn" class="logged-in">
-                <a href="#">
-                    <strong >Cargando</strong><span class="iniciarSesion-icon"></span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    </div>
-        </header>
-        <main>
-            <div class="main-container">
-                <div class="main-sides">
-                    <section class="main-left">
-                        <div class="main-left-information">
-                            <figure class="isologo--left">
-                                <img src="./assets/imgs/imagotipo.png" alt="imagotipo milri" width="300" height="300">
-                            </figure>
-                            <h1>¡Bienvenido/a!</h1>
-                            <P>Este es un proyecto diseñado y desarrollado por estudiantes de informática empresarial.</P>
-                        </div>
-                    </section>
-                    <aside>
-                        <section class="aside-container">
-                            <figure>
-                                <img src="./assets/imgs/update.gif" width="150" alt="Cargando">
-                            </figure>
-                    </aside>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <section class="footer-container">
-                <div class="footer-information">
-                    <ul class="information-links">
-                        <li><a href="#"><span>Acerca de</span></a></li>
-                        <li><a href="#"><span>Funcionalidades</span></a></li>
-                        <li><a href="#"><span>¿Cómo colaborar?</span></a></li>
-                        <li><a href="./license.html"><span>Licencia</span></a></li>
-                    </ul>
-                    <div class="social-links">
-                        <span>MILRI 2020</span>
-                        <span>REDES SOCIALES</span>
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8" />
+            <!--PWA -->
+            <meta name="theme-color" content="rgb(13, 5, 47)">
+            <link rel="apple-touch-icon" href="./assets/imgs/isotipo.png"/>
+            <meta name="mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="msapplication-starturl" content="/">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- SEO -->
+            <meta name="title" content="MILRI">
+            <meta name="subject" content="Eventos y avisos">
+            <meta name="description"content="La herramienta que permite agendar eventos, fechas importantes y hacer avisos, para una mejor organización y conocimiento de estos." />
+            <meta name="keywords" content="Eventos, Avisos, MILRI, milri, Milri, Mylri, Milry, mes, juego, antiestresante, estres, milton, yassir, aviso, informatica, empresarial,">
+            <meta name="author" content="Autores: Milton Barrera Zepeda, Yassir Gómez Oses">
+            <meta name="languaje" content="spanish" />
+            <meta name="Revisit" content="1 day">
+            <meta name="distribution" content="global">
+            <meta name="robots"content="index,follow" />
+            <meta property="og:description" content="Todos juntos podemos hacer un cambio hacia una mejor comunicación estudiantil."/>
+            <meta property="og:title" content="MILRI HOME" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://milri-cr.web.app" />
+            <meta property="og:image" content="https://milri-cr.web.app/assets/imgs/isotipo.png" />
+            <meta property="og:site_name" content="https://milri-cr.web.app" />
+            <!-- STYLE LINKS -->
+            <title>MILRI</title>
+            <link rel="icon" href="./assets/imgs/isotipo.png">
+            <link rel="preload" as="style" href="./styles/style.css" />
+            <link rel="preload" as="style" href="./styles/headerFooter.css" />
+            <link rel="preload" as="style" href="./styles/tablet.css" media="screen and (max-width:812px)" />
+            <link rel="preload" as="style" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
+            <link rel="stylesheet" href="./styles/style.css" />
+            <link rel="stylesheet" href="./styles/headerFooter.css" />
+            <link rel="stylesheet" href="./styles/tablet.css" media="screen and (max-width:812px)" />
+            <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width: 568px)" />
+            <link rel="stylesheet" href="./styles/headerFooter.css" />
+            <link rel="manifest" href="./manifest.json">
+        </head>
+        <body id="body">
+            <header>
+            </header>
+            <main>
+                <div class="main-container">
+                    <div class="main-sides">
+                        <section class="main-left">
+                            <div class="main-left-information">
+                                <figure class="isologo--left">
+                                    <img src="./assets/imgs/imagotipo.png" alt="imagotipo milri" width="300" height="300">
+                                </figure>
+                                <h1>¡Bienvenido/a!</h1>
+                                <P>Este es un proyecto diseñado y desarrollado por estudiantes de informática empresarial.</P>
+                            </div>
+                        </section>
+                        <aside>
+                            <section class="aside-container">
+                                <figure>
+                                    <img src="./assets/imgs/update.gif" width="150" alt="Cargando">
+                                </figure>
+                        </aside>
                     </div>
                 </div>
-            </section>
+            </main>
+        <footer>
         </footer>
-        <script type="text/javascript">
-            if ("serviceWorker" in navigator) {
-                window.addEventListener('load', function() { 
-                    navigator.serviceWorker.register("sw.js")
-                    .then(() => {
-                        console.log("Service Worker Registered");
-                    })
-                    .catch((error) => {
-                        console.error(`Error al registrar el service worker => ${error}`);
-                    });
-                })
-            }
-        </script>
-        <script defer type="text/javascript" src="./js/modalController.js" ></script>
         <!-- firebase -->
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js" ></script>
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js" ></script>
@@ -94,6 +73,7 @@
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js" ></script>
         <script defer src="https://www.gstatic.com/firebasejs/8.0.0/firebase-messaging.js" ></script>
         <!-- custom -->
+        <script defer type="text/javascript" src="./js/modalController.js" ></script>
         <script defer type="text/javascript" src="./js/config/ConfigFirebase.js" ></script>
         <script type="module" src="./js/main.js" ></script>
         <script defer type="module" src="./js/eventsRealTime.js" ></script>

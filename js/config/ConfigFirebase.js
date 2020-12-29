@@ -15,21 +15,21 @@ firebase.analytics();
 const auth = firebase.auth();
 const fs = firebase.firestore();
 const storage = firebase.storage();
-const messaging = firebase.messaging();
+// const messaging = firebase.messaging();
 
-messaging
-  .requestPermission()
-  .then(() => {
-    console.log("Have permissions");
-    return messaging.getToken();
-  })
-  .then((token) => {
-    console.log(`Token: ${token}`);
-  })
-  .catch((error) => {
-    console.log(`Error => ${error}`);
-  });
+// messaging
+//   .requestPermission()
+//   .then(() => {
+//     console.log("Have permissions");
+//     return messaging.getToken();
+//   })
+//   .then((token) => {
+//     console.log(`Token: ${token}`);
+//   })
+//   .catch((error) => {
+//     console.log(`Error => ${error}`);
+//   });
 
-messaging.onMessage((payload) => {
-  console.log("On message: ", payload);
-});
+// messaging.onMessage((payload) => {
+//   console.log("On message: ", payload);
+// });

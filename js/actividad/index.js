@@ -87,7 +87,7 @@ function obtenerEventosUsuario() {
   } else {
     document.querySelector(".eventos_usuario--container").innerHTML = "";
     const card = `
-        <h2>Inicia sesión</h2>
+        <h2 class="noLogin">Inicia sesión</h2>
         `;
     document.querySelector(".eventos_usuario--container").innerHTML += card;
   }
