@@ -1,15 +1,16 @@
-function obtenerEventosUsuario() {
+function getEventsUser() {
   if (auth.currentUser) {
     const onGetEventsUser = (callback) =>
-      fs
-        .collection("evento")
-        .orderBy("publicado", "desc")
-        .where("userEmail", "==", auth.currentUser.email)
-        .onSnapshot(callback);
-
+    fs
+    .collection("evento")
+    .orderBy("publicado", "desc")
+    .where("userEmail", "==", auth.currentUser.email)
+    .onSnapshot(callback);
+    let eventsUserContainer =eventsUserContainer;
+        
     onGetEventsUser((querySnapshot) => {
       if (querySnapshot.empty) {
-        document.querySelector(".eventos_usuario--container").innerHTML = `
+       eventsUserContainer = `
                     <div class="card event">
                     <figure class="card-image">
                     <img src="./assets/imgs/imagotipo.png" alt="Imagen de un evento" >
@@ -22,10 +23,10 @@ function obtenerEventosUsuario() {
       } else {
         let html = "";
         querySnapshot.forEach((doc) => {
-          const evento = doc.data();
-          evento.id = doc.id;
+          const event = doc.data();
+          event.id = doc.id;
 
-          const card = `
+          const cardTemplate = `
           <div class="card event">
               <figure class="card-image">
               <img src="${evento.imgLink}" alt="Imagen de un evento" >
@@ -45,61 +46,59 @@ function obtenerEventosUsuario() {
               </div>
             </div>
               `;
-          html += card;
+          html += cardTemplate;
         });
-        document.querySelector(".eventos_usuario--container").innerHTML = html;
+       eventsUserContainer = html;
 
         // btnFuncion
 
-        const btn_eliminar = document.querySelectorAll(".eliminar--btn");
-        const btn_editar = document.querySelectorAll(".editar--btn");
+        const deleteBtn = document.querySelectorAll(".eliminar--btn");
+        const editBtn = document.querySelectorAll(".editar--btn");
 
-        btn_eliminar.forEach((btn) => {
+        deleteBtn.forEach((btn) => {
           btn.addEventListener("click", (e) => {
-            eliminarEvento(e.target.dataset.id);
+            deleteEvent(e.target.dataset.id);
           });
         });
 
-        btn_editar.forEach((btn) => {
+        editBtn.forEach((btn) => {
           btn.addEventListener("click", async (e) => {
             
             btn.style = "display: none";
             editStatus = true;
-            const doc = await editarEvento(e.target.dataset.id);
+            const doc = await editEvent(e.target.dataset.id);
             id = doc.id;
             const docData = doc.data();
             
-            let agendarEvento_btn = document.querySelector("#agendarEvennt--btn");
-            agendarEvento_btn.click();
+            let scheduleEventBtn = document.querySelector("#agendarEvennt--btn");
+            scheduleEventBtn.click();
             btn.style = "display: inline-block";
             
-            // setTimeout(() => {
               agendarEvento["eventTittle--container"].value = docData.title;
               agendarEvento["eventDescription"].value = docData.description;
               agendarEvento["fecha"].value = docData.fecha;
               document.querySelector("#agendar--btn").innerHTML = "Actualizar";
-            // }, 1000);
           });
         });
         // btnFuncion
       }
     });
   } else {
-    document.querySelector(".eventos_usuario--container").innerHTML = "";
+   eventsUserContainer = "";
     const card = `
         <h2 class="noLogin">Inicia sesión</h2>
         `;
-    document.querySelector(".eventos_usuario--container").innerHTML += card;
+   eventsUserContainer += card;
   }
 }
 
 auth.onAuthStateChanged((user) => {
-  obtenerEventosUsuario();
+  getEventsUser();
 });
 
-function eliminarEvento(id) {
+function deleteEvent(id) {
   fs.collection("evento").doc(id).delete();
 }
-const editarEvento = (id) => fs.collection("evento").doc(id).get();
+const editEvent = (id) => fs.collection("evento").doc(id).get();
 const updateEvento = (id, updateEvento) =>
   fs.collection("evento").doc(id).update(updateEvento);
