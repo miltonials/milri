@@ -46,6 +46,7 @@ const printModal = (content) => {
   // remover modal
   const removeModal = () => {
     document.body.removeChild(modalContainerEl);
+    window.removeEventListener("keydown");
   };
 
   modalContainerEl.addEventListener("click", (e) => {

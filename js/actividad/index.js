@@ -1,16 +1,18 @@
 function getEventsUser() {
   if (auth.currentUser) {
     const onGetEventsUser = (callback) =>
-    fs
-    .collection("evento")
-    .orderBy("publicado", "desc")
-    .where("userEmail", "==", auth.currentUser.email)
-    .onSnapshot(callback);
-    let eventsUserContainer =eventsUserContainer;
-        
+      fs
+        .collection("evento")
+        .orderBy("publicado", "desc")
+        .where("userEmail", "==", auth.currentUser.email)
+        .onSnapshot(callback);
+    let eventsUserContainer = document.querySelector(
+      ".eventos_usuario--container"
+    );
+
     onGetEventsUser((querySnapshot) => {
       if (querySnapshot.empty) {
-       eventsUserContainer = `
+        eventsUserContainer = `
                     <div class="card event">
                     <figure class="card-image">
                     <img src="./assets/imgs/imagotipo.png" alt="Imagen de un evento" >
@@ -29,26 +31,26 @@ function getEventsUser() {
           const cardTemplate = `
           <div class="card event">
               <figure class="card-image">
-              <img src="${evento.imgLink}" alt="Imagen de un evento" >
+              <img src="${event.imgLink}" alt="Imagen de un evento" >
               </figure>
               <div class="card-information">
-              <h2 class="title">${evento.title}</h2>
-              <p>${evento.description} <br />
+              <h2 class="title">${event.title}</h2>
+              <p>${event.description} <br />
                 <i class="fecha--container">
-                  Publicado el: ${evento.publicado} <br />
-                  Fecha del evento: ${evento.fecha}
+                  Publicado el: ${event.publicado} <br />
+                  Fecha del evento: ${event.fecha}
                 </i>
               </p>
               <section class="btns--container">
-                <button class="eliminar--btn" data-id="${evento.id}">Eliminar</button>
-                <button class="editar--btn" data-id="${evento.id}">Editar</button>
+                <button class="eliminar--btn" data-id="${event.id}">Eliminar</button>
+                <button class="editar--btn" data-id="${event.id}">Editar</button>
               </section>
               </div>
             </div>
               `;
           html += cardTemplate;
         });
-       eventsUserContainer = html;
+        eventsUserContainer = html;
 
         // btnFuncion
 
@@ -63,32 +65,33 @@ function getEventsUser() {
 
         editBtn.forEach((btn) => {
           btn.addEventListener("click", async (e) => {
-            
             btn.style = "display: none";
             editStatus = true;
             const doc = await editEvent(e.target.dataset.id);
             id = doc.id;
             const docData = doc.data();
-            
-            let scheduleEventBtn = document.querySelector("#agendarEvennt--btn");
+
+            let scheduleEventBtn = document.querySelector(
+              "#agendarEvennt--btn"
+            );
             scheduleEventBtn.click();
             btn.style = "display: inline-block";
-            
-              agendarEvento["eventTittle--container"].value = docData.title;
-              agendarEvento["eventDescription"].value = docData.description;
-              agendarEvento["fecha"].value = docData.fecha;
-              document.querySelector("#agendar--btn").innerHTML = "Actualizar";
+
+            agendarEvento["eventTittle--container"].value = docData.title;
+            agendarEvento["eventDescription"].value = docData.description;
+            agendarEvento["fecha"].value = docData.fecha;
+            document.querySelector("#agendar--btn").innerHTML = "Actualizar";
           });
         });
         // btnFuncion
       }
     });
   } else {
-   eventsUserContainer = "";
+    eventsUserContainer = "";
     const card = `
         <h2 class="noLogin">Inicia sesión</h2>
         `;
-   eventsUserContainer += card;
+    eventsUserContainer += card;
   }
 }
 
