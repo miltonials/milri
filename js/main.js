@@ -4,17 +4,15 @@ import header from "./header/index.js";
 header();
 footer();
 
-/*NAVBAR*/
-let rigth_menu = document.querySelector(".rigth-menu");
-let left_menu = document.querySelector(".left-menu");
+let rigthMenu = document.querySelector(".rigth-menu");
+let leftMenu = document.querySelector(".left-menu");
 let logo = document.querySelector(".logo");
 let burgerButton = document.querySelector("#burger-menu");
-// const card = document.querySelector(".aside-container");
 let tablet = window.matchMedia("screen and (max-width:812px)");
 
 tablet.addListener(validation);
 
-validation(tablet); //Para que funcione el burgerButton si se inicia desde <767px
+validation(tablet); 
 
 function validation(event) {
   if (event.matches) {
@@ -25,20 +23,19 @@ function validation(event) {
 }
 
 function hideShow() {
-  if (rigth_menu.classList.contains("is-active")) {
+  if (rigthMenu.classList.contains("is-active")) {
     logo.classList.remove("is-active");
     burgerButton.classList.remove("is-active");
-    rigth_menu.classList.remove("is-active");
-    left_menu.classList.remove("is-active");
+    rigthMenu.classList.remove("is-active");
+    leftMenu.classList.remove("is-active");
   } else {
     logo.classList.add("is-active");
     burgerButton.classList.add("is-active");
-    rigth_menu.classList.add("is-active");
-    left_menu.classList.add("is-active");
+    rigthMenu.classList.add("is-active");
+    leftMenu.classList.add("is-active");
   }
 }
 
-// Cambio de estado de
 auth.onAuthStateChanged((user) => {
   let welcomeText = document.querySelector(".main-left-information > h1");
   
